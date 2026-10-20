@@ -25,7 +25,7 @@ def test_parallel_panel_matches_seeded_serial_games_and_preserves_outputs(tmp_pa
     result = run_panel(p, out, workers=2)
     assert result["completed"]
     tracked = result["source_and_artifact_sha256"]
-    assert not any(Path(p).name == "enable_playtruco_alignment.py" for p in tracked)
+    assert not any(Path(p).name == "enable_online_alignment.py" for p in tracked)
     assert any(Path(p).name == "e13_panel.py" for p in tracked)
     for job, got in zip(plan["jobs"], result["matchups"]):
         rows, _, _ = e10_rapid.batch((job["a"], job["b"], list(range(job["start_seed"], job["start_seed"]+2))))

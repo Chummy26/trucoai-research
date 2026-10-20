@@ -19,7 +19,7 @@ from trucoai.arena import play_match
 from trucoai.agents.bayes_response import BayesResponseAgent
 from trucoai.agents.learned import PolicyNetwork
 from trucoai.agents.fast_network import accelerate
-from trucoai.rules import PLAYTRUCO_O1
+from trucoai.rules import ONLINE_O1
 
 
 def factory(spec):
@@ -56,7 +56,7 @@ def batch(task):
     # Independent memory even for a self-match.
     aa = Timed(_CACHE[a])
     bb = Timed(factory(b) if a == b else _CACHE[b])
-    rows = [play_match(aa, bb, seed, seat, rules=PLAYTRUCO_O1)
+    rows = [play_match(aa, bb, seed, seat, rules=ONLINE_O1)
             for seed in seeds for seat in (0, 1)]
     return rows, aa.times, bb.times
 
@@ -74,7 +74,7 @@ def main():
              + [ROOT/p for p in plan.get('artifacts', [])] + [Path(args.plan).resolve()])
     hashes = {str(p.resolve()): hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
     receipt = dict(plan=plan, source_and_artifact_sha256=hashes, completed=False,
-                   rules_fingerprint=PLAYTRUCO_O1.fingerprint, workers=args.workers,
+                   rules_fingerprint=ONLINE_O1.fingerprint, workers=args.workers,
                    loaded_agents={s: getattr(factory(s), 'meta', {})
                                   for j in plan['jobs'] for s in (j['a'],j['b'])},
                    matchups=[])

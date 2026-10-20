@@ -1,7 +1,7 @@
 """Regulamento configurável de Truco Paulista 1v1.
 
 Cada regra tem um *status* de verificação. Em 19/10/2026 nenhuma regra pôde ser
-confirmada no texto publicado da PlayTruco (o site não expõe regulamento no
+confirmada no texto publicado da Online (o site não expõe regulamento no
 cliente; ver docs/REGRAS.md). Por isso todas começam como ``HIPOTESE`` e devem
 ser promovidas a ``OBSERVADO`` ou ``PUBLICADO`` só com evidência registrada.
 
@@ -16,8 +16,8 @@ import json
 from dataclasses import asdict, dataclass, field
 from typing import Dict, Tuple
 
-PUBLICADO = "publicado"  # texto oficial da PlayTruco
-OBSERVADO = "observado"  # comportamento observado em partidas 1v1 na PlayTruco
+PUBLICADO = "publicado"  # texto oficial da Online
+OBSERVADO = "observado"  # comportamento observado em partidas 1v1 na Online
 HIPOTESE = "hipotese"  # convenção comum do Truco Paulista, ainda não verificada
 
 
@@ -80,13 +80,13 @@ class RuleSet:
 DEFAULT_RULES = RuleSet()
 
 
-# Regulamento com o que foi OBSERVADO na PlayTruco em 19/10/2026 (partida 1v1
+# Regulamento com o que foi OBSERVADO na Online em 19/10/2026 (partida 1v1
 # Paulista, mesa R$ 0,25; evidência em captures/20261019_dom_partida1/ e
 # docs/REGRAS.md). Diferença em relação a h0: "correr" na própria vez existe,
 # só na 1ª rodada (flag ``cgr`` do protocolo só é verdadeira antes da 1ª vaza).
-# Mão de ferro (19/10/2026, logs/playtruco/20261019_021457_shadow.jsonl): cartas
+# Mão de ferro (19/10/2026, logs/online/20261019_021457_shadow.jsonl): cartas
 # visíveis ao próprio jogador, vale 1, sem truco, sem correr e sem virar.
-PLAYTRUCO_O1 = RuleSet(
+ONLINE_O1 = RuleSet(
     version="paulista-1v1-o1",
     allow_fold_on_turn=True,
     fold_on_turn_max_round=0,

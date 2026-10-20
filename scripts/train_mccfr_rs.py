@@ -35,9 +35,9 @@ if hasattr(sys.stdout, "reconfigure"):
 
 from trucoai import __version__  # noqa: E402
 from trucoai.equity import default_table  # noqa: E402
-from trucoai.rules import DEFAULT_RULES, PLAYTRUCO_O1  # noqa: E402
+from trucoai.rules import DEFAULT_RULES, ONLINE_O1  # noqa: E402
 
-RULESETS = {"h0": DEFAULT_RULES, "o1": PLAYTRUCO_O1}
+RULESETS = {"h0": DEFAULT_RULES, "o1": ONLINE_O1}
 
 CRATE = ROOT / "rust" / "mccfr"
 BIN = CRATE / "target" / "release" / ("mccfr.exe" if sys.platform == "win32" else "mccfr")
@@ -75,7 +75,7 @@ def main():
     ap.add_argument("--keep-tsv", action="store_true")
     ap.add_argument("--run-id", required=True)
     ap.add_argument("--rules", choices=sorted(RULESETS), default="h0",
-                    help="h0 (padrão histórico) ou o1 (observado na PlayTruco)")
+                    help="h0 (padrão histórico) ou o1 (observado na Online)")
     a = ap.parse_args()
 
     out = ROOT / "runs" / a.run_id

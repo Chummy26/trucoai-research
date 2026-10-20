@@ -17,7 +17,7 @@ import numpy as np
 from scripts.e13_rapid import factory
 from scripts.e10_rapid import batch
 from scripts.evaluate_frozen import summarize_pairs
-from trucoai.rules import PLAYTRUCO_O1
+from trucoai.rules import ONLINE_O1
 
 
 def panel_batch(task):
@@ -37,7 +37,7 @@ def run_panel(plan_path, out, workers=12):
     paths += [ROOT/p for p in plan.get("artifacts", [])] + [plan_path]
     hashes = {str(p.resolve()): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
     receipt = dict(plan=plan, source_and_artifact_sha256=hashes, completed=False,
-                   rules_fingerprint=PLAYTRUCO_O1.fingerprint, workers=workers,
+                   rules_fingerprint=ONLINE_O1.fingerprint, workers=workers,
                    loaded_agents={s: getattr(factory(s), "meta", {})
                                   for j in plan["jobs"] for s in (j["a"], j["b"])},
                    matchups=[])

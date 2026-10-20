@@ -2,7 +2,7 @@ import random
 import numpy as np
 from trucoai.engine import new_match
 from trucoai.observation import observe
-from trucoai.rules import PLAYTRUCO_O1
+from trucoai.rules import ONLINE_O1
 
 
 def test_joint_posterior_normalization_and_no_same_hand_double_count():
@@ -33,7 +33,7 @@ def test_bayes_reset_and_hidden_state_invariance():
         def probs(self, o):
             return Uniform()._policy_probs(o)
     a = BayesResponseAgent([Uniform(), Uniform()], Own(), n=4, k=2)
-    s = new_match(PLAYTRUCO_O1)
+    s = new_match(ONLINE_O1)
     s.deal(random.Random(42))
     o = observe(s, s.current)
     a.reset(21)

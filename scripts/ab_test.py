@@ -1,6 +1,6 @@
 """Teste A/B: cada candidato contra um agente de referência (campeão atual).
 
-Partidas espelhadas sob PLAYTRUCO_O1, sementes de avaliação disjuntas do treino,
+Partidas espelhadas sob ONLINE_O1, sementes de avaliação disjuntas do treino,
 estatística pareada por distribuição (reaproveita ``compare_references``) e
 Bonferroni sobre o número de candidatos. Grava JSON em results/ (nome novo).
 
@@ -29,7 +29,7 @@ from compare_references import pair_stats  # noqa: E402
 from trucoai import __version__  # noqa: E402
 from trucoai.agents import make_agent  # noqa: E402
 from trucoai.arena import run_matchup  # noqa: E402
-from trucoai.rules import PLAYTRUCO_O1  # noqa: E402
+from trucoai.rules import ONLINE_O1  # noqa: E402
 
 
 def main():
@@ -48,8 +48,8 @@ def main():
 
     def save():
         out.write_text(json.dumps({
-            "meta": {"code_version": __version__, "rules": PLAYTRUCO_O1.version,
-                     "rules_fingerprint": PLAYTRUCO_O1.fingerprint, "args": vars(a),
+            "meta": {"code_version": __version__, "rules": ONLINE_O1.version,
+                     "rules_fingerprint": ONLINE_O1.fingerprint, "args": vars(a),
                      "alpha_bonferroni": alpha,
                      "nota": "simulação contra bots; não é evidência contra humanos"},
             "matchups": rows}, indent=2, ensure_ascii=False), encoding="utf-8")
@@ -57,7 +57,7 @@ def main():
     for c, base in [(c, b) for c in a.candidates for b in a.baseline]:
         t0 = time.time()
         r = run_matchup(make_agent, c, base, deals=a.deals, start_seed=a.start_seed,
-                        workers=a.workers, rules=PLAYTRUCO_O1)
+                        workers=a.workers, rules=ONLINE_O1)
         r["wall_s"] = round(time.time() - t0, 1)
         r["stats"] = pair_stats(r, alpha)
         rows.append(r)

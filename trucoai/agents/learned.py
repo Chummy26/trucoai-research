@@ -15,7 +15,7 @@ from .. import cards as C
 from ..cfr.mccfr import abstract_legal, sorted_slots, to_abstract
 from ..engine import new_match
 from ..observation import Observation, observe
-from ..rules import PLAYTRUCO_O1
+from ..rules import ONLINE_O1
 from .search import SearchAgent
 from .base import Agent
 
@@ -112,7 +112,7 @@ def collect_chunk(args):
     for seed in range(start, start + count):
         rng = random.Random(seed)
         agent.reset(seed + 314159)
-        s = new_match(PLAYTRUCO_O1, first_dealer=rng.randrange(2))
+        s = new_match(ONLINE_O1, first_dealer=rng.randrange(2))
         s.scores = [rng.randrange(12), rng.randrange(12)]
         s.deal(rng)
         while not s.is_terminal():

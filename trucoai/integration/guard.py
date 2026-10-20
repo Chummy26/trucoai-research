@@ -5,7 +5,7 @@ bloqueia. A trava é consultada antes de CADA ação, não só ao sentar.
 
 Mesas valendo dinheiro: defina ``TRUCOAI_MAX_STAKE`` (reais, ex.: ``2.00``)
 ou use ``--max-stake`` no CLI. Sem o limite definido a IA não joga mesa paga
-(é assim que ``playtruco.py`` monta a guarda por padrão).
+(é assim que ``online.py`` monta a guarda por padrão).
 """
 
 from __future__ import annotations

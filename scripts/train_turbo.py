@@ -36,11 +36,11 @@ if hasattr(sys.stdout, "reconfigure"):
 from trucoai import __version__  # noqa: E402
 from trucoai.cfr.compact import finalize_unsorted  # noqa: E402
 from trucoai.equity import default_table  # noqa: E402
-from trucoai.rules import DEFAULT_RULES, PLAYTRUCO_O1  # noqa: E402
+from trucoai.rules import DEFAULT_RULES, ONLINE_O1  # noqa: E402
 
 CRATE = ROOT / "rust" / "mccfr"
 BIN = CRATE / "target" / "release" / ("mccfr.exe" if sys.platform == "win32" else "mccfr")
-RULESETS = {"h0": DEFAULT_RULES, "o1": PLAYTRUCO_O1}
+RULESETS = {"h0": DEFAULT_RULES, "o1": ONLINE_O1}
 
 
 def merge_unsorted(parts, out_dir: Path) -> dict:

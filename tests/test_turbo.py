@@ -11,7 +11,7 @@ from trucoai.cfr.abstraction import info_key
 from trucoai.cfr.compact import CompactPolicy, finalize_unsorted
 from trucoai.engine import new_match
 from trucoai.observation import observe
-from trucoai.rules import PLAYTRUCO_O1
+from trucoai.rules import ONLINE_O1
 
 ROOT = Path(__file__).resolve().parent.parent
 BIN = ROOT / "rust" / "mccfr" / "target" / "release" / ("mccfr.exe" if shutil.os.name == "nt" else "mccfr")
@@ -23,7 +23,7 @@ def root_keys(n=400, seed=0):
     rng = random.Random(seed)
     out = []
     for _ in range(n):
-        st = new_match(PLAYTRUCO_O1)
+        st = new_match(ONLINE_O1)
         st.deal(rng)
         out.append(info_key(observe(st, st.current)))
     return out

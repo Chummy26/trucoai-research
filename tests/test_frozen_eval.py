@@ -2,14 +2,14 @@ import importlib.util
 
 from trucoai.agents import make_agent
 from trucoai.arena import play_match, summarize
-from trucoai.rules import PLAYTRUCO_O1
+from trucoai.rules import ONLINE_O1
 
 
 def test_frozen_summary_requires_complete_mirrored_pairs():
     assert importlib.util.find_spec('scripts.evaluate_frozen') is not None
     from scripts.evaluate_frozen import summarize_pairs
     import pytest
-    rows = [play_match(make_agent('random'), make_agent('random'), seed, seat, rules=PLAYTRUCO_O1)
+    rows = [play_match(make_agent('random'), make_agent('random'), seed, seat, rules=ONLINE_O1)
             for seed in (100, 101, 102) for seat in (0, 1)]
     expected = summarize(rows)
     actual = summarize_pairs(rows, 'random', 'random', 100)

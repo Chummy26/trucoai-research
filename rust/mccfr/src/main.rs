@@ -35,7 +35,7 @@ use std::time::{Duration, Instant};
 // ---------------------------------------------------------------------------
 const RULES_VERSION: &str = "paulista-1v1-h0";
 const RULES_VERSION_O1: &str = "paulista-1v1-o1";
-// `--rules o1`: regulamento observado na PlayTruco (trucoai.rules.PLAYTRUCO_O1):
+// `--rules o1`: regulamento observado na Online (trucoai.rules.ONLINE_O1):
 // correr na própria vez só na 1ª rodada de mão normal; mão de ferro com cartas
 // visíveis (iron_blind=false). Padrão: h0 (treinos já registrados).
 static O1: AtomicBool = AtomicBool::new(false);

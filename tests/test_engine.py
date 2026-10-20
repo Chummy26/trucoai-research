@@ -218,27 +218,27 @@ def test_acao_ilegal_rejeitada():
         st.apply(ACCEPT)
 
 
-def test_playtruco_o1_permite_correr_na_vez():
-    from trucoai.rules import PLAYTRUCO_O1
-    st = start(["3p", "2p", "Ap"], ["4o", "5o", "6o"], "7c", scores=(6, 1), rules=PLAYTRUCO_O1)
+def test_online_o1_permite_correr_na_vez():
+    from trucoai.rules import ONLINE_O1
+    st = start(["3p", "2p", "Ap"], ["4o", "5o", "6o"], "7c", scores=(6, 1), rules=ONLINE_O1)
     assert RUN in st.legal_actions()
     st.apply(RUN)
-    assert st.scores == [6, 2]  # como observado na PlayTruco
+    assert st.scores == [6, 2]  # como observado na Online
     assert RUN not in start(["3p", "2p", "Ap"], ["4o", "5o", "6o"], "7c").legal_actions()
 
 
-def test_playtruco_o1_sem_limite_perto_de_12():
-    from trucoai.rules import PLAYTRUCO_O1
-    st = start(["3p", "2p", "Ap"], ["4o", "5o", "6o"], "7c", scores=(8, 10), rules=PLAYTRUCO_O1)
+def test_online_o1_sem_limite_perto_de_12():
+    from trucoai.rules import ONLINE_O1
+    st = start(["3p", "2p", "Ap"], ["4o", "5o", "6o"], "7c", scores=(8, 10), rules=ONLINE_O1)
     for _ in range(4):
         st.apply(RAISE)
     assert st.pending == 12
 
 
-def test_playtruco_o1_mao_de_ferro_visivel_sem_correr_nem_virar():
+def test_online_o1_mao_de_ferro_visivel_sem_correr_nem_virar():
     from trucoai.observation import observe
-    from trucoai.rules import PLAYTRUCO_O1
-    st = start(["3p", "2p", "Ap"], ["4o", "5o", "6o"], "7c", scores=(11, 11), rules=PLAYTRUCO_O1)
+    from trucoai.rules import ONLINE_O1
+    st = start(["3p", "2p", "Ap"], ["4o", "5o", "6o"], "7c", scores=(11, 11), rules=ONLINE_O1)
     assert st.special == IRON and st.stake == 1
     o = observe(st, 0)
     assert not o.blind and all(c is not None for c in o.my_hand)
@@ -248,8 +248,8 @@ def test_playtruco_o1_mao_de_ferro_visivel_sem_correr_nem_virar():
     assert all(a < 3 for a in st.legal_actions())  # sem virar na 2ª rodada
 
 
-def test_playtruco_o1_sem_correr_na_mao_de_onze():
-    from trucoai.rules import PLAYTRUCO_O1
-    st = start(["3p", "2p", "Ap"], ["4o", "5o", "6o"], "7c", scores=(11, 5), rules=PLAYTRUCO_O1)
+def test_online_o1_sem_correr_na_mao_de_onze():
+    from trucoai.rules import ONLINE_O1
+    st = start(["3p", "2p", "Ap"], ["4o", "5o", "6o"], "7c", scores=(11, 5), rules=ONLINE_O1)
     st.apply(ACCEPT)
     assert RUN not in st.legal_actions()

@@ -53,7 +53,7 @@ ignora vantagem de ser mão e decisões especiais da mão de onze.
   Rust e exige, a cada decisão, chave igual a `info_key(observe(...))`, mesmas
   ações abstratas legais e mesmo placar final; como a chave Python é invariante
   à informação oculta, a do Rust também é. Regulamentos: `h0` (padrão) e
-  `--rules o1` (= `PLAYTRUCO_O1`: correr na vez na 1ª rodada de mão normal, mão de
+  `--rules o1` (= `ONLINE_O1`: correr na vez na 1ª rodada de mão normal, mão de
   ferro com cartas visíveis); o teste refaz 6.000 jogos em cada um.
   Diferenças: threads compartilham uma tabela (CFR assíncrono, travas por
   fatia) e o RNG é xoshiro256** (sementes não reproduzem o treino Python);

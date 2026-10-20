@@ -9,7 +9,7 @@ def test_portfolio_uses_public_likelihoods_and_resets_all_policy_memory():
     from trucoai.agents.base import Agent
     from trucoai.engine import new_match
     from trucoai.observation import observe, Observation
-    from trucoai.rules import PLAYTRUCO_O1
+    from trucoai.rules import ONLINE_O1
 
     class Policy(Agent):
         def __init__(self, last=False):
@@ -38,7 +38,7 @@ def test_portfolio_uses_public_likelihoods_and_resets_all_policy_memory():
     fallback = Policy()
     portfolio = PortfolioAgent([Model(0.01), Model(0.99)], policies, fallback,
                                style_n=4, threshold=0.7)
-    state = new_match(PLAYTRUCO_O1)
+    state = new_match(ONLINE_O1)
     state.deal(random.Random(42))
     start = observe(state, state.current)
     assert portfolio.act(start) == start.legal_actions[0]
@@ -68,7 +68,7 @@ def test_portfolio_file_loads_exact_policies_and_completes_legal_match(tmp_path)
     from pathlib import Path
     from scripts.portfolio_factory import factory
     from trucoai.arena import play_match
-    from trucoai.rules import PLAYTRUCO_O1
+    from trucoai.rules import ONLINE_O1
     root = Path(__file__).resolve().parents[1]
     net = root/'runs/e9_iteration_s43_warm/policy.npz'
     spec = f'learned:{root}/runs/mccfr_rs_o1_s7/compact?net={net}&nbets=1&n=2&k=2&bets=0'
@@ -77,14 +77,14 @@ def test_portfolio_file_loads_exact_policies_and_completes_legal_match(tmp_path)
                                 'style_n':2, 'threshold':0.5}))
     ag = factory(f'portfolio:{path}')
     assert ag.models[0].network.path == str(net.resolve())
-    result = play_match(ag, factory('heuristic'), 132001, 0, rules=PLAYTRUCO_O1)
+    result = play_match(ag, factory('heuristic'), 132001, 0, rules=ONLINE_O1)
     assert max(result.a_points, result.b_points) >= 12
     assert result.sides['a'].illegal == 0
     assert ag.meta['portfolio_file'] == str(path.resolve())
     # Actual hidden cards may change while the legal observation stays fixed.
     from trucoai.engine import new_match
     from trucoai.observation import observe
-    state = new_match(PLAYTRUCO_O1)
+    state = new_match(ONLINE_O1)
     state.deal(random.Random(8))
     obs = observe(state, state.current)
     alternate = state.clone()

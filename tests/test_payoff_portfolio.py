@@ -4,7 +4,7 @@ import numpy as np
 import pytest
 from trucoai.engine import new_match
 from trucoai.observation import observe
-from trucoai.rules import PLAYTRUCO_O1
+from trucoai.rules import ONLINE_O1
 
 
 def agent_type():
@@ -34,7 +34,7 @@ class Policy:
 
 
 def public_obs():
-    s = new_match(PLAYTRUCO_O1)
+    s = new_match(ONLINE_O1)
     s.deal(random.Random(42))
     s.apply(s.legal_actions()[0])
     return s, observe(s, s.current)

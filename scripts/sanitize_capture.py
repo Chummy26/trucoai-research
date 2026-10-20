@@ -1,10 +1,10 @@
-"""Converte uma captura da PlayTruco em eventos decodificados e anonimizados.
+"""Converte uma captura da Online em eventos decodificados e anonimizados.
 
 Remove apelidos, IDs de usuário/sala/sessão, skins e URLs assinadas. A saída
 pode ir para tests/data/ (versionada); a captura bruta continua fora do git.
 
 Uso:
-    python scripts/sanitize_capture.py captures/20261019_014228 tests/data/playtruco_partida2.jsonl
+    python scripts/sanitize_capture.py captures/20261019_014228 tests/data/online_partida2.jsonl
 """
 
 from __future__ import annotations

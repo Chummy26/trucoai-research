@@ -1,11 +1,11 @@
-# Embaralhamento — referência PlayTruco, verificada em 20/10/2026
+# Embaralhamento — referência plataforma de referência, verificada em 20/10/2026
 
 Fontes públicas lidas no navegador:
 
-- https://www.playtruco.com/embaralhamento — página «Embaralhamento justo»,
+- Página de embaralhamento da plataforma de referência (endereço omitido) — página «Embaralhamento justo»,
   incluindo as etapas RNG certificado, embaralhamento e distribuição.
 - https://access.gaminglabs.com/certificate/index?i=610 — certificado de
-  Marketing Play Business LTDA dba playtruco.
+  Marketing Play Business LTDA dba online.
 
 A página descreve o princípio Fisher–Yates aplicado ao baralho inteiro com
 aleatoriedade de um RNG auditado; a distribuição ocorre depois. Não publica
@@ -26,7 +26,7 @@ descendente, índices uniformes `0..i`, gerados por bits com rejeição de valor
 fora do intervalo. Assim evitamos duplicatas e viés por redução modular.
 
 O PRNG local é Mersenne Twister com sementes registradas para reproduzir o
-experimento. Ele **não é o RNG certificado da PlayTruco**, não é criptográfico
+experimento. Ele **não é o RNG certificado da plataforma de referência**, não é criptográfico
 e não tenta reproduzir as cartas reais do site. O que reproduzimos é o
 contrato probabilístico de permutação uniforme sem reposição. Sementes,
 baralho futuro e cartas adversárias nunca entram nas features da política.

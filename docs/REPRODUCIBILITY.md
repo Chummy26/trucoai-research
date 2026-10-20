@@ -15,3 +15,7 @@ Os defaults históricos de vários scripts usam h0. E13 usou O1, fingerprint `ca
 ## Ambiente de verificação da publicação
 
 Windows, Python 3.14; pytest 9.0.2, NumPy 2.4.2, PyTorch 2.10.0+cu126. As dependências mínimas do pacote usam intervalos; estas são versões observadas, não garantia de bit equivalência em qualquer plataforma. Use `requirements-research.txt` para as versões de pytest/NumPy verificadas. PyTorch e CUDA são opcionais, separados desse arquivo.
+
+## Integração reutilizável
+
+O launcher scripts/online.py e as correções de integração foram acrescentados com endereço configurável e nomes neutros. Veja ONLINE_INTEGRATION.md. Isso permite reconstruir o fluxo com agentes disponíveis; as limitações de reprodução da política composta E13 permanecem. Os recibos exportados também neutralizam nomes e caminhos de módulos; os hashes originais embutidos não identificam os novos fontes.

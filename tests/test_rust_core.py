@@ -18,7 +18,7 @@ from trucoai.cfr.compact import key_hash_fnv
 from trucoai.cfr.mccfr import abstract_legal
 from trucoai.engine import new_match
 from trucoai.observation import observe
-from trucoai.rules import DEFAULT_RULES, PLAYTRUCO_O1
+from trucoai.rules import DEFAULT_RULES, ONLINE_O1
 
 CRATE = Path(__file__).resolve().parent.parent / "rust" / "mccfr"
 BIN = CRATE / "target" / "release" / ("mccfr.exe" if shutil.os.name == "nt" else "mccfr")
@@ -53,11 +53,11 @@ def test_regras_do_rust_iguais_as_default_rules(binary):
 def test_rust_versao_o1(binary):
     out = subprocess.run([str(binary), "version", "--rules", "o1"], capture_output=True,
                          text=True, check=True)
-    assert out.stdout.strip() == PLAYTRUCO_O1.version
+    assert out.stdout.strip() == ONLINE_O1.version
 
 
 @pytest.mark.parametrize("absv", ["v1", "v2a", "v2b"])
-@pytest.mark.parametrize("rules_flag,rules", [("h0", DEFAULT_RULES), ("o1", PLAYTRUCO_O1)])
+@pytest.mark.parametrize("rules_flag,rules", [("h0", DEFAULT_RULES), ("o1", ONLINE_O1)])
 @pytest.mark.parametrize("seed", [1, 2])
 def test_rust_reproduz_motor_e_chave_python(binary, seed, rules_flag, rules, absv):
     out = subprocess.run([str(binary), "selftest", "--seed", str(seed), "--games", "3000",

@@ -17,13 +17,13 @@ sys.path.insert(0, str(ROOT))
 from scripts.compare_references import pair_stats
 from trucoai.agents import make_agent
 from trucoai.arena import _chunk, summarize
-from trucoai.rules import PLAYTRUCO_O1
+from trucoai.rules import ONLINE_O1
 
 
 def summarize_pairs(rows, a, b, start_seed, alpha=0.05):
     groups = {}
     for r in rows:
-        if max(r.a_points, r.b_points) < PLAYTRUCO_O1.target_score:
+        if max(r.a_points, r.b_points) < ONLINE_O1.target_score:
             raise ValueError('unfinished match cannot be scored as a loss')
         groups.setdefault(r.seed, []).append(r)
     if not groups or any(sorted(r.a_seat for r in g) != [0, 1] for g in groups.values()):
@@ -34,8 +34,8 @@ def summarize_pairs(rows, a, b, start_seed, alpha=0.05):
     result.update({'a_metrics': result.pop('a'), 'b_metrics': result.pop('b')})
     result.update({'a': a, 'b': b, 'deals': len(groups), 'start_seed': start_seed,
                    'deal_wins': [sum(r.a_won for r in groups[s]) for s in sorted(groups)],
-                   'rules_version': PLAYTRUCO_O1.version,
-                   'rules_fingerprint': PLAYTRUCO_O1.fingerprint})
+                   'rules_version': ONLINE_O1.version,
+                   'rules_fingerprint': ONLINE_O1.fingerprint})
     result['stats'] = pair_stats(result, alpha)
     return result
 
@@ -49,7 +49,7 @@ def main():
     manifest_path = Path(args.manifest)
     manifest_text = manifest_path.read_text(encoding='utf8')
     manifest = json.loads(manifest_text)
-    if manifest['rules_fingerprint'] != PLAYTRUCO_O1.fingerprint:
+    if manifest['rules_fingerprint'] != ONLINE_O1.fingerprint:
         raise ValueError('rules fingerprint mismatch')
 
     def verify_hashes():
@@ -67,7 +67,7 @@ def main():
     with ProcessPoolExecutor(args.workers) as ex:
         for j, job in enumerate(manifest['jobs']):
             count, seed0 = job['deals'], job['start_seed']
-            tasks = [(make_agent, job['a'], job['b'], list(range(s,min(s+10,seed0+count))), PLAYTRUCO_O1)
+            tasks = [(make_agent, job['a'], job['b'], list(range(s,min(s+10,seed0+count))), ONLINE_O1)
                      for s in range(seed0,seed0+count,10)]
             rows = []
             print(f'job {j+1}/{len(manifest["jobs"])}: {count*2} games versus {job["b"]}',flush=True)

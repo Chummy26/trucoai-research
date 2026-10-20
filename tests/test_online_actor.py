@@ -1,12 +1,12 @@
-"""Identificação das cartas na tela pelo recorte do spritesheet da PlayTruco."""
+"""Identificação das cartas na tela pelo recorte do spritesheet da Online."""
 
-from trucoai.integration.playtruco_actor import PlayTrucoActor, sprite_card
-from trucoai.integration.playtruco_protocol import card_from_code
+from trucoai.integration.online_actor import OnlineActor, sprite_card
+from trucoai.integration.online_protocol import card_from_code
 
 SIZE = "2050px 75px"
 
 # (código da carta enviada pelo cliente, recorte do botão clicado), de cliques
-# verificados ao vivo em logs/playtruco/20261019_0225*_remote e _0230*_remote.
+# verificados ao vivo em logs/online/20261019_0225*_remote e _0230*_remote.
 VERIFIED = [("c1", -50), ("c2", -100), ("c5", -250), ("c6", -300), ("c7", -350),
             ("c11", -400), ("c12", -450), ("c13", -500), ("d4", -700), ("d5", -750),
             ("d6", -800), ("d7", -850), ("d12", -950), ("d13", -1000), ("s1", -1050),
@@ -33,7 +33,7 @@ def test_sprite_desconhecido_ou_escala_diferente():
 
 
 def test_botao_escolhido_pela_carta_e_nao_pela_ordem():
-    a = PlayTrucoActor(reader=None)
+    a = OnlineActor(reader=None)
     a.hand = [card_from_code("c7"), card_from_code("c3")]
     # na tela, ordem invertida em relação à mão registrada (caso real da falha)
     buttons = [{"x": 10, "pos": "-150px 0px", "size": SIZE},

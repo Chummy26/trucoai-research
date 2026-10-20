@@ -21,7 +21,7 @@ from trucoai.arena import EVAL_BASE
 from trucoai.cfr.mccfr import abstract_legal, to_abstract
 from trucoai.engine import new_match
 from trucoai.observation import observe
-from trucoai.rules import PLAYTRUCO_O1
+from trucoai.rules import ONLINE_O1
 
 
 def collect_match(args, factory=make_agent):
@@ -31,7 +31,7 @@ def collect_match(args, factory=make_agent):
     for i, agent in enumerate(agents):
         agent.reset(seed * 2 + i + 314159)
     seated = agents if seat == 0 else agents[::-1]
-    state = new_match(PLAYTRUCO_O1, first_dealer=1)
+    state = new_match(ONLINE_O1, first_dealer=1)
     xs, ys, masks = [], [], []
     hands = 0
     while state.match_winner is None and hands < 200:
@@ -73,7 +73,7 @@ def main():
     out = ROOT/'runs'/args.run_id
     out.mkdir(exist_ok=False)
     sources = list((ROOT/'trucoai').rglob('*.py')) + [Path(__file__)]
-    config = {'args': vars(args), 'teacher': teacher, 'rules_fingerprint': PLAYTRUCO_O1.fingerprint,
+    config = {'args': vars(args), 'teacher': teacher, 'rules_fingerprint': ONLINE_O1.fingerprint,
               'source_sha256': {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},
               'teacher_manifest_sha256': hashlib.sha256(Path(args.manifest).read_bytes()).hexdigest(),
               'provenance': 'Synthetic full matches. Teacher labels only its own legal observations. Separate agent per seat; reset each match.',

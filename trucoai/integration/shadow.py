@@ -1,6 +1,6 @@
 """Jogo-sombra: reconstrói a mão a partir dos eventos visíveis da mesa real.
 
-A mesa externa (PlayTruco) só mostra ao jogador o que ele pode ver. O leitor
+A mesa externa (Online) só mostra ao jogador o que ele pode ver. O leitor
 da mesa converte isso em eventos normalizados; esta classe os aplica no motor
 local, com cartas *fictícias* no lugar das cartas ocultas do adversário. Assim:
 
@@ -28,6 +28,11 @@ ME, OPP = 0, 1
 
 
 # --- eventos normalizados -----------------------------------------------------
+@dataclass(frozen=True)
+class MatchStart:
+    match_no: int
+
+
 @dataclass(frozen=True)
 class HandStart:
     my_cards: Optional[Sequence[int]]  # None = mão de ferro às cegas
@@ -67,7 +72,7 @@ class HandEnd:
     gave_up: bool = False  # a mesa indicou que alguém correu
 
 
-Event = Union[HandStart, Play, Raise, Accept, Run, HandEnd]
+Event = Union[MatchStart, HandStart, Play, Raise, Accept, Run, HandEnd]
 
 
 @dataclass
@@ -83,6 +88,8 @@ class ShadowGame:
     state: Optional[GameState] = None
     synced: bool = False
     hands: int = 0
+    match_no: int = 0
+    hands_in_match: int = 0
     divergences: List[Divergence] = field(default_factory=list)
     blind: bool = False
     blind_slot_hint: Optional[int] = None  # posição que o executor clicou às cegas
@@ -91,7 +98,9 @@ class ShadowGame:
     # ------------------------------------------------------------------
     def feed(self, ev: Event) -> None:
         try:
-            if isinstance(ev, HandStart):
+            if isinstance(ev, MatchStart):
+                self._new_match(ev.match_no)
+            elif isinstance(ev, HandStart):
                 self._start(ev)
             elif not self.synced:
                 return
@@ -116,11 +125,19 @@ class ShadowGame:
         return observe(s, ME)
 
     # ------------------------------------------------------------------
+    def _new_match(self, match_no=None) -> None:
+        self.match_no = self.match_no + 1 if match_no is None else match_no
+        self.hands_in_match = 0
+        self.state, self.synced = None, False
+        self.blind, self.blind_slot_hint = False, None
+
     def _diverge(self, ev, detail: str) -> None:
         self.divergences.append(Divergence(self.hands, type(ev).__name__, f"{ev}: {detail}"))
         self.synced = False
 
     def _start(self, ev: HandStart) -> None:
+        if self.match_no == 0 or (self.state is not None and self.state.match_winner is not None):
+            self._new_match()
         self.blind = ev.my_cards is None
         if self.blind:
             # Mão de ferro às cegas: nem a IA conhece as próprias cartas.
@@ -145,6 +162,8 @@ class ShadowGame:
         s.deal(self._rng, deck)
         if self.blind and not (s.special == "iron" and self.rules.iron_blind):
             raise ValueError("mão às cegas fora da mão de ferro")
+        self.hands_in_match += 1
+        s.hand_no = self.hands_in_match
         self.state, self.synced = s, True
         self.hands += 1
 

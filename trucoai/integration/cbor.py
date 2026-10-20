@@ -1,6 +1,6 @@
 """Decodificador CBOR mínimo (RFC 8949), sem dependências.
 
-Usado para os anexos binários dos ``gameEvent`` da PlayTruco (socket.io).
+Usado para os anexos binários dos ``gameEvent`` da Online (socket.io).
 Suporta inteiros, bytes, texto, arrays, mapas, tags (ignoradas), booleanos,
 null/undefined e floats de 16/32/64 bits, inclusive comprimento indefinido.
 """

@@ -12,7 +12,7 @@ from trucoai.cfr.compact import key_hash_fnv  # noqa: E402
 from trucoai.cfr.mccfr import abstract_legal  # noqa: E402
 from trucoai.engine import new_match  # noqa: E402
 from trucoai.observation import observe  # noqa: E402
-from trucoai.rules import DEFAULT_RULES, PLAYTRUCO_O1  # noqa: E402
+from trucoai.rules import DEFAULT_RULES, ONLINE_O1  # noqa: E402
 
 ST_MAX = 48
 
@@ -26,7 +26,7 @@ def kernel():
 
 
 @pytest.mark.parametrize("absv,absname", [(0, "v1"), (1, "v2a"), (2, "v2b")])
-@pytest.mark.parametrize("o1,rules", [(1, PLAYTRUCO_O1), (0, DEFAULT_RULES)])
+@pytest.mark.parametrize("o1,rules", [(1, ONLINE_O1), (0, DEFAULT_RULES)])
 def test_kernel_reproduz_motor_python(kernel, o1, rules, absv, absname):
     from trucoai.gpu.cuda import ptr
     games = 3000

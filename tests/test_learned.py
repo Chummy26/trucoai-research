@@ -7,7 +7,7 @@ import pytest
 
 from trucoai.engine import new_match
 from trucoai.observation import observe, sample_state
-from trucoai.rules import PLAYTRUCO_O1, DEFAULT_RULES
+from trucoai.rules import ONLINE_O1, DEFAULT_RULES
 
 
 def api():
@@ -20,7 +20,7 @@ def test_features_only_depend_on_legal_observation():
     m = api()
     rng = random.Random(132)
     for _ in range(100):
-        s = new_match(PLAYTRUCO_O1)
+        s = new_match(ONLINE_O1)
         s.deal(rng)
         for _ in range(rng.randrange(5)):
             if s.is_terminal():
@@ -38,13 +38,13 @@ def test_export_masks_illegal_actions_and_checks_rules(tmp_path):
     m = api()
     import torch
     torch.manual_seed(42)
-    s = new_match(PLAYTRUCO_O1)
+    s = new_match(ONLINE_O1)
     s.deal(random.Random(2))
     o = observe(s, s.current)
     net = torch.nn.Sequential(torch.nn.Linear(len(m.features(o)), 32), torch.nn.ReLU(),
                               torch.nn.Linear(32, 9))
     p = tmp_path / 'policy.npz'
-    m.export_policy(net, p, {'rules_fingerprint': PLAYTRUCO_O1.fingerprint})
+    m.export_policy(net, p, {'rules_fingerprint': ONLINE_O1.fingerprint})
     portable = m.PolicyNetwork(p)
     expected = net(torch.tensor(m.features(o))).detach().numpy()
     assert np.max(np.abs(portable.logits(o) - expected)) < 1e-5
@@ -74,15 +74,15 @@ def test_learned_search_registration_and_legal_play(tmp_path):
     from pathlib import Path
     from trucoai.agents import make_agent
     from trucoai.arena import play_match
-    s = new_match(PLAYTRUCO_O1)
+    s = new_match(ONLINE_O1)
     s.deal(random.Random(4))
     net = torch.nn.Sequential(torch.nn.Linear(len(m.features(observe(s, s.current))), 9))
     p = tmp_path / 'network.npz'
-    m.export_policy(net, p, {'rules_fingerprint': PLAYTRUCO_O1.fingerprint})
+    m.export_policy(net, p, {'rules_fingerprint': ONLINE_O1.fingerprint})
     bp = Path(__file__).resolve().parents[1] / 'runs' / 'mccfr_rs_o1_s7' / 'compact'
     agent = make_agent(f'learned:{bp}?net={p}&n=4&k=2&belief=1&bcards=1')
     for seed in range(2):
-        result = play_match(agent, make_agent('heuristic'), seed=seed, a_seat=seed, rules=PLAYTRUCO_O1)
+        result = play_match(agent, make_agent('heuristic'), seed=seed, a_seat=seed, rules=ONLINE_O1)
         assert result.sides['a'].illegal == 0
     assert make_agent('zap:v1').name == 'Zap v1'
 
@@ -102,13 +102,13 @@ def test_network_can_model_all_actions_when_requested(tmp_path):
     m = api()
     import torch
     from pathlib import Path
-    s = new_match(PLAYTRUCO_O1)
+    s = new_match(ONLINE_O1)
     s.deal(random.Random(4))
     s.apply(6)
     o = observe(s, s.current)
     net = torch.nn.Sequential(torch.nn.Linear(len(m.features(o)), 9))
     p = tmp_path / 'network.npz'
-    m.export_policy(net, p, {'rules_fingerprint': PLAYTRUCO_O1.fingerprint})
+    m.export_policy(net, p, {'rules_fingerprint': ONLINE_O1.fingerprint})
     bp = Path(__file__).resolve().parents[1] / 'runs' / 'mccfr_rs_o1_s7' / 'compact'
     agent = m.LearnedSearchAgent(bp, p, neural_bets=True)
     assert agent._policy_probs(o) == pytest.approx(agent.network.probs(o))
@@ -119,7 +119,7 @@ def test_fold_signal_uses_only_unambiguous_public_transition():
     assert hasattr(m, 'fold_signal')
     from trucoai.engine import RUN, RAISE
     rng = random.Random(88)
-    s = new_match(PLAYTRUCO_O1)
+    s = new_match(ONLINE_O1)
     s.deal(rng)
     before = observe(s, s.current)
     s.apply(0)
@@ -147,8 +147,8 @@ def test_adaptive_expert_preserves_champion_against_nonfolding_style():
     wrapper = m.AdaptiveLearnedAgent(m.LearnedSearchAgent(bp, net, n=4, belief=False))
     for seed in range(3):
         logs = [[], []]
-        r1 = play_match(wrapper, make_agent('heuristic'), seed, 0, rules=PLAYTRUCO_O1, log=logs[0])
-        r2 = play_match(make_agent('zap:v1'), make_agent('heuristic'), seed, 0, rules=PLAYTRUCO_O1, log=logs[1])
+        r1 = play_match(wrapper, make_agent('heuristic'), seed, 0, rules=ONLINE_O1, log=logs[0])
+        r2 = play_match(make_agent('zap:v1'), make_agent('heuristic'), seed, 0, rules=ONLINE_O1, log=logs[1])
         assert not wrapper.expert_enabled
         assert logs[0] == logs[1]
         assert r1.a_won == r2.a_won
@@ -201,7 +201,7 @@ def test_style_agent_registration_legality_and_reset():
             '&style=1&style_n=4&n=4&belief=1&bcards=1&bets=0&mix=0&temper=1')
     agent = make_agent(spec)
     assert isinstance(agent, m.StyleAdaptiveAgent)
-    result = play_match(agent, make_agent('heuristic'), 55, 0, rules=PLAYTRUCO_O1)
+    result = play_match(agent, make_agent('heuristic'), 55, 0, rules=ONLINE_O1)
     assert result.sides['a'].illegal == 0
     agent.reset(55)
     assert agent.belief.posterior == pytest.approx([1/3]*3)

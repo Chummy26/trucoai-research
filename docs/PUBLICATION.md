@@ -25,3 +25,9 @@ Varredura automática não garante ausência absoluta de dados sensíveis. Não 
 ## Integração contínua
 
 O token disponível permite criar e publicar o repositório, mas o GitHub recusou a criação de workflow por ausência do escopo workflow. O modelo está em docs/ci/research.yml; nenhum CI foi ativado nesta publicação. Os comandos foram validados localmente sobre git archive. Para ativar futuramente, instale esse modelo em .github/workflows/research.yml com uma autenticação autorizada.
+
+## Revisão da integração online
+
+Adicionados launcher e módulos de integração com nomes neutros e endereço fornecido localmente. As correções locais v2/v4 foram integradas no pacote. Perfis, credenciais, capturas, logs pessoais e tetos de sessões anteriores não foram incluídos. A árvore atual não contém o nome ou domínio da plataforma. Commits e releases anteriores preservam o histórico público e não foram reescritos. A referência das regras permanece O1; a neutralização nominal não implica compatibilidade com qualquer plataforma.
+
+Verificação da revisão 0.2.0: 144 testes passaram, 22 foram ignorados; quatro testes novos do launcher falharam antes da implementação e passaram após ela. Gitleaks não encontrou credenciais na árvore em preparação. A auditoria estatística E13 continua conferindo os mesmos resultados; nomes neutralizados são transformações da exportação, não novos jogos.

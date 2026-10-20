@@ -2,7 +2,7 @@ import random
 import pytest
 from trucoai.engine import new_match
 from trucoai.observation import observe
-from trucoai.rules import PLAYTRUCO_O1
+from trucoai.rules import ONLINE_O1
 
 
 def test_tail_value_uses_expected_opponent_and_best_own_terminal_action():
@@ -13,7 +13,7 @@ def test_tail_value_uses_expected_opponent_and_best_own_terminal_action():
     from trucoai.equity import default_table
     found = 0
     for seed in range(100):
-        s = new_match(PLAYTRUCO_O1)
+        s = new_match(ONLINE_O1)
         s.deal(random.Random(seed))
         s.stake = 12
         while not s.is_terminal():
@@ -42,7 +42,7 @@ def test_refined_hidden_state_invariance_and_legal_actions():
     cfg = json.loads((root/'runs/e9_frozen_20261020/portfolio.json').read_text())
     spec = cfg['policies'][-1].replace('learned:', 'refined:', 1) + '&tail=1&own_greedy=1'
     a, b = factory(spec), factory(spec)
-    s = new_match(PLAYTRUCO_O1)
+    s = new_match(ONLINE_O1)
     s.deal(random.Random(121))
     hidden = s.clone()
     hidden.hands[1-s.current] = [35, 36, 37]

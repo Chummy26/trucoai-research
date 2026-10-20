@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import numpy as np
 from trucoai.agents.learned import collect_chunk, combine_datasets
-from trucoai.rules import PLAYTRUCO_O1
+from trucoai.rules import ONLINE_O1
 
 
 def main():
@@ -32,7 +32,7 @@ def main():
     with np.load(source) as z:
         parts = [{k: z[k].copy() for k in ('x', 'y', 'mask', 'group')}]
     manifest = {'args': vars(args), 'source_sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
-                'rules_fingerprint': PLAYTRUCO_O1.fingerprint, 'teachers': ['zap:v1', 'heuristic', 'malandro_rule'],
+                'rules_fingerprint': ONLINE_O1.fingerprint, 'teachers': ['zap:v1', 'heuristic', 'malandro_rule'],
                 'new_seed_ranges': [[400000, 400000+args.hands-1], [500000,500000+args.hands-1]],
                 'hypothesis': 'A diverse opponent policy reduces exploitation-specific regression against non-Zap bots.'}
     tasks = [(spec, start+i, min(100,args.hands-i))

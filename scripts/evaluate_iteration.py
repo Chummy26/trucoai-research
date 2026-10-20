@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT))
 from trucoai.agents import make_agent
 from trucoai.agents.iteration import AsymmetricSearchAgent
 from trucoai.arena import run_matchup
-from trucoai.rules import PLAYTRUCO_O1
+from trucoai.rules import ONLINE_O1
 from scripts.compare_references import pair_stats
 
 
@@ -42,7 +42,7 @@ def main():
     out.mkdir(exist_ok=False)
     sources = list((ROOT/'trucoai').rglob('*.py')) + [Path(__file__)]
     receipt = {'plan': plan, 'workers': args.workers, 'completed': False,
-               'rules_fingerprint': PLAYTRUCO_O1.fingerprint,
+               'rules_fingerprint': ONLINE_O1.fingerprint,
                'source_sha256': {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},
                'matchups': [], 'loaded_agents': {}}
     start = time.time()
@@ -52,7 +52,7 @@ def main():
                 receipt['loaded_agents'][spec] = getattr(factory(spec), 'meta', {})
         print(f'START {job.get("name", "matchup")} {job["deals"]*2} games', flush=True)
         result = run_matchup(factory, job['a'], job['b'], deals=job['deals'],
-                             start_seed=job['start_seed'], workers=args.workers, rules=PLAYTRUCO_O1)
+                             start_seed=job['start_seed'], workers=args.workers, rules=ONLINE_O1)
         result['stats'] = pair_stats(result, 0.05)
         result['name'] = job.get('name', '')
         receipt['matchups'].append(result)

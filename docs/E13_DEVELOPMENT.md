@@ -49,7 +49,7 @@ Essas médias serviram para desenvolver a seleção. As células pequenas têm
 incerteza alta. Não foram usadas como confirmação de superioridade.
 
 A arena antiga concluiu os 500 jogos em 772,3 s, mas a checagem final
-rejeitou uma mudança concorrente em `scripts/enable_playtruco_alignment.py`,
+rejeitou uma mudança concorrente em `scripts/enable_online_alignment.py`,
 um helper de integração que não é importado pela arena. O resultado
 original com `completed=false` e o log do erro foram preservados.
 `results/e13_matrix_20261020/completion_audit.json` conferiu todos os
@@ -138,4 +138,4 @@ O plano final foi congelado antes de iniciar os jogos:
 Plano e artefatos: `runs/e13_frozen_20261020/plan.json`.
 Este documento não declara que os critérios finais foram cumpridos.
 Resultados contra bots não demonstram força contra humanos ou integração
-validada no fluxo da PlayTruco.
+validada no fluxo da plataforma de referência.

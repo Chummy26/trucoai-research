@@ -1,6 +1,6 @@
 # TrucoAI — pesquisa em Truco Paulista 1v1
 
-Pesquisa experimental sobre agentes de informação imperfeita para Truco Paulista com dois jogadores individuais. Inclui motor de regras, observações por jogador, MCCFR, busca, políticas neurais e avaliação contra bots. A PlayTruco é a referência de modalidade; este projeto é independente, sem afiliação declarada com a plataforma.
+Pesquisa experimental sobre agentes de informação imperfeita para Truco Paulista com dois jogadores individuais. Inclui motor de regras, observações por jogador, MCCFR, busca, políticas neurais e avaliação contra bots. O protocolo observado de uma plataforma online é a referência da modalidade; este projeto é independente, sem afiliação declarada com a plataforma.
 
 **Status: pesquisa em andamento, sem revisão por pares.** Os resultados publicados são de simulação. Não demonstram força contra humanos, equilíbrio de Nash, optimalidade ou fidelidade integral ao site.
 
@@ -36,7 +36,8 @@ Treinar redes exige o extra `training`; CUDA e compilador Rust são opcionais. O
 
 ## Conteúdo e fronteiras
 
-- `trucoai/`: regras, observação legítima, agentes, treino e componentes de integração.
+- `trucoai/`: regras, observação legítima, agentes, treino e integração online.
+- `scripts/online.py`: launcher configurável para shadow, play, remote e capture.
 - `tests/`: testes locais; não incluem capturas de participantes.
 - `rust/mccfr/`: fonte do núcleo de treino; sem binários pré-compilados.
 - `runs/*/policy.npz`: pesos produzidos pelos experimentos locais; não incluem checkpoints de terceiros.
@@ -52,6 +53,6 @@ flowchart LR
     V --> E
 ```
 
-O regulamento O1 e suas hipóteses estão em [REGRAS.md](docs/REGRAS.md). Relatos históricos de observação do site não são uma verificação atual. Esta distribuição não inclui perfil de navegador, sessões autenticadas, capturas reais, dados de participantes nem launcher de jogo no site. A integração completa com humanos permanece fora da validação desta publicação.
+O regulamento O1 e suas hipóteses estão em [REGRAS.md](docs/REGRAS.md). Relatos históricos de observação do site não são uma verificação atual. Esta distribuição não inclui perfil de navegador, sessões autenticadas, capturas reais, dados de participantes e não fornece credenciais. O launcher reutilizável está em `scripts/online.py`; veja [integração online](docs/ONLINE_INTEGRATION.md). A integração completa com humanos permanece fora da validação desta publicação.
 
 [Proveniência e direitos](docs/PROVENANCE.md) · [Privacidade](docs/PRIVACY.md) · [Preparação para publicação](docs/PUBLICATION.md)

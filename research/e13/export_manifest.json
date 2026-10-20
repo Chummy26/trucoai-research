@@ -3,18 +3,18 @@
     "path": "research/e13/analysis.json",
     "original_sha256": "dc831c2ac69f87b222c4ccbaa1788b03293b82c51af2b03151c15a91027b6816",
     "public_sha256": "27fa064599927b03cb1760ecd3640839bbfa76325eae6ca33e4bc32da6b62dde",
-    "transformation": "Local workspace prefix removed from strings and keys. Historical embedded hashes are original receipts, not hashes of this public export."
+    "transformation": "Local workspace prefix removed from strings and keys. Historical embedded hashes are original receipts, not hashes of this public export. Platform names, module paths and endpoint references replaced by neutral online labels in this public revision. Historical hashes still identify the original private receipts."
   },
   {
     "path": "research/e13/results.json",
     "original_sha256": "a938e61e0bd85bb240f2bf023eb5e851344d15a624e314514d638285b6998b85",
-    "public_sha256": "435bd3bccff209d7a8798b24ec0e65e004b6a3a3aa9832885f8bcb12c85578b0",
-    "transformation": "Local workspace prefix removed from strings and keys. Historical embedded hashes are original receipts, not hashes of this public export."
+    "public_sha256": "65b270473d35cc71cb95e8976d0148d387a5dba23f9b6ee37c5c43168fadeb20",
+    "transformation": "Local workspace prefix removed from strings and keys. Historical embedded hashes are original receipts, not hashes of this public export. Platform names, module paths and endpoint references replaced by neutral online labels in this public revision. Historical hashes still identify the original private receipts."
   },
   {
     "path": "research/e13/manifest.json",
     "original_sha256": "0291c7af999b81eab9ac36f95fc6082bf94cc26e8577fb46083bfd48ab152e99",
-    "public_sha256": "15ed389802060ccd13fa2c5ffc0c0234466cf74640ab10e8a3b9ddf34f9dfb71",
-    "transformation": "Local workspace prefix removed from strings and keys. Historical embedded hashes are original receipts, not hashes of this public export."
+    "public_sha256": "60123f3a9426543a6c3cb68c8cdb53d99421f6c7149aa08fd49383dcc5e233fe",
+    "transformation": "Local workspace prefix removed from strings and keys. Historical embedded hashes are original receipts, not hashes of this public export. Platform names, module paths and endpoint references replaced by neutral online labels in this public revision. Historical hashes still identify the original private receipts."
   }
 ]

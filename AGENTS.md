@@ -4,21 +4,21 @@
 
 Este projeto é uma pesquisa sobre inteligência artificial aplicada ao **Truco Paulista 1v1**, com dois jogadores individuais, sem duplas. O objetivo é desenvolver, treinar e avaliar uma IA capaz de jogar contra humanos, respeitando as regras e a informação disponível a cada jogador.
 
-A referência de regras escolhida pelo usuário é a modalidade Truco Paulista da [PlayTruco](https://www.playtruco.com/truco). O projeto deve reproduzir as regras dessa modalidade no formato 1v1.
+A referência de regras escolhida pelo usuário é a modalidade Truco Paulista da plataforma online de referência. O projeto deve reproduzir as regras dessa modalidade no formato 1v1.
 
-O ambiente alvo de atuação da IA é o próprio site da **PlayTruco**: a IA será treinada para disputar partidas de Truco Paulista 1v1 contra jogadores humanos nessa plataforma. A pesquisa inclui a integração do modelo com o fluxo real de partida do site. Simuladores locais e partidas de autojogo servem ao treinamento e à validação; o objetivo final é jogar contra pessoas na PlayTruco.
+O ambiente alvo de atuação da IA é o próprio site da **plataforma de referência**: a IA será treinada para disputar partidas de Truco Paulista 1v1 contra jogadores humanos nessa plataforma. A pesquisa inclui a integração do modelo com o fluxo real de partida do site. Simuladores locais e partidas de autojogo servem ao treinamento e à validação; o objetivo final é jogar contra pessoas na plataforma de referência.
 
 ## Princípios de trabalho
 
 - Trate o projeto como pesquisa: formule hipóteses verificáveis, registre experimentos e apresente evidências para as conclusões.
 - Preserve alterações e trabalhos existentes. Antes de editar, examine os arquivos e o estado do repositório, quando houver controle de versão.
 - Faça mudanças pequenas, rastreáveis e coerentes com o objetivo do projeto.
-- A variante e o formato já estão definidos: Truco Paulista 1v1 conforme a PlayTruco. Não substitua por Truco Mineiro, partidas em duplas ou outra convenção de regras. Para detalhes ainda não confirmados, linguagem, arquitetura ou infraestrutura, verifique decisões já documentadas e esclareça ambiguidades que alterem o jogo ou a pesquisa.
+- A variante e o formato já estão definidos: Truco Paulista 1v1 conforme a plataforma de referência. Não substitua por Truco Mineiro, partidas em duplas ou outra convenção de regras. Para detalhes ainda não confirmados, linguagem, arquitetura ou infraestrutura, verifique decisões já documentadas e esclareça ambiguidades que alterem o jogo ou a pesquisa.
 - Não apresente resultados de simulação como evidência de desempenho contra humanos.
 
 ## Regras e ambiente de jogo
 
-- Documente o regulamento de Truco Paulista 1v1 da PlayTruco: baralho, distribuição e vira, hierarquia das cartas, manilhas, ordem de jogo, pontuação, empates, pedidos e respostas, recusas, mão de onze, eventual mão de ferro e cartas encobertas.
+- Documente o regulamento de Truco Paulista 1v1 da plataforma de referência: baralho, distribuição e vira, hierarquia das cartas, manilhas, ordem de jogo, pontuação, empates, pedidos e respostas, recusas, mão de onze, eventual mão de ferro e cartas encobertas.
 - Confira cada detalhe na referência antes de implementá-lo como regra confirmada. Não complete lacunas com regras genéricas de Truco Paulista sem registrar e validar a diferença.
 - Registre a origem e a data de verificação das regras, distinguindo texto publicado, comportamento observado na modalidade 1v1 e hipóteses ainda não confirmadas. Congele uma versão do regulamento para cada experimento.
 - Estado da consulta em 19/10/2026: a página indicada apresentou a interface de partida, mas não forneceu regulamento textual extraível na consulta realizada. A variante, o formato e a referência estão definidos pelo usuário; os detalhes do regulamento ainda precisam ser verificados.

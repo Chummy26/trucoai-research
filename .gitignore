@@ -29,3 +29,12 @@ runs/**/blueprint*
 runs/**/compact/
 
 results/
+
+# Local browser authentication and user-selected profiles
+.browser-profile/
+browser-profile/
+chrome-profile/
+profiles/
+*auth-state*.json
+*auth_state*.json
+*cookies*.json

@@ -4,7 +4,7 @@ from pathlib import Path
 from trucoai.agents.learned import PolicyNetwork
 from trucoai.engine import new_match
 from trucoai.observation import observe
-from trucoai.rules import PLAYTRUCO_O1
+from trucoai.rules import ONLINE_O1
 
 
 def test_cached_network_is_bit_exact_on_legal_observations():
@@ -14,7 +14,7 @@ def test_cached_network_is_bit_exact_on_legal_observations():
     fast = FastNetwork(original)
     checked = 0
     for seed in range(30):
-        s = new_match(PLAYTRUCO_O1)
+        s = new_match(ONLINE_O1)
         s.deal(random.Random(seed))
         rng = random.Random(seed)
         while not s.is_terminal():
@@ -33,7 +33,7 @@ def test_acceleration_preserves_seeded_portfolio_decisions():
     spec='portfolio:'+(root/'runs/e9_frozen_20261020/portfolio.json').as_posix()
     a, b = factory(spec), accelerate(factory(spec))
     a.reset(11); b.reset(11)
-    s = new_match(PLAYTRUCO_O1)
+    s = new_match(ONLINE_O1)
     s.deal(random.Random(11))
     while not s.is_terminal():
         o = observe(s,s.current)

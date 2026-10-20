@@ -10,7 +10,7 @@ from trucoai.agents.search import _hand_start
 from trucoai.arena import play_match
 from trucoai.engine import new_match
 from trucoai.observation import observe, sample_state
-from trucoai.rules import PLAYTRUCO_O1
+from trucoai.rules import ONLINE_O1
 
 COMPACT = Path(__file__).resolve().parent.parent / "runs" / "mccfr_rs_v1_s1" / "compact"
 pytestmark = pytest.mark.skipif(not COMPACT.exists(), reason="blueprint compacto ausente")
@@ -20,7 +20,7 @@ def random_mid_hand_states(n=150, seed=4):
     rng = random.Random(seed)
     out = []
     while len(out) < n:
-        st = new_match(PLAYTRUCO_O1)
+        st = new_match(ONLINE_O1)
         st.scores = [rng.randrange(12), rng.randrange(12)]
         st.deal(rng)
         for _ in range(rng.randrange(1, 7)):
@@ -66,7 +66,7 @@ def test_crenca_favorece_manilha_de_quem_pediu_truco():
     more = 0
     trials = 0
     while trials < 25:
-        st = new_match(PLAYTRUCO_O1)
+        st = new_match(ONLINE_O1)
         st.deal(rng)
         if st.current != 0 or RAISE not in st.legal_actions():
             continue
@@ -86,7 +86,7 @@ def test_agente_joga_partidas_sem_acoes_ilegais():
     a = make_agent(f"search:{COMPACT}?n=8&k=2&adaptive=1")
     b = make_agent("heuristic")
     for seed in range(3):
-        r = play_match(a, b, seed=seed, a_seat=seed % 2, rules=PLAYTRUCO_O1)
+        r = play_match(a, b, seed=seed, a_seat=seed % 2, rules=ONLINE_O1)
         assert r.sides["a"].illegal == 0
 
 

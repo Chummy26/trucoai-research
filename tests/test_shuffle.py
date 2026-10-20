@@ -4,7 +4,7 @@ import random
 
 from trucoai.engine import new_match
 from trucoai.observation import observe
-from trucoai.rules import PLAYTRUCO_O1
+from trucoai.rules import ONLINE_O1
 
 
 class TracedRandom(random.Random):
@@ -19,7 +19,7 @@ class TracedRandom(random.Random):
 
 def test_full_deck_fisher_yates_before_dealing():
     rng = TracedRandom(442)
-    state = new_match(PLAYTRUCO_O1)
+    state = new_match(ONLINE_O1)
     state.deal(rng)
     # All 39 exchanges are performed, including cards not distributed.
     assert rng.bounds == list(range(40, 1, -1))
@@ -47,7 +47,7 @@ def test_fisher_yates_exhaustive_small_deck_has_equal_preimages():
 
 def test_seeded_shuffling_has_no_repetition_and_replays():
     for seed in range(200):
-        a, b = new_match(PLAYTRUCO_O1), new_match(PLAYTRUCO_O1)
+        a, b = new_match(ONLINE_O1), new_match(ONLINE_O1)
         a.deal(random.Random(seed))
         b.deal(random.Random(seed))
         assert a.hands == b.hands and a.vira == b.vira

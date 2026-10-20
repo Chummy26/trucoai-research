@@ -1,4 +1,4 @@
-# Regulamento — Truco Paulista 1v1 (referência: PlayTruco)
+# Regulamento — Truco Paulista 1v1 (referência: Online)
 
 Versão congelada no código: `RuleSet(version="paulista-1v1-h0")` em
 [`trucoai/rules.py`](../trucoai/rules.py). Todo checkpoint e todo resultado grava
@@ -8,7 +8,7 @@ Versão congelada no código: `RuleSet(version="paulista-1v1-h0")` em
 
 | Fonte | Resultado |
 |---|---|
-| `https://www.playtruco.com/truco` via fetch | HTTP 403 |
+| `endereço da plataforma de referência (omitido)` via fetch | HTTP 403 |
 | Mesma página no navegador | Só a interface da mesa ("Partida / Rodadas / Tentos / Pontos"); nenhum texto de regulamento |
 | Página inicial | Lobby de **mesas ranqueadas com valores em R$** (R$ 0,25 a R$ 200, com taxa), "Truco Paulista e mineiro com premiação na hora" |
 | Bundles JavaScript do cliente | Nenhum texto sobre mão de onze, mão de ferro, encoberta ou manilhas: as regras rodam no servidor |
@@ -22,7 +22,7 @@ oficial, com data) nesta página.
 
 Partida 1v1 Paulista em mesa de R$ 0,25 jogada pelo usuário, gravada pelo texto
 da página (`captures/20261019_dom_partida1/`, fora do git). Regulamento derivado:
-`PLAYTRUCO_O1` em `trucoai/rules.py` (o padrão `h0` foi mantido porque o núcleo
+`ONLINE_O1` em `trucoai/rules.py` (o padrão `h0` foi mantido porque o núcleo
 Rust e os checkpoints existentes o fixam).
 
 | Regra | Evidência (t em ms) | Status |
@@ -39,9 +39,9 @@ Rust e os checkpoints existentes o fixam).
 
 ## Evidências pelo protocolo — capturas 2 e 3 (19/10/2026)
 
-Mensagens reais da mesa (`tests/data/playtruco_partida2.jsonl`, `..._partida3.jsonl`,
-anonimizadas) reproduzidas no motor com `PLAYTRUCO_O1`: **26 mãos, 0 divergências**
-(`tests/test_playtruco_protocol.py`). Isso confirma, nessas mãos, força das cartas,
+Mensagens reais da mesa (`tests/data/online_partida2.jsonl`, `..._partida3.jsonl`,
+anonimizadas) reproduzidas no motor com `ONLINE_O1`: **26 mãos, 0 divergências**
+(`tests/test_online_protocol.py`). Isso confirma, nessas mãos, força das cartas,
 manilhas e naipes, decisão das rodadas e da mão, pontos de truco/recusa, além de:
 
 | Regra | Evidência | Status |
@@ -57,13 +57,13 @@ manilhas e naipes, decisão das rodadas e da mão, pontos de truco/recusa, além
 
 ## Evidências do primeiro `shadow` ao vivo (19/10/2026, 02:14)
 
-`logs/playtruco/20261019_021457_shadow.jsonl`: partida de R$ 0,25 jogada pelo
+`logs/online/20261019_021457_shadow.jsonl`: partida de R$ 0,25 jogada pelo
 usuário, 16 mãos lidas ao vivo, 0 divergências, 12×11 para o usuário.
 
 | Regra | Evidência | Status |
 |---|---|---|
 | Mão de onze: correr dá 1 ao outro | adversário com 11 correu 10 mãos seguidas (1×11 → 11×11) | OBSERVADO |
-| Mão de ferro **não** é às cegas | em 11×11 o `start_round` trouxe as cartas do jogador visíveis | OBSERVADO — **diverge de h0** (`iron_blind=False` em `PLAYTRUCO_O1`) |
+| Mão de ferro **não** é às cegas | em 11×11 o `start_round` trouxe as cartas do jogador visíveis | OBSERVADO — **diverge de h0** (`iron_blind=False` em `ONLINE_O1`) |
 | Mão de ferro: vale 1, sem truco, sem correr, sem virar | `run_turn` com `crp=1`, `catip/cgr/chc = false`; venceu 11 → 12 | OBSERVADO |
 | Sem correr na vez em mão de onze/ferro | `cgr=false` nas duas | OBSERVADO |
 | Três empates | não ocorreu | HIPÓTESE |
@@ -95,7 +95,7 @@ Diferença deliberada em relação a `truco-de-malandro`: lá a IA via as própr
 cartas na mão de ferro enquanto o humano não ("regra da casa"). Aqui as duas
 partes têm a mesma restrição, como exige `AGENTS.md`.
 
-## O que precisa ser verificado na PlayTruco (modo 1v1 Paulista)
+## O que precisa ser verificado na plataforma de referência (modo 1v1 Paulista)
 
 1. Existe carta encoberta? Em que rodadas? O que acontece com duas encobertas?
 2. Mão de onze: valor (3?), pontos ao correr (1?), o que acontece se o adversário pedir truco.

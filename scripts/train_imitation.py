@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import numpy as np
 from trucoai.agents.learned import collect_chunk, export_policy
-from trucoai.rules import PLAYTRUCO_O1
+from trucoai.rules import ONLINE_O1
 
 
 def validation_mask(groups, mode='modulo'):
@@ -61,7 +61,7 @@ def main():
     start = time.time()
     sources = list((ROOT / 'trucoai').rglob('*.py')) + [Path(__file__)]
     hashes = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sources}
-    config = {'args': vars(args), 'rules_fingerprint': PLAYTRUCO_O1.fingerprint,
+    config = {'args': vars(args), 'rules_fingerprint': ONLINE_O1.fingerprint,
               'code_sha256': hashes, 'hypothesis': 'Learning the specified teacher actions improves rollout fidelity and posterior search.',
               'provenance': 'Synthetic independent hands; teacher only receives Observation; no human data or privileged labels.',
               'started': time.strftime('%Y-%m-%d %H:%M:%S')}
@@ -139,7 +139,7 @@ def main():
             break
     net.load_state_dict(state)
     net.cpu()
-    meta = {'rules_fingerprint': PLAYTRUCO_O1.fingerprint, 'run_id': args.run_id,
+    meta = {'rules_fingerprint': ONLINE_O1.fingerprint, 'run_id': args.run_id,
             'teacher': args.teacher, 'seed': args.seed, 'best_epoch': best_epoch, 'val_loss': best}
     export_policy(net, out / 'policy.npz', meta)
     from trucoai.agents.learned import PolicyNetwork

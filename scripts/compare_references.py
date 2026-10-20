@@ -1,7 +1,7 @@
 """E4 — comparativo justo entre nossos agentes e os de repositórios de referência.
 
 Protocolo (tudo gravado no JSON de saída, em results/<timestamp>_<tag>.json):
-  * regulamento ``PLAYTRUCO_O1`` (o observado na PlayTruco) para TODOS os confrontos;
+  * regulamento ``ONLINE_O1`` (o observado na Online) para TODOS os confrontos;
   * partidas espelhadas: cada distribuição é jogada nos dois assentos (padrão da arena);
   * sementes de avaliação disjuntas das de treino (``EVAL_BASE`` da arena) e dos
     conjuntos já usados em E1-E3 (checado abaixo);
@@ -45,7 +45,7 @@ from trucoai.agents import make_agent  # noqa: E402
 from trucoai.arena import EVAL_BASE, play_match, run_matchup, wilson  # noqa: E402
 from trucoai.engine import new_match  # noqa: E402
 from trucoai.observation import observe  # noqa: E402
-from trucoai.rules import DEFAULT_RULES, PLAYTRUCO_O1  # noqa: E402
+from trucoai.rules import DEFAULT_RULES, ONLINE_O1  # noqa: E402
 
 BLUEPRINT = "runs/mccfr_rs_v1_s1/blueprint.pkl"
 HYBRID = f"hybrid:{BLUEPRINT}@2000"
@@ -53,7 +53,7 @@ CHECKPOINTS = ["truco_liga_v2", "truco_ppo_1M", "truco_ppo", "truco_ppo_200k"]
 SECONDARY_FIXED = ["random", "pimc:24", "mccfr_simplex", "mccfr_simple"]
 # Sementes de avaliação já usadas antes (E1-E3): não reutilizar no teste.
 USED_SEEDS = [(0, 99), (1000, 1399), (5000, 5299), (9000, 9599)]
-RULES = PLAYTRUCO_O1
+RULES = ONLINE_O1
 
 
 def label(spec: str) -> str:

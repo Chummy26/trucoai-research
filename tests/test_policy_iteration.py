@@ -44,7 +44,7 @@ def test_asymmetric_search_uses_the_opponent_model_only_for_the_other_seat():
     from trucoai.agents.learned import LearnedSearchAgent
     from trucoai.engine import new_match
     from trucoai.observation import observe, sample_state
-    from trucoai.rules import PLAYTRUCO_O1
+    from trucoai.rules import ONLINE_O1
     from dataclasses import replace
     import random
     root = Path(__file__).resolve().parents[1]
@@ -53,7 +53,7 @@ def test_asymmetric_search_uses_the_opponent_model_only_for_the_other_seat():
     opp = root/'runs/e8_imitation_s20261020/policy.npz'
     agent = AsymmetricSearchAgent(bp, own, opponent_network_path=opp, n=4,
                                  neural_bets=True, bets_from_blueprint=False)
-    st = new_match(PLAYTRUCO_O1)
+    st = new_match(ONLINE_O1)
     st.deal(random.Random(1))
     obs = observe(st, st.current)
     agent.act(obs)
@@ -74,7 +74,7 @@ def test_iteration_factory_loads_explicit_models_and_finishes_a_legal_match():
     assert path.exists(), 'iteration evaluation entrypoint missing'
     from scripts.evaluate_iteration import factory
     from trucoai.arena import play_match
-    from trucoai.rules import PLAYTRUCO_O1
+    from trucoai.rules import ONLINE_O1
     root = Path(__file__).resolve().parents[1]
     own = root/'runs/e8_mixture_s20261021/policy.npz'
     opp = root/'runs/e8_imitation_s20261020/policy.npz'
@@ -82,7 +82,7 @@ def test_iteration_factory_loads_explicit_models_and_finishes_a_legal_match():
     agent = factory(spec)
     assert agent.network.path == str(own.resolve())
     assert agent.opponent_network.path == str(opp.resolve())
-    result = play_match(agent, factory('heuristic'), 130001, 0, rules=PLAYTRUCO_O1)
+    result = play_match(agent, factory('heuristic'), 130001, 0, rules=ONLINE_O1)
     assert max(result.a_points, result.b_points) >= 12
     assert result.sides['a'].illegal == 0
 
