@@ -26,8 +26,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 3682,
-    "sha256": "bf7e7727d894ae997dcbf9da4c2b2410f1a85743b5c5058eeb5d436b3386de07"
+    "bytes": 3481,
+    "sha256": "3ef31bfd666004e7e9ebe0ba5182a096b08b67b388122e6d8c34589a47b3a92e"
   },
   {
     "path": "data/equity_dist.json",
@@ -61,8 +61,8 @@
   },
   {
     "path": "docs/PUBLICATION.md",
-    "bytes": 2754,
-    "sha256": "995686f534044dff13cf9440f08fca53023b975bf0b70401585d4e7ffe574e7d"
+    "bytes": 2614,
+    "sha256": "87acc7ca586971153f5012cc63b86810bc04f89413742f22579a968ed4c44b00"
   },
   {
     "path": "docs/REGRAS.md",

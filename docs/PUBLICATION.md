@@ -1,26 +1,26 @@
-# PreparaÃ§Ã£o para publicaÃ§Ã£o pÃºblica
+# Preparação para publicação pública
 
-Preparado em 20/10/2026 como cÃ³pia independente. Os diretÃ³rios originais main/ e refs/ foram preservados. O repositÃ³rio comeÃ§a com histÃ³rico novo e nÃ£o importa objetos Git de clones externos.
+Preparado em 20/10/2026 como cópia independente. Os diretórios originais main/ e refs/ foram preservados. O repositório começa com histórico novo e não importa objetos Git de clones externos.
 
-## ConteÃºdo
+## Conteúdo
 
-IncluÃ­dos: fontes Python/Rust/CUDA, testes locais, 20 arquivos prÃ³prios de pesos .npz, documentaÃ§Ã£o e recibos de simulaÃ§Ã£o E13 com caminhos pessoais removidos.
+Incluídos: fontes Python/Rust/CUDA, testes locais, 20 arquivos próprios de pesos .npz, documentação e recibos de simulação E13 com caminhos pessoais removidos.
 
-ExcluÃ­dos: perfis autenticados, capturas, logs, estatÃ­sticas e fixtures de partidas reais, caches, binÃ¡rios, clones, pesos de terceiros, adaptadores com proveniÃªncia pendente, blueprints grandes e loader incompleto. Nenhum fonte original foi apagado.
+Excluídos: perfis autenticados, capturas, logs, estatísticas e fixtures de partidas reais, caches, binários, clones, pesos de terceiros, adaptadores com proveniência pendente, blueprints grandes e loader incompleto. Nenhum fonte original foi apagado.
 
-AlteraÃ§Ãµes: apresentaÃ§Ã£o como pesquisa; limitaÃ§Ãµes e proveniÃªncia explÃ­citas; descoberta dos subpacotes no empacotamento; erro descritivo para adaptadores ausentes; skips dos testes dependentes de artefatos; uso de random no teste de separaÃ§Ã£o dos grupos; auditoria estatÃ­stica e CI offline.
+Alterações: apresentação como pesquisa; limitações e proveniência explícitas; descoberta dos subpacotes no empacotamento; erro descritivo para adaptadores ausentes; skips dos testes dependentes de artefatos; uso de random no teste de separação dos grupos; auditoria estatística e CI offline.
 
-## VerificaÃ§Ã£o
+## Verificação
 
-SuÃ­te local da cÃ³pia pÃºblica: 113 testes passaram e 18 foram ignorados por dependÃªncias opcionais ou artefatos ausentes. A auditoria E13 confirmou integridade da exportaÃ§Ã£o, contagens e IC pareado, sem reexecutar partidas.
+Suíte local da cópia pública: 113 testes passaram e 18 foram ignorados por dependências opcionais ou artefatos ausentes. A auditoria E13 confirmou integridade da exportação, contagens e IC pareado, sem reexecutar partidas.
 
-Gitleaks v8.30.1, obtido do release e conferido contra seu checksum, nÃ£o encontrou credenciais apÃ³s revisÃ£o de cinco falsos positivos. As exceÃ§Ãµes restritas em .gitleaks.toml sÃ£o nomes de algoritmos e um SHA256 de tabela NumPy, nunca credenciais.
+Gitleaks v8.30.1, obtido do release e conferido contra seu checksum, não encontrou credenciais após revisão de cinco falsos positivos. As exceções restritas em .gitleaks.toml são nomes de algoritmos e um SHA256 de tabela NumPy, nunca credenciais.
 
-A inspeÃ§Ã£o dos arquivos selecionados e metadados textuais dos 20 .npz nÃ£o apontou caminhos pessoais ou credenciais. research/publication_manifest.json registra os arquivos selecionados, exceto o prÃ³prio manifesto. O commit usa bytes preservados para manter os hashes dos recibos. Uma exportaÃ§Ã£o do commit Ã© validada separadamente dos caches locais antes da publicaÃ§Ã£o.
+A inspeção dos arquivos selecionados e metadados textuais dos 20 .npz não apontou caminhos pessoais ou credenciais. research/publication_manifest.json registra os arquivos selecionados, exceto o próprio manifesto. O commit usa bytes preservados para manter os hashes dos recibos. Uma exportação do commit é validada separadamente dos caches locais antes da publicação.
 
 ## Limites
 
-Varredura automÃ¡tica nÃ£o garante ausÃªncia absoluta de dados sensÃ­veis. NÃ£o hÃ¡ licenÃ§a permissiva global aplicada, DOI, revisÃ£o por pares, reproduÃ§Ã£o integral do E13 ou demonstraÃ§Ã£o de desempenho humano. Os problemas de proveniÃªncia identificados foram tratados por exclusÃ£o.
+Varredura automática não garante ausência absoluta de dados sensíveis. Não há licença permissiva global aplicada, DOI, revisão por pares, reprodução integral do E13 ou demonstração de desempenho humano. Os problemas de proveniência identificados foram tratados por exclusão.
 
 ## Integração contínua
 
