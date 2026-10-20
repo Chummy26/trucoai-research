@@ -10,6 +10,10 @@ No painel fixo de sete adversários, E13 venceu **363/560 partidas (64,82%)**, c
 
 E13 fez **47,5% contra Zap v1**: a média do painel não implica vencer cada adversário. Tempo médio registrado: 0,302 s por decisão; máximo observado: 0,938 s. As latências dependem da máquina e do protocolo. [Método, tabela completa e limites](docs/RESEARCH.md).
 
+## Blueprint para reutilização
+
+O [blueprint MCCFR O1 comprimido](https://github.com/Chummy26/trucoai-research/releases/download/v0.2.0/blueprint_o1_s7.tar.xz) está disponível na release: **88,7 MB**, com checksum e [instruções de restauração](docs/BLUEPRINT.md). Ele permite restaurar a tabela usada por Zap v1; não inclui todas as configurações do E13.
+
 ## Executar localmente
 
 Python 3.10 ou superior; use um ambiente virtual.

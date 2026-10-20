@@ -47,3 +47,7 @@ A trava existente permanece: sem `--max-stake` nem `TRUCOAI_MAX_STAKE`, somente 
 Testes sintéticos cobrem URL obrigatória, recusa de credenciais na URL, escolha de aba por origem, redaction de identificadores, transições de partida, memória do agente, mão de onze, confirmação síncrona dos cliques e o recibo exato da observação entregue ao agente. O teste do loop usa navegador substituído por objetos de teste e o agente heuristic realmente carregado.
 
 Essa verificação não abre uma sessão real, não faz login e não joga uma partida. Ela não certifica compatibilidade com a versão atual do serviço. Algumas verificações históricas de políticas e capturas permanecem ignoradas por falta dos artefatos privados.
+
+## Blueprint opcional
+
+A tabela histórica usada por Zap v1 está disponível separadamente na release, com checksum e instruções em [BLUEPRINT.md](BLUEPRINT.md). Depois de restaurá-la, --agent zap pode ser usado. Configurações e adaptadores da política E13 composta permanecem fora desta entrega.

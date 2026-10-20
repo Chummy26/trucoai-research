@@ -1,0 +1,30 @@
+{
+  "asset": "blueprint_o1_s7.tar.xz",
+  "download_url": "https://github.com/Chummy26/trucoai-research/releases/download/v0.2.0/blueprint_o1_s7.tar.xz",
+  "bytes": 88722464,
+  "sha256": "b47aac2c56631db2211d3fe305ddd5d64f06e8db55fae51d2d81045fad77634e",
+  "source_bytes": 204618326,
+  "files": {
+    "keys.npy": {
+      "bytes": 77949656,
+      "sha256": "54336daaebda1ca44bbb88ade06bb3a44bcaf40560c68445cc14c87ff0513b2f"
+    },
+    "probs.npy": {
+      "bytes": 87693347,
+      "sha256": "8fa466283c4ceafa3601537fbf44b7d551f9d76eb767be66a80f0963ef6fcddf"
+    },
+    "visits.npy": {
+      "bytes": 38974892,
+      "sha256": "f58beaac099cf4f452dda6481db1447b7567e3b9b64ff5df800c98157899a660"
+    },
+    "meta.json": {
+      "bytes": 431,
+      "sha256": "20e6ce7c1f73e3860f8e6bb147a406bedf7dd531bb61c2324e5a924c717858fa"
+    }
+  },
+  "rules_version": "paulista-1v1-o1",
+  "rules_fingerprint": "ca73a2770a14c415",
+  "nodes": 9743691,
+  "restore_parent": "runs/mccfr_rs_o1_s7",
+  "scope": "Historical MCCFR O1 strategy table; not a complete E13 policy or evidence against humans."
+}

@@ -6,8 +6,8 @@
   },
   {
     "path": ".gitignore",
-    "bytes": 479,
-    "sha256": "70dbd40aadc36e81431dd1e2e7757562af699c23cc95eaebca6650cd1212ae68"
+    "bytes": 491,
+    "sha256": "d151b5b60f6f93a5e40981f5ff4eca091b3514abbd30d8c8d75f76a8df0e6715"
   },
   {
     "path": ".gitleaks.toml",
@@ -26,8 +26,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 3643,
-    "sha256": "5fb718d4332ce6abafc8ba197d54bf4662b6b5c0331ea8af6c7e517d82814333"
+    "bytes": 4010,
+    "sha256": "a059f0dc7e12f6047d1d089591a004722c05d7f69c5f4454d6274c924aaa48c0"
   },
   {
     "path": "data/equity_dist.json",
@@ -38,6 +38,11 @@
     "path": "docs/ARQUITETURA.md",
     "bytes": 6521,
     "sha256": "97387fca42c7b1ad64194772db34c8374e23e1796b28086a3ced90d72b11a426"
+  },
+  {
+    "path": "docs/BLUEPRINT.md",
+    "bytes": 1809,
+    "sha256": "625a2e54fc4aad4d6c8109ccdc43cf6cb340a7c2865bd638b60aadc6bc0cac61"
   },
   {
     "path": "docs/E13_DEVELOPMENT.md",
@@ -51,8 +56,8 @@
   },
   {
     "path": "docs/ONLINE_INTEGRATION.md",
-    "bytes": 4042,
-    "sha256": "6d8a99e7f4185cf306d471196b7e0868a6ad1472234d0eea2d902c7516cdcdfd"
+    "bytes": 4347,
+    "sha256": "f7509d16b680c9138ce5657bfcec62155e7d4e04d44d185ed20a4359d221064b"
   },
   {
     "path": "docs/PRIVACY.md",
@@ -66,8 +71,8 @@
   },
   {
     "path": "docs/PUBLICATION.md",
-    "bytes": 3523,
-    "sha256": "a79a4312218f7725c2cae576842310236d0d24485245a758ec9e6dc86c04c516"
+    "bytes": 3882,
+    "sha256": "91cae5e16e8cf24eaf1367339294729ff33a494a483af6a321fe8c89ada648a5"
   },
   {
     "path": "docs/REGRAS.md",
@@ -76,8 +81,8 @@
   },
   {
     "path": "docs/REPRODUCIBILITY.md",
-    "bytes": 2440,
-    "sha256": "74b52560e17b032edcbe83e486fc8413e9b9f3a0951f4f70e2fe98c3fb2eaba8"
+    "bytes": 2524,
+    "sha256": "559c5503e445914aacd8e75643d22ea83a89bc135d22779312ed3a0722e4c9f5"
   },
   {
     "path": "docs/RESEARCH.md",
@@ -98,6 +103,11 @@
     "path": "requirements-research.txt",
     "bytes": 29,
     "sha256": "114c1a615254858d6dcdf40137a396a60ac58a71e72ca8644527afecba47ef7f"
+  },
+  {
+    "path": "research/blueprint_o1_s7.json",
+    "bytes": 1080,
+    "sha256": "84b177e8e1e98ff60052f5b9894b1203555a43e846595ed41354a854b32583a9"
   },
   {
     "path": "research/e13/analysis.json",
@@ -376,8 +386,8 @@
   },
   {
     "path": "tests/conftest.py",
-    "bytes": 1287,
-    "sha256": "cd4c654b9af91e4844e9ac239e1e779725174921c025032148e4d709bb3b3f3f"
+    "bytes": 1681,
+    "sha256": "b3dce34da761472ca1c8e7a46f8b22ff93370091047d33eaa8653c2b76c5fa62"
   },
   {
     "path": "tests/test_agents.py",

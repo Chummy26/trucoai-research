@@ -38,3 +38,5 @@ profiles/
 *auth-state*.json
 *auth_state*.json
 *cookies*.json
+
+artifacts/

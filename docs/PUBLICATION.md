@@ -31,3 +31,7 @@ O token disponível permite criar e publicar o repositório, mas o GitHub recuso
 Adicionados launcher e módulos de integração com nomes neutros e endereço fornecido localmente. As correções locais v2/v4 foram integradas no pacote. Perfis, credenciais, capturas, logs pessoais e tetos de sessões anteriores não foram incluídos. A árvore atual não contém o nome ou domínio da plataforma. Commits e releases anteriores preservam o histórico público e não foram reescritos. A referência das regras permanece O1; a neutralização nominal não implica compatibilidade com qualquer plataforma.
 
 Verificação da revisão 0.2.0: 144 testes passaram, 22 foram ignorados; quatro testes novos do launcher falharam antes da implementação e passaram após ela. Gitleaks não encontrou credenciais na árvore em preparação. A auditoria estatística E13 continua conferindo os mesmos resultados; nomes neutralizados são transformações da exportação, não novos jogos.
+
+## Disponibilização do blueprint
+
+A tabela MCCFR O1 passou a ser distribuída como arquivo comprimido da release v0.2.0, acompanhada de manifesto e SHA-256. Não faz parte do histórico Git. Contém somente quatro arquivos de estratégia, com integridade sem perda verificada. BLUEPRINT.md documenta a restauração e os componentes ainda ausentes do E13.

@@ -1,4 +1,4 @@
-"""Public-release boundaries: historic blueprints are not bundled."""
+"""Explicit optional-artifact boundaries for the public research package."""
 from pathlib import Path
 import pytest
 
@@ -22,3 +22,10 @@ def pytest_collection_modifyitems(items):
         for item in items:
             if item.originalname in ARTIFACT_TESTS:
                 item.add_marker(pytest.mark.skip(reason="Historical blueprint/configuration omitted from public release; see docs/REPRODUCIBILITY.md"))
+
+    config_tests = {"test_refined_hidden_state_invariance_and_legal_actions",
+                    "test_acceleration_preserves_seeded_portfolio_decisions"}
+    if not (ROOT / "runs/e9_frozen_20261020/portfolio.json").exists():
+        for item in items:
+            if item.originalname in config_tests:
+                item.add_marker(pytest.mark.skip(reason="Historical E9 portfolio configuration omitted"))

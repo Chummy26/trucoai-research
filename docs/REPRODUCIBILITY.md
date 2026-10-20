@@ -8,7 +8,7 @@ Motor Python, observação, MCCFR, buscas, modelos e testes sem artefatos extern
 
 ## Indisponível
 
-A arena histórica E13 exige blueprint MCCFR, configurações congeladas e adaptadores omitidos. O pacote não fornece uma política E13 pronta para inferência, não usa fallback silencioso e não publica o loader incompleto. Arquivos `.npz` próprios estão preservados, mas não bastam para reconstruir a política composta histórica.
+O blueprint MCCFR histórico agora está disponível como asset da release; veja BLUEPRINT.md. A arena histórica E13 ainda exige configurações congeladas e adaptadores omitidos. O pacote não fornece uma política E13 pronta para inferência, não usa fallback silencioso e não publica o loader incompleto. Arquivos `.npz` próprios estão preservados, mas não bastam para reconstruir a política composta histórica.
 
 Os defaults históricos de vários scripts usam h0. E13 usou O1, fingerprint `ca73a2770a14c415`. Não compare um treino h0 como se fosse repetição de O1. Um novo treino tem outra identidade e não deve sobrescrever resultados antigos.
 
