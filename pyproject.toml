@@ -1,0 +1,18 @@
+[project]
+name = "trucoai"
+version = "0.1.0"
+description = "Pesquisa de IA para Truco Paulista 1v1"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+learned = ["numpy>=1.26"]
+training = ["numpy>=1.26", "torch>=2.5"]
+
+[tool.setuptools.packages.find]
+include = ["trucoai*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

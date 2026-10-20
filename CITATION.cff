@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Cite esta versão de pesquisa pelo URL e pelo hash do commit utilizado."
+title: "TrucoAI: pesquisa experimental em Truco Paulista 1v1"
+type: software
+version: 0.1.0
+abstract: "Motor, agentes e recibos de avaliação simulada para Truco Paulista 1v1. Sem evidência de desempenho contra humanos."
+authors:
+  - name: "Chummy26"
+repository-code: "https://github.com/Chummy26/trucoai-research"

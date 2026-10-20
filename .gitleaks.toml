@@ -1,0 +1,11 @@
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Verified false positives: infoset hash algorithm identifiers and one recorded SHA256 of a numpy key table; no credentials."
+regexTarget = "line"
+regexes = [
+  'HASHES = \{"blake2b64": key_hash, "fnv1a64-splitmix": key_hash_fnv\}',
+  '"key_hash": "fnv1a64-splitmix"',
+  '"runs\\\\mccfr_rs_o1_s7\\\\compact\\\\keys\.npy": "54336daaebda1ca44bbb88ade06bb3a44bcaf40560c68445cc14c87ff0513b2f"',
+]

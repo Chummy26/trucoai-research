@@ -1,0 +1,3355 @@
+{
+  "plan": {
+    "phase": "Fixed independent broad confirmation; 1120 primary and 160 exploratory games",
+    "selection_receipt": {
+      "name": "E13-joint",
+      "candidate": "bayes:runs/e13_frozen_20261020/policy.json",
+      "development_table": {
+        "payoff": {
+          "rates": {
+            "v1": 0.5,
+            "heuristic": 0.8,
+            "malandro": 0.8,
+            "pimc": 0.35,
+            "e9": 0.55,
+            "e11": 0.5,
+            "e12": 0.5
+          },
+          "mean": 0.5714285714285714,
+          "worst": 0.35,
+          "mean_time": 0.3081093822438904,
+          "max_time": 1.8092883999997866
+        },
+        "grouped": {
+          "rates": {
+            "v1": 0.55,
+            "heuristic": 0.7,
+            "malandro": 0.9,
+            "pimc": 0.6,
+            "e9": 0.65,
+            "e11": 0.6,
+            "e12": 0.45
+          },
+          "mean": 0.6357142857142858,
+          "worst": 0.45,
+          "mean_time": 0.20889876280121958,
+          "max_time": 1.4957534999994095
+        },
+        "joint": {
+          "rates": {
+            "v1": 0.55,
+            "heuristic": 0.6,
+            "malandro": 0.7,
+            "pimc": 0.65,
+            "e9": 0.7,
+            "e11": 0.6,
+            "e12": 0.65
+          },
+          "mean": 0.6357142857142858,
+          "worst": 0.55,
+          "mean_time": 0.2900685963095485,
+          "max_time": 0.6528726999968057
+        },
+        "reference": {
+          "rates": {
+            "v1": 0.45,
+            "heuristic": 0.5,
+            "malandro": 0.65,
+            "pimc": 0.6,
+            "e9": 0.65,
+            "e11": 0.55,
+            "e12": 0.6
+          },
+          "mean": 0.5714285714285714,
+          "worst": 0.45,
+          "mean_time": 0.20499361889850967,
+          "max_time": 0.547249199997168
+        },
+        "payoff_history": {
+          "rates": {
+            "v1": 0.55,
+            "heuristic": 0.7,
+            "malandro": 0.9,
+            "pimc": 0.65,
+            "e9": 0.6,
+            "e11": 0.45,
+            "e12": 0.6
+          },
+          "mean": 0.6357142857142858,
+          "worst": 0.45,
+          "mean_time": 0.20310536016979486,
+          "max_time": 1.7472164999999222
+        },
+        "grouped_history": {
+          "rates": {
+            "v1": 0.55,
+            "heuristic": 0.7,
+            "malandro": 0.9,
+            "pimc": 0.6,
+            "e9": 0.7,
+            "e11": 0.6,
+            "e12": 0.45
+          },
+          "mean": 0.6428571428571429,
+          "worst": 0.45,
+          "mean_time": 0.1900767148819548,
+          "max_time": 1.501010400002997
+        },
+        "e9_reference": {
+          "rates": {
+            "v1": 0.5,
+            "heuristic": 0.7,
+            "malandro": 0.9,
+            "pimc": 0.6,
+            "e9": 0.6,
+            "e11": 0.45,
+            "e12": 0.4
+          },
+          "mean": 0.5928571428571429,
+          "worst": 0.4,
+          "mean_time": 0.09929477123370889,
+          "max_time": 0.3709755999952904
+        },
+        "joint384": {
+          "rates": {
+            "v1": 0.45,
+            "heuristic": 0.6,
+            "malandro": 0.7,
+            "pimc": 0.55,
+            "e9": 0.6,
+            "e11": 0.6,
+            "e12": 0.5
+          },
+          "mean": 0.5714285714285714,
+          "worst": 0.45,
+          "mean_time": 1.0179651030967594,
+          "max_time": 2.2264145000008284
+        }
+      },
+      "chosen": "joint",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "new_network_sha256": "4af8faea055e2e414a7497e6084703181c285af2305eb4f0924381ed4a27e4ac",
+      "loaded_runtime": [
+        {
+          "class": "BayesResponseAgent",
+          "n": 96,
+          "k": 2,
+          "forgetting": 0.02,
+          "own_network": {
+            "path": "runs\\e13_frozen_20261020\\policy.npz",
+            "class": "FastNetwork",
+            "sha256": "4af8faea055e2e414a7497e6084703181c285af2305eb4f0924381ed4a27e4ac"
+          }
+        },
+        {
+          "class": "LearnedSearchAgent",
+          "n": 48,
+          "k": 4,
+          "neural_bets": true,
+          "belief": true,
+          "belief_cards": true,
+          "temper": 0.5,
+          "network": {
+            "path": "runs\\e8_imitation_s20261020\\policy.npz",
+            "class": "FastNetwork",
+            "sha256": "fe8276f81d3e714861dc0fb0c8836e5ec31ece9dd04bfa371c411eed301cae46"
+          }
+        },
+        {
+          "class": "LearnedSearchAgent",
+          "n": 48,
+          "k": 4,
+          "neural_bets": true,
+          "belief": true,
+          "belief_cards": true,
+          "temper": 0.5,
+          "network": {
+            "path": "runs\\e8_style_heuristic_s31\\policy.npz",
+            "class": "FastNetwork",
+            "sha256": "bdb1af7ad5b55d3a1d10529778956c493455b9d25104ac6b50c84a3e87b9ba35"
+          }
+        },
+        {
+          "class": "LearnedSearchAgent",
+          "n": 48,
+          "k": 4,
+          "neural_bets": true,
+          "belief": true,
+          "belief_cards": true,
+          "temper": 0.5,
+          "network": {
+            "path": "runs\\e8_style_malandro_s32\\policy.npz",
+            "class": "FastNetwork",
+            "sha256": "e336bcfa92b85ecf54cb49cf3e1d818e28166bb9e8a42ede1417b0a42839f522"
+          }
+        },
+        {
+          "class": "LearnedSearchAgent",
+          "n": 48,
+          "k": 4,
+          "neural_bets": true,
+          "belief": true,
+          "belief_cards": true,
+          "temper": 0.5,
+          "network": {
+            "path": "runs\\e9_style_pimc_s44\\policy.npz",
+            "class": "FastNetwork",
+            "sha256": "542ee37e787d84e47607a6057420cc2d16f77a949a045e2f94635484afb373fa"
+          }
+        },
+        {
+          "class": "LearnedSearchAgent",
+          "n": 96,
+          "k": 4,
+          "neural_bets": true,
+          "belief": true,
+          "belief_cards": true,
+          "temper": 1.0,
+          "network": {
+            "path": "runs\\e11_frozen_20261020\\policy.npz",
+            "class": "FastNetwork",
+            "sha256": "6abc714ed04d96d76812401a01fd268a5f0318f6449a5f3b113b7bf7a62d3140"
+          }
+        },
+        {
+          "class": "LearnedSearchAgent",
+          "n": 96,
+          "k": 4,
+          "neural_bets": true,
+          "belief": true,
+          "belief_cards": true,
+          "temper": 1.0,
+          "network": {
+            "path": "runs\\e12_frozen_20261020\\policy.npz",
+            "class": "FastNetwork",
+            "sha256": "89110617e8a0f47b8f16beeea44cab7ab39cd74847fd77703fb600f51a799b57"
+          }
+        },
+        {
+          "class": "LearnedSearchAgent",
+          "n": 96,
+          "k": 4,
+          "neural_bets": true,
+          "belief": true,
+          "belief_cards": true,
+          "temper": 1.0,
+          "network": {
+            "path": "runs\\e13_frozen_20261020\\policy.npz",
+            "class": "FastNetwork",
+            "sha256": "4af8faea055e2e414a7497e6084703181c285af2305eb4f0924381ed4a27e4ac"
+          }
+        }
+      ],
+      "training": "runs/e13_imitation_s71_warm/config.json",
+      "scope": "Independent broad test pending; no live activation."
+    },
+    "artifacts": [
+      "data\\equity_dist.json",
+      "results/e11_confirm_20261020/results.json",
+      "results/e12_confirm_20261020/results.json",
+      "results/e13_matrix_20261020/completion_audit.json",
+      "results/e9_confirm_20261020/results.json",
+      "runs/e13_development_20261020/candidate_selection_protocol.json",
+      "runs/e13_development_20261020/freeze.py",
+      "runs/e13_development_20261020/history_selection_note.md",
+      "runs/e13_development_20261020/joint384.json",
+      "runs/e13_development_20261020/protocol.md",
+      "runs/e13_development_20261020/selection.json",
+      "runs/e13_development_20261020/selection_scope_note.md",
+      "runs/e13_imitation_s71_warm/config.json",
+      "runs/e13_teacher_data/data.npz",
+      "runs/e13_teacher_data/manifest.json",
+      "runs\\e11_frozen_20261020\\candidate.json",
+      "runs\\e11_frozen_20261020\\loaded_agent.json",
+      "runs\\e11_frozen_20261020\\policy.npz",
+      "runs\\e11_frozen_20261020\\protocol_at_freeze.md",
+      "runs\\e12_frozen_20261020\\policy.npz",
+      "runs\\e13_development_20261020\\grouped.json",
+      "runs\\e13_development_20261020\\grouped_history.json",
+      "runs\\e13_development_20261020\\joint.json",
+      "runs\\e13_development_20261020\\payoff.json",
+      "runs\\e13_development_20261020\\payoff_history.json",
+      "runs\\e13_frozen_20261020\\candidate.json",
+      "runs\\e13_frozen_20261020\\loaded_agent.json",
+      "runs\\e13_frozen_20261020\\policy.json",
+      "runs\\e13_frozen_20261020\\policy.npz",
+      "runs\\e13_frozen_20261020\\protocol.md",
+      "runs\\e13_frozen_20261020\\source\\scripts\\collect_iteration.py",
+      "runs\\e13_frozen_20261020\\source\\scripts\\compare_references.py",
+      "runs\\e13_frozen_20261020\\source\\scripts\\e10_collect_fast.py",
+      "runs\\e13_frozen_20261020\\source\\scripts\\e10_factory.py",
+      "runs\\e13_frozen_20261020\\source\\scripts\\e10_rapid.py",
+      "runs\\e13_frozen_20261020\\source\\scripts\\e11_rapid.py",
+      "runs\\e13_frozen_20261020\\source\\scripts\\e13_panel.py",
+      "runs\\e13_frozen_20261020\\source\\scripts\\e13_rapid.py",
+      "runs\\e13_frozen_20261020\\source\\scripts\\evaluate_frozen.py",
+      "runs\\e13_frozen_20261020\\source\\scripts\\evaluate_iteration.py",
+      "runs\\e13_frozen_20261020\\source\\scripts\\portfolio_factory.py",
+      "runs\\e13_frozen_20261020\\source\\scripts\\train_imitation.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\__init__.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\__init__.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\base.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\bayes_response.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\blueprint.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\fast_network.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\grouped_portfolio.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\heuristic.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\iteration.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\learned.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\payoff_portfolio.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\pimc.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\portfolio.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\references\\__init__.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\references\\malandro.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\references\\mccfr_simplex.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\refined.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\rollout.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\search.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\arena.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\cards.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\cfr\\__init__.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\cfr\\abstraction.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\cfr\\compact.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\cfr\\mccfr.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\engine.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\equity.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\gpu\\__init__.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\gpu\\cuda.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\gpu\\train.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\integration\\__init__.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\integration\\cbor.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\integration\\guard.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\integration\\human.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\integration\\playtruco.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\integration\\playtruco_actor.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\integration\\playtruco_protocol.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\integration\\shadow.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\integration\\silent.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\observation.py",
+      "runs\\e13_frozen_20261020\\source\\trucoai\\rules.py",
+      "runs\\e13_imitation_s71_warm\\policy.npz",
+      "runs\\e8_imitation_s20261020\\policy.npz",
+      "runs\\e8_mixture_s20261021\\policy.npz",
+      "runs\\e8_style_heuristic_s31\\policy.npz",
+      "runs\\e8_style_malandro_s32\\policy.npz",
+      "runs\\e9_frozen_20261020\\portfolio.json",
+      "runs\\e9_iteration_s43_warm\\policy.npz",
+      "runs\\e9_style_pimc_s44\\policy.npz",
+      "runs\\mccfr_rs_o1_s7\\compact\\keys.npy",
+      "runs\\mccfr_rs_o1_s7\\compact\\meta.json",
+      "runs\\mccfr_rs_o1_s7\\compact\\probs.npy",
+      "runs\\mccfr_rs_o1_s7\\compact\\visits.npy",
+      "scripts\\collect_iteration.py",
+      "scripts\\e10_collect_fast.py",
+      "trucoai\\__init__.py",
+      "trucoai\\agents\\__init__.py",
+      "trucoai\\agents\\base.py",
+      "trucoai\\agents\\bayes_response.py",
+      "trucoai\\agents\\blueprint.py",
+      "trucoai\\agents\\fast_network.py",
+      "trucoai\\agents\\grouped_portfolio.py",
+      "trucoai\\agents\\heuristic.py",
+      "trucoai\\agents\\iteration.py",
+      "trucoai\\agents\\learned.py",
+      "trucoai\\agents\\pimc.py",
+      "trucoai\\agents\\portfolio.py",
+      "trucoai\\agents\\references\\__init__.py",
+      "trucoai\\agents\\references\\malandro.py",
+      "trucoai\\agents\\references\\mccfr_simplex.py",
+      "trucoai\\agents\\refined.py",
+      "trucoai\\agents\\rollout.py",
+      "trucoai\\agents\\search.py",
+      "trucoai\\arena.py",
+      "trucoai\\cards.py",
+      "trucoai\\cfr\\__init__.py",
+      "trucoai\\cfr\\abstraction.py",
+      "trucoai\\cfr\\compact.py",
+      "trucoai\\cfr\\mccfr.py",
+      "trucoai\\engine.py",
+      "trucoai\\equity.py",
+      "trucoai\\gpu\\__init__.py",
+      "trucoai\\gpu\\cuda.py",
+      "trucoai\\gpu\\train.py",
+      "trucoai\\integration\\__init__.py",
+      "trucoai\\integration\\cbor.py",
+      "trucoai\\integration\\guard.py",
+      "trucoai\\integration\\human.py",
+      "trucoai\\integration\\playtruco.py",
+      "trucoai\\integration\\playtruco_actor.py",
+      "trucoai\\integration\\playtruco_protocol.py",
+      "trucoai\\integration\\shadow.py",
+      "trucoai\\integration\\silent.py",
+      "trucoai\\observation.py",
+      "trucoai\\rules.py"
+    ],
+    "jobs": [
+      {
+        "name": "candidate_vs_v1",
+        "a": "bayes:runs/e13_frozen_20261020/policy.json",
+        "b": "zap:v1",
+        "deals": 40,
+        "start_seed": 240000
+      },
+      {
+        "name": "candidate_vs_heuristic",
+        "a": "bayes:runs/e13_frozen_20261020/policy.json",
+        "b": "heuristic",
+        "deals": 40,
+        "start_seed": 240000
+      },
+      {
+        "name": "candidate_vs_malandro",
+        "a": "bayes:runs/e13_frozen_20261020/policy.json",
+        "b": "malandro_rule",
+        "deals": 40,
+        "start_seed": 240000
+      },
+      {
+        "name": "candidate_vs_pimc",
+        "a": "bayes:runs/e13_frozen_20261020/policy.json",
+        "b": "pimc:24",
+        "deals": 40,
+        "start_seed": 240000
+      },
+      {
+        "name": "candidate_vs_e9",
+        "a": "bayes:runs/e13_frozen_20261020/policy.json",
+        "b": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+        "deals": 40,
+        "start_seed": 240000
+      },
+      {
+        "name": "candidate_vs_e11",
+        "a": "bayes:runs/e13_frozen_20261020/policy.json",
+        "b": "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e11_frozen_20261020/policy.npz&belief=1&bcards=1&temper=1&mix=0&bets=0&n=384&nbets=1",
+        "deals": 40,
+        "start_seed": 240000
+      },
+      {
+        "name": "candidate_vs_e12",
+        "a": "bayes:runs/e13_frozen_20261020/policy.json",
+        "b": "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e12_frozen_20261020/policy.npz&belief=1&bcards=1&temper=1&mix=0&bets=0&n=96&nbets=1",
+        "deals": 40,
+        "start_seed": 240000
+      },
+      {
+        "name": "e9_vs_v1",
+        "a": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+        "b": "zap:v1",
+        "deals": 40,
+        "start_seed": 240000
+      },
+      {
+        "name": "e9_vs_heuristic",
+        "a": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+        "b": "heuristic",
+        "deals": 40,
+        "start_seed": 240000
+      },
+      {
+        "name": "e9_vs_malandro",
+        "a": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+        "b": "malandro_rule",
+        "deals": 40,
+        "start_seed": 240000
+      },
+      {
+        "name": "e9_vs_pimc",
+        "a": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+        "b": "pimc:24",
+        "deals": 40,
+        "start_seed": 240000
+      },
+      {
+        "name": "e9_vs_e9",
+        "a": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+        "b": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+        "deals": 40,
+        "start_seed": 240000
+      },
+      {
+        "name": "e9_vs_e11",
+        "a": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+        "b": "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e11_frozen_20261020/policy.npz&belief=1&bcards=1&temper=1&mix=0&bets=0&n=384&nbets=1",
+        "deals": 40,
+        "start_seed": 240000
+      },
+      {
+        "name": "e9_vs_e12",
+        "a": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+        "b": "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e12_frozen_20261020/policy.npz&belief=1&bcards=1&temper=1&mix=0&bets=0&n=96&nbets=1",
+        "deals": 40,
+        "start_seed": 240000
+      },
+      {
+        "name": "candidate_vs_simplex",
+        "a": "bayes:runs/e13_frozen_20261020/policy.json",
+        "b": "mccfr_simplex",
+        "deals": 20,
+        "start_seed": 241000
+      },
+      {
+        "name": "e9_vs_simplex",
+        "a": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+        "b": "mccfr_simplex",
+        "deals": 20,
+        "start_seed": 241000
+      },
+      {
+        "name": "candidate_vs_pimc64",
+        "a": "bayes:runs/e13_frozen_20261020/policy.json",
+        "b": "pimc:64",
+        "deals": 20,
+        "start_seed": 241100
+      },
+      {
+        "name": "e9_vs_pimc64",
+        "a": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+        "b": "pimc:64",
+        "deals": 20,
+        "start_seed": 241100
+      }
+    ]
+  },
+  "source_and_artifact_sha256": {
+    "trucoai\\arena.py": "da9fc7f3b93448f9e71658e616fd72f597b5e1c128969c8f7ff9acd0c04e2eca",
+    "trucoai\\cards.py": "1901c2a7afa97e6fa468c2a60f5ba54a1d0318633e1e21e9815a727c4acadf70",
+    "trucoai\\engine.py": "66979f37ce5dfc48ec9b0d2777649073c0e20272640b4762db9930e4b4601d67",
+    "trucoai\\equity.py": "65bd5fc3376c724ae242dc9b62830a26001c21e0ef795c5a42432544764e2b4d",
+    "trucoai\\observation.py": "f700bee4248badaa87575262c0945be78fb206fd0fd9dfa9c46263e60a9a502d",
+    "trucoai\\rules.py": "74312811f2340ccacbfd6338302ceae07a444767eb516a5230e203c05b696d4c",
+    "trucoai\\__init__.py": "d2afdced6596cd27fd83ebfe7877fc7d9fd7b4beef759bbf5b864d2fa0fe2f59",
+    "trucoai\\agents\\base.py": "ca96e2169867a3c5dd34fc5038525bcf640e3c5a5d62d7c19e0212387a446f67",
+    "trucoai\\agents\\bayes_response.py": "e5b66c74734dfd59a3ae14ed23767ec7de79a9ce5a0e92e652d84d1a43531644",
+    "trucoai\\agents\\blueprint.py": "e921088ee1aca2642619936ba240906424cb256c0ded76cadb1db5ed16581ca4",
+    "trucoai\\agents\\fast_network.py": "8aa4486e86e589765e8b863574f416e1202e9edfc230edaabc9cb3b8a12d06c1",
+    "trucoai\\agents\\grouped_portfolio.py": "ede1abb168e4a62e1309a6907a730bf2af09141253a4ebfc69f0882af820ec76",
+    "trucoai\\agents\\heuristic.py": "0009c5c831b98db75435a2bf362895f514da730042dd003ecf6169bafe173c3d",
+    "trucoai\\agents\\iteration.py": "559e1c9cb73652aa9fe6e9ff6806a49d108a4dcf917f2befaaf6112da0fd0826",
+    "trucoai\\agents\\learned.py": "3d483de373e0d8660df104762204c198a4e013bcaba7d25e22896171f3c4a73f",
+    "trucoai\\agents\\payoff_portfolio.py": "45d35613609c2b4d677bdf10a01dda6fe812b0e31e09bebb76d16bb62f93e936",
+    "trucoai\\agents\\pimc.py": "7b146b4731f1b8a881def6f5697d5a39f343a3c4ed993bf1a80dfa0e42fbc7e9",
+    "trucoai\\agents\\portfolio.py": "6596f7a7cf30e3a0cb70684812550b27a91ddf4b282d42454bb43e6fffcbf9e0",
+    "trucoai\\agents\\refined.py": "821a1a4f9f5577fd0a2f5a1488d5c206d55b04d0c240164320cb25c06cca19f8",
+    "trucoai\\agents\\rollout.py": "4c241bcb5f6b9092cc35bd8105d38322de67244540c7c0e9738504877105195f",
+    "trucoai\\agents\\search.py": "29166b284fbc7da3fc843901e1832de3eaac0cf1b20d8a7ea42686dad3c7ddbc",
+    "trucoai\\agents\\__init__.py": "df97b64d4ced777f811fad256eca24b2075fcb0727c8afbdc9454bffe19db56a",
+    "trucoai\\cfr\\abstraction.py": "437538fa5bfd0d88462d371e2fc1fc0770eb067c844c7ea233673f7af310c2e6",
+    "trucoai\\cfr\\compact.py": "cdd86bb78f93ce8ff5d6d8cf4561f4b790c3ec79f9e23ac72bc58290bac6d616",
+    "trucoai\\cfr\\mccfr.py": "577ed66a8b00b2197ae970c8a89d1e9a322712e3a1d95a2c123dc48ce83068aa",
+    "trucoai\\cfr\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "trucoai\\gpu\\cuda.py": "026b8e1ae0ea4e3413de18aeae3d448e6928f1d0571857a9b9bd201747a00f8e",
+    "trucoai\\gpu\\train.py": "d869c18b4d4c2156997f2466dc29b97c697eb392007fe6a1dad6840429238666",
+    "trucoai\\gpu\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "trucoai\\integration\\cbor.py": "a67ac563fb08f2cee8602c44b25c7c68429703ffbd0b5ce07ca575c281a9a49c",
+    "trucoai\\integration\\guard.py": "2a3c3d5f42ccc6e36041a81aa1155361b35632faf0759bb28e4050b46f0aa427",
+    "trucoai\\integration\\human.py": "b88f5930545398c30efb44e04934aa326e841ba62087288446b4354acf5e18cf",
+    "trucoai\\integration\\playtruco.py": "389272dc7671ce1a251cb4413d9629dbab6dbfba25c3b09c72a00be0be5f0f10",
+    "trucoai\\integration\\playtruco_actor.py": "9d877b118b2f74cb9c13717fc77a9bf3c540c292a2cb98727ef18dc06ff6f58c",
+    "trucoai\\integration\\playtruco_protocol.py": "35d742f56b80208e8144e38b948c64e02eb53710b12a8f13236381eca7349fc6",
+    "trucoai\\integration\\shadow.py": "7ca9da276fb641e680519b4a270b357b7e8422456046e6ee15e0a41994caad71",
+    "trucoai\\integration\\silent.py": "b874508d1be17bca87ae77c088d2ac8ee6dac0b537d1fac75a44699f50d9c069",
+    "trucoai\\integration\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "trucoai\\agents\\references\\malandro.py": "6ca544b1c26016b8ac18e961b3eda049dcdcdd013f65d006065fcd9226e12a1e",
+    "trucoai\\agents\\references\\mccfr_simplex.py": "198300e5f01a1f8481c80d6ba5bc7d8ce9d0d49fb7b74d62705da57af7e83b94",
+    "trucoai\\agents\\references\\__init__.py": "0887b6f9b120298a60b0be84a907f9780132224e9359974a33e5b62d61a269d8",
+    "scripts\\e13_panel.py": "c6b95031c5fed0f0f92122e514d4ec023da35a410444d6a966c02224796e0d53",
+    "scripts\\e13_rapid.py": "da582dcba3ac4ca2fcaccda9f80b8d5d9b97ba46a1f71de4c2f9c71726b3767f",
+    "scripts\\e11_rapid.py": "adc9c5f7cd4495124223dc42ab7e7482b966f0a372e0a9b316a3ac2c0e844193",
+    "scripts\\e10_rapid.py": "327220614eda92cfb46814d09ad36b0646728a731a97c989cf0e5f173e9e8efa",
+    "scripts\\e10_factory.py": "264244e5106a8e2d758a1aff8df2744508281a727104966d9e411c212aad2f70",
+    "scripts\\portfolio_factory.py": "3ed1c75656b1c3d5a31260afbd57863b4e959e2092b07d1c1298cc0ed4c3bf26",
+    "scripts\\evaluate_iteration.py": "36c1a79aa6ed7368b3cca6f7a6ada8699c55b9fcdccc4f635536b16cf96ee357",
+    "scripts\\compare_references.py": "72d73dede4f7253dd76c9bb61f1ec183f4cf7566a3a654da24b890e593cdaccd",
+    "scripts\\evaluate_frozen.py": "114393058a4623d1e611f3aa38c4fde974fb9f545033466cbfc1f5bd9526efb2",
+    "data\\equity_dist.json": "f6fe69671bae51631963dda7530aececc7db1c2c3aa3fe2739a0d43c6a4820de",
+    "results\\e11_confirm_20261020\\results.json": "2f32377c000fd189553bf708fe9c1a73e565b807a64e759e5e3562bd025e250e",
+    "results\\e12_confirm_20261020\\results.json": "f6b5605abb03684fe6da71537fed2071754fb3b080705f5cc8033cdbb7186269",
+    "results\\e13_matrix_20261020\\completion_audit.json": "76a1e80658ad22843cf1e1ee99a08617ed3c011332e07ee811a0b1fd041cbde4",
+    "results\\e9_confirm_20261020\\results.json": "702b4ec864765cb85605167d315b538dd17cd4e09b170bacf17edfe32d271aac",
+    "runs\\e13_development_20261020\\candidate_selection_protocol.json": "f2648665cd66c98f1e882cd5fe64e3ef2f6cf5ac8fb36e06ce6fa783b2c28bf4",
+    "runs\\e13_development_20261020\\freeze.py": "5fb5cb7380b6c4c6f0600a25bd94b3730bcfd97320d6cc348554bd0472d03062",
+    "runs\\e13_development_20261020\\history_selection_note.md": "fca6f7a396edecda0b652807ccda389666b2dc03d369b72b6e4e04095e26b5ca",
+    "runs\\e13_development_20261020\\joint384.json": "249eb08b717cdc4c145f53f3805143e2d053914cd9a5791774af3932c8c1723d",
+    "runs\\e13_development_20261020\\protocol.md": "6570f70d5c26a35667b9a52256b53542fee87fc5059e7057b773d3ce1af01d9b",
+    "runs\\e13_development_20261020\\selection.json": "248a8344058a64b05519a52c4978d1d9c02e1d639ddf904ab0f08f24f37747b9",
+    "runs\\e13_development_20261020\\selection_scope_note.md": "0c3be3eb7b048817ceb9fcdaa6796d03d9b5bfb4e02f8236e9e027fa4f4995e6",
+    "runs\\e13_imitation_s71_warm\\config.json": "6e7327bfb40626756f082bea6e91a2eb46303eb07817025a35ad07ea4f49d2f5",
+    "runs\\e13_teacher_data\\data.npz": "8fdcbf0ffad24d0c82e8934fc9003e1472520f7f62db3f3a94111160e7af3acc",
+    "runs\\e13_teacher_data\\manifest.json": "41644e146b77014083ea0a1d198dd6e54813beaa31d865561fbf8950a4760e0b",
+    "runs\\e11_frozen_20261020\\candidate.json": "c20fe2501f4e9815a9b6ee79928032b904e3719ab2c5dd46d68c5a0e3c7b3779",
+    "runs\\e11_frozen_20261020\\loaded_agent.json": "61b85fcf2f822d93fdf328ad7f49680533617e90c9133e10a8e74ce0df32982a",
+    "runs\\e11_frozen_20261020\\policy.npz": "6abc714ed04d96d76812401a01fd268a5f0318f6449a5f3b113b7bf7a62d3140",
+    "runs\\e11_frozen_20261020\\protocol_at_freeze.md": "6556c4bb648aac533b357ae1c878b27dc184c23b2fc85451a2003476fcc5154e",
+    "runs\\e12_frozen_20261020\\policy.npz": "89110617e8a0f47b8f16beeea44cab7ab39cd74847fd77703fb600f51a799b57",
+    "runs\\e13_development_20261020\\grouped.json": "0a6bcfde86b46ac9d691bbf998b4e6239425a24c8af7ee91d9eb2e1493361c3d",
+    "runs\\e13_development_20261020\\grouped_history.json": "00be06109f905968cdf9f0d5608ab6617afcd07e9336ecee4c4bd41f2bf4df34",
+    "runs\\e13_development_20261020\\joint.json": "e8e843ce51b1c2525213b81aa45d1c4789dc8dc2b3f83ec8feb35435ebb834fd",
+    "runs\\e13_development_20261020\\payoff.json": "e912d4646e9ec563a506157efc8db5077399810fc6e4be69163d7bc0ff93fc07",
+    "runs\\e13_development_20261020\\payoff_history.json": "58702d34517e9143e01e58cbf28d60ab1185bc56081e3198102680f7d56868f0",
+    "runs\\e13_frozen_20261020\\candidate.json": "be770717635f571bd441f79a511063893d3cff87ac20da5cee4fd937508541d8",
+    "runs\\e13_frozen_20261020\\loaded_agent.json": "6635397adb873dbead15fd75c1357e64be3bc68818989cfcd592c9f9cd3eb17e",
+    "runs\\e13_frozen_20261020\\policy.json": "c62e982ee6d5a39db25e6551d89c40b2ec0e349cfb48ad886662583625dd6d04",
+    "runs\\e13_frozen_20261020\\policy.npz": "4af8faea055e2e414a7497e6084703181c285af2305eb4f0924381ed4a27e4ac",
+    "runs\\e13_frozen_20261020\\protocol.md": "e811d93a9d6f9b7b4a7fbf58a2b5277ef3e53278da3a406cf174dffdf25d0c08",
+    "runs\\e13_frozen_20261020\\source\\scripts\\collect_iteration.py": "e30dd696a98dd2c7817cf2560b5eecc2a76ce216522b4cf9c3c93a24de9a6339",
+    "runs\\e13_frozen_20261020\\source\\scripts\\compare_references.py": "72d73dede4f7253dd76c9bb61f1ec183f4cf7566a3a654da24b890e593cdaccd",
+    "runs\\e13_frozen_20261020\\source\\scripts\\e10_collect_fast.py": "7d9c8455c0842c2614ce20b71368b6d591a10ae3df976900575fb2d502c74761",
+    "runs\\e13_frozen_20261020\\source\\scripts\\e10_factory.py": "264244e5106a8e2d758a1aff8df2744508281a727104966d9e411c212aad2f70",
+    "runs\\e13_frozen_20261020\\source\\scripts\\e10_rapid.py": "327220614eda92cfb46814d09ad36b0646728a731a97c989cf0e5f173e9e8efa",
+    "runs\\e13_frozen_20261020\\source\\scripts\\e11_rapid.py": "adc9c5f7cd4495124223dc42ab7e7482b966f0a372e0a9b316a3ac2c0e844193",
+    "runs\\e13_frozen_20261020\\source\\scripts\\e13_panel.py": "c6b95031c5fed0f0f92122e514d4ec023da35a410444d6a966c02224796e0d53",
+    "runs\\e13_frozen_20261020\\source\\scripts\\e13_rapid.py": "da582dcba3ac4ca2fcaccda9f80b8d5d9b97ba46a1f71de4c2f9c71726b3767f",
+    "runs\\e13_frozen_20261020\\source\\scripts\\evaluate_frozen.py": "114393058a4623d1e611f3aa38c4fde974fb9f545033466cbfc1f5bd9526efb2",
+    "runs\\e13_frozen_20261020\\source\\scripts\\evaluate_iteration.py": "36c1a79aa6ed7368b3cca6f7a6ada8699c55b9fcdccc4f635536b16cf96ee357",
+    "runs\\e13_frozen_20261020\\source\\scripts\\portfolio_factory.py": "3ed1c75656b1c3d5a31260afbd57863b4e959e2092b07d1c1298cc0ed4c3bf26",
+    "runs\\e13_frozen_20261020\\source\\scripts\\train_imitation.py": "e0b3f6c633c9b82efa8705439df65ae11de9817621f0165537b1022ea4efadf4",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\__init__.py": "d2afdced6596cd27fd83ebfe7877fc7d9fd7b4beef759bbf5b864d2fa0fe2f59",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\__init__.py": "df97b64d4ced777f811fad256eca24b2075fcb0727c8afbdc9454bffe19db56a",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\base.py": "ca96e2169867a3c5dd34fc5038525bcf640e3c5a5d62d7c19e0212387a446f67",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\bayes_response.py": "e5b66c74734dfd59a3ae14ed23767ec7de79a9ce5a0e92e652d84d1a43531644",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\blueprint.py": "e921088ee1aca2642619936ba240906424cb256c0ded76cadb1db5ed16581ca4",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\fast_network.py": "8aa4486e86e589765e8b863574f416e1202e9edfc230edaabc9cb3b8a12d06c1",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\grouped_portfolio.py": "ede1abb168e4a62e1309a6907a730bf2af09141253a4ebfc69f0882af820ec76",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\heuristic.py": "0009c5c831b98db75435a2bf362895f514da730042dd003ecf6169bafe173c3d",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\iteration.py": "559e1c9cb73652aa9fe6e9ff6806a49d108a4dcf917f2befaaf6112da0fd0826",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\learned.py": "3d483de373e0d8660df104762204c198a4e013bcaba7d25e22896171f3c4a73f",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\payoff_portfolio.py": "45d35613609c2b4d677bdf10a01dda6fe812b0e31e09bebb76d16bb62f93e936",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\pimc.py": "7b146b4731f1b8a881def6f5697d5a39f343a3c4ed993bf1a80dfa0e42fbc7e9",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\portfolio.py": "6596f7a7cf30e3a0cb70684812550b27a91ddf4b282d42454bb43e6fffcbf9e0",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\references\\__init__.py": "0887b6f9b120298a60b0be84a907f9780132224e9359974a33e5b62d61a269d8",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\references\\malandro.py": "6ca544b1c26016b8ac18e961b3eda049dcdcdd013f65d006065fcd9226e12a1e",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\references\\mccfr_simplex.py": "198300e5f01a1f8481c80d6ba5bc7d8ce9d0d49fb7b74d62705da57af7e83b94",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\refined.py": "821a1a4f9f5577fd0a2f5a1488d5c206d55b04d0c240164320cb25c06cca19f8",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\rollout.py": "4c241bcb5f6b9092cc35bd8105d38322de67244540c7c0e9738504877105195f",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\agents\\search.py": "29166b284fbc7da3fc843901e1832de3eaac0cf1b20d8a7ea42686dad3c7ddbc",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\arena.py": "da9fc7f3b93448f9e71658e616fd72f597b5e1c128969c8f7ff9acd0c04e2eca",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\cards.py": "1901c2a7afa97e6fa468c2a60f5ba54a1d0318633e1e21e9815a727c4acadf70",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\cfr\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\cfr\\abstraction.py": "437538fa5bfd0d88462d371e2fc1fc0770eb067c844c7ea233673f7af310c2e6",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\cfr\\compact.py": "cdd86bb78f93ce8ff5d6d8cf4561f4b790c3ec79f9e23ac72bc58290bac6d616",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\cfr\\mccfr.py": "577ed66a8b00b2197ae970c8a89d1e9a322712e3a1d95a2c123dc48ce83068aa",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\engine.py": "66979f37ce5dfc48ec9b0d2777649073c0e20272640b4762db9930e4b4601d67",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\equity.py": "65bd5fc3376c724ae242dc9b62830a26001c21e0ef795c5a42432544764e2b4d",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\gpu\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\gpu\\cuda.py": "026b8e1ae0ea4e3413de18aeae3d448e6928f1d0571857a9b9bd201747a00f8e",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\gpu\\train.py": "d869c18b4d4c2156997f2466dc29b97c697eb392007fe6a1dad6840429238666",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\integration\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\integration\\cbor.py": "a67ac563fb08f2cee8602c44b25c7c68429703ffbd0b5ce07ca575c281a9a49c",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\integration\\guard.py": "2a3c3d5f42ccc6e36041a81aa1155361b35632faf0759bb28e4050b46f0aa427",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\integration\\human.py": "b88f5930545398c30efb44e04934aa326e841ba62087288446b4354acf5e18cf",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\integration\\playtruco.py": "389272dc7671ce1a251cb4413d9629dbab6dbfba25c3b09c72a00be0be5f0f10",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\integration\\playtruco_actor.py": "9d877b118b2f74cb9c13717fc77a9bf3c540c292a2cb98727ef18dc06ff6f58c",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\integration\\playtruco_protocol.py": "35d742f56b80208e8144e38b948c64e02eb53710b12a8f13236381eca7349fc6",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\integration\\shadow.py": "7ca9da276fb641e680519b4a270b357b7e8422456046e6ee15e0a41994caad71",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\integration\\silent.py": "b874508d1be17bca87ae77c088d2ac8ee6dac0b537d1fac75a44699f50d9c069",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\observation.py": "f700bee4248badaa87575262c0945be78fb206fd0fd9dfa9c46263e60a9a502d",
+    "runs\\e13_frozen_20261020\\source\\trucoai\\rules.py": "74312811f2340ccacbfd6338302ceae07a444767eb516a5230e203c05b696d4c",
+    "runs\\e13_imitation_s71_warm\\policy.npz": "4af8faea055e2e414a7497e6084703181c285af2305eb4f0924381ed4a27e4ac",
+    "runs\\e8_imitation_s20261020\\policy.npz": "fe8276f81d3e714861dc0fb0c8836e5ec31ece9dd04bfa371c411eed301cae46",
+    "runs\\e8_mixture_s20261021\\policy.npz": "0d0ab2cbf722bcaf74aa43137c23c00408ff373bbe1780f840fe4eccb48bfba7",
+    "runs\\e8_style_heuristic_s31\\policy.npz": "bdb1af7ad5b55d3a1d10529778956c493455b9d25104ac6b50c84a3e87b9ba35",
+    "runs\\e8_style_malandro_s32\\policy.npz": "e336bcfa92b85ecf54cb49cf3e1d818e28166bb9e8a42ede1417b0a42839f522",
+    "runs\\e9_frozen_20261020\\portfolio.json": "33c222e37e0d3273cb3b4f507e9f7ed2d5288101adb3deddd670f9e03945e363",
+    "runs\\e9_iteration_s43_warm\\policy.npz": "a23683678e5d26559be1606b42406a58397d1a59db948b1ae41f0745ecb39526",
+    "runs\\e9_style_pimc_s44\\policy.npz": "542ee37e787d84e47607a6057420cc2d16f77a949a045e2f94635484afb373fa",
+    "runs\\mccfr_rs_o1_s7\\compact\\keys.npy": "54336daaebda1ca44bbb88ade06bb3a44bcaf40560c68445cc14c87ff0513b2f",
+    "runs\\mccfr_rs_o1_s7\\compact\\meta.json": "20e6ce7c1f73e3860f8e6bb147a406bedf7dd531bb61c2324e5a924c717858fa",
+    "runs\\mccfr_rs_o1_s7\\compact\\probs.npy": "8fa466283c4ceafa3601537fbf44b7d551f9d76eb767be66a80f0963ef6fcddf",
+    "runs\\mccfr_rs_o1_s7\\compact\\visits.npy": "f58beaac099cf4f452dda6481db1447b7567e3b9b64ff5df800c98157899a660",
+    "scripts\\collect_iteration.py": "e30dd696a98dd2c7817cf2560b5eecc2a76ce216522b4cf9c3c93a24de9a6339",
+    "scripts\\e10_collect_fast.py": "7d9c8455c0842c2614ce20b71368b6d591a10ae3df976900575fb2d502c74761",
+    "runs\\e13_frozen_20261020\\plan.json": "6afe4accc9fae8d13ba702dcefa5d0f504cc7581b9abfe94f7c5c9f186f08683"
+  },
+  "completed": true,
+  "rules_fingerprint": "ca73a2770a14c415",
+  "workers": 12,
+  "loaded_agents": {
+    "bayes:runs/e13_frozen_20261020/policy.json": {
+      "algorithm": "joint hand/style posterior, fixed latent per rollout",
+      "n": 96,
+      "k": 2,
+      "own_greedy": false,
+      "forgetting": 0.02,
+      "models": [
+        {
+          "policy": "runs/mccfr_rs_o1_s7/compact",
+          "run_id": "mccfr_rs_o1_s7",
+          "rules_version": "paulista-1v1-o1",
+          "rules_fingerprint": "ca73a2770a14c415",
+          "iterations": 658872576,
+          "seed": 7,
+          "equity_dist": {
+            "1": 0.6373937677053825,
+            "3": 0.29380817482800486,
+            "6": 0.02063941723998381,
+            "9": 0.013354917037636584,
+            "12": 0.03480372318899231
+          },
+          "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+          "min_visits": 30,
+          "nodes": 9743691,
+          "network": "runs\\e8_imitation_s20261020\\policy.npz",
+          "network_meta": {
+            "rules_fingerprint": "ca73a2770a14c415",
+            "run_id": "e8_imitation_s20261020",
+            "teacher": "zap:v1",
+            "seed": 20261020,
+            "best_epoch": 34,
+            "val_loss": 0.6038028597831726,
+            "feature_version": 1,
+            "layers": 3
+          }
+        },
+        {
+          "policy": "runs/mccfr_rs_o1_s7/compact",
+          "run_id": "mccfr_rs_o1_s7",
+          "rules_version": "paulista-1v1-o1",
+          "rules_fingerprint": "ca73a2770a14c415",
+          "iterations": 658872576,
+          "seed": 7,
+          "equity_dist": {
+            "1": 0.6373937677053825,
+            "3": 0.29380817482800486,
+            "6": 0.02063941723998381,
+            "9": 0.013354917037636584,
+            "12": 0.03480372318899231
+          },
+          "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+          "min_visits": 30,
+          "nodes": 9743691,
+          "network": "runs\\e8_style_heuristic_s31\\policy.npz",
+          "network_meta": {
+            "rules_fingerprint": "ca73a2770a14c415",
+            "run_id": "e8_style_heuristic_s31",
+            "teacher": "heuristic",
+            "seed": 31,
+            "best_epoch": 41,
+            "val_loss": 0.18108873069286346,
+            "feature_version": 1,
+            "layers": 3
+          }
+        },
+        {
+          "policy": "runs/mccfr_rs_o1_s7/compact",
+          "run_id": "mccfr_rs_o1_s7",
+          "rules_version": "paulista-1v1-o1",
+          "rules_fingerprint": "ca73a2770a14c415",
+          "iterations": 658872576,
+          "seed": 7,
+          "equity_dist": {
+            "1": 0.6373937677053825,
+            "3": 0.29380817482800486,
+            "6": 0.02063941723998381,
+            "9": 0.013354917037636584,
+            "12": 0.03480372318899231
+          },
+          "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+          "min_visits": 30,
+          "nodes": 9743691,
+          "network": "runs\\e8_style_malandro_s32\\policy.npz",
+          "network_meta": {
+            "rules_fingerprint": "ca73a2770a14c415",
+            "run_id": "e8_style_malandro_s32",
+            "teacher": "malandro_rule",
+            "seed": 32,
+            "best_epoch": 92,
+            "val_loss": 0.00593166658654809,
+            "feature_version": 1,
+            "layers": 3
+          }
+        },
+        {
+          "policy": "runs/mccfr_rs_o1_s7/compact",
+          "run_id": "mccfr_rs_o1_s7",
+          "rules_version": "paulista-1v1-o1",
+          "rules_fingerprint": "ca73a2770a14c415",
+          "iterations": 658872576,
+          "seed": 7,
+          "equity_dist": {
+            "1": 0.6373937677053825,
+            "3": 0.29380817482800486,
+            "6": 0.02063941723998381,
+            "9": 0.013354917037636584,
+            "12": 0.03480372318899231
+          },
+          "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+          "min_visits": 30,
+          "nodes": 9743691,
+          "network": "runs\\e9_style_pimc_s44\\policy.npz",
+          "network_meta": {
+            "rules_fingerprint": "ca73a2770a14c415",
+            "run_id": "e9_style_pimc_s44",
+            "teacher": "pimc:64",
+            "seed": 44,
+            "best_epoch": 46,
+            "val_loss": 0.37251168489456177,
+            "feature_version": 1,
+            "layers": 3
+          }
+        },
+        {
+          "policy": "runs/mccfr_rs_o1_s7/compact",
+          "run_id": "mccfr_rs_o1_s7",
+          "rules_version": "paulista-1v1-o1",
+          "rules_fingerprint": "ca73a2770a14c415",
+          "iterations": 658872576,
+          "seed": 7,
+          "equity_dist": {
+            "1": 0.6373937677053825,
+            "3": 0.29380817482800486,
+            "6": 0.02063941723998381,
+            "9": 0.013354917037636584,
+            "12": 0.03480372318899231
+          },
+          "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+          "min_visits": 30,
+          "nodes": 9743691,
+          "network": "runs\\e11_frozen_20261020\\policy.npz",
+          "network_meta": {
+            "rules_fingerprint": "ca73a2770a14c415",
+            "run_id": "e10_expanded_s53",
+            "teacher": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+            "seed": 53,
+            "best_epoch": 3,
+            "val_loss": 0.8748297095298767,
+            "feature_version": 1,
+            "layers": 3
+          }
+        },
+        {
+          "policy": "runs/mccfr_rs_o1_s7/compact",
+          "run_id": "mccfr_rs_o1_s7",
+          "rules_version": "paulista-1v1-o1",
+          "rules_fingerprint": "ca73a2770a14c415",
+          "iterations": 658872576,
+          "seed": 7,
+          "equity_dist": {
+            "1": 0.6373937677053825,
+            "3": 0.29380817482800486,
+            "6": 0.02063941723998381,
+            "9": 0.013354917037636584,
+            "12": 0.03480372318899231
+          },
+          "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+          "min_visits": 30,
+          "nodes": 9743691,
+          "network": "runs\\e12_frozen_20261020\\policy.npz",
+          "network_meta": {
+            "rules_fingerprint": "ca73a2770a14c415",
+            "run_id": "e12_imitation_s61_warm",
+            "teacher": "E11-384",
+            "seed": 61,
+            "best_epoch": 16,
+            "val_loss": 0.6295064091682434,
+            "feature_version": 1,
+            "layers": 3
+          }
+        },
+        {
+          "policy": "runs/mccfr_rs_o1_s7/compact",
+          "run_id": "mccfr_rs_o1_s7",
+          "rules_version": "paulista-1v1-o1",
+          "rules_fingerprint": "ca73a2770a14c415",
+          "iterations": 658872576,
+          "seed": 7,
+          "equity_dist": {
+            "1": 0.6373937677053825,
+            "3": 0.29380817482800486,
+            "6": 0.02063941723998381,
+            "9": 0.013354917037636584,
+            "12": 0.03480372318899231
+          },
+          "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+          "min_visits": 30,
+          "nodes": 9743691,
+          "network": "runs\\e13_frozen_20261020\\policy.npz",
+          "network_meta": {
+            "rules_fingerprint": "ca73a2770a14c415",
+            "run_id": "e13_imitation_s71_warm",
+            "teacher": "E12-96",
+            "seed": 71,
+            "best_epoch": 20,
+            "val_loss": 0.8693196177482605,
+            "feature_version": 1,
+            "layers": 3
+          }
+        }
+      ],
+      "own_network": "runs\\e13_frozen_20261020\\policy.npz",
+      "config_sha256": "c62e982ee6d5a39db25e6551d89c40b2ec0e349cfb48ad886662583625dd6d04",
+      "config": {
+        "models": [
+          "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e8_imitation_s20261020/policy.npz&nbets=1&bcards=1",
+          "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e8_style_heuristic_s31/policy.npz&nbets=1&bcards=1",
+          "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e8_style_malandro_s32/policy.npz&nbets=1&bcards=1",
+          "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e9_style_pimc_s44/policy.npz&nbets=1&bcards=1",
+          "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e11_frozen_20261020/policy.npz&belief=1&bcards=1&temper=1&mix=0&bets=0&n=96&nbets=1",
+          "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e12_frozen_20261020/policy.npz&belief=1&bcards=1&temper=1&mix=0&bets=0&n=96&nbets=1",
+          "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e13_frozen_20261020/policy.npz&belief=1&bcards=1&temper=1&mix=0&bets=0&n=96&nbets=1"
+        ],
+        "own_network": "runs/e13_frozen_20261020/policy.npz",
+        "n": 96,
+        "k": 2,
+        "own_greedy": false,
+        "forgetting": 0.02
+      }
+    },
+    "zap:v1": {
+      "name": "Zap v1",
+      "spec": "search:runs\\mccfr_rs_o1_s7\\compact?belief=0&mix=1",
+      "policy": "runs\\mccfr_rs_o1_s7\\compact",
+      "run_id": "mccfr_rs_o1_s7",
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "iterations": 658872576,
+      "seed": 7,
+      "equity_dist": {
+        "1": 0.6373937677053825,
+        "3": 0.29380817482800486,
+        "6": 0.02063941723998381,
+        "9": 0.013354917037636584,
+        "12": 0.03480372318899231
+      },
+      "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+      "min_visits": 30,
+      "nodes": 9743691
+    },
+    "heuristic": {},
+    "malandro_rule": {},
+    "pimc:24": {},
+    "portfolio:runs/e9_frozen_20261020/portfolio.json": {
+      "style_models": [
+        {
+          "policy": "runs/mccfr_rs_o1_s7/compact",
+          "run_id": "mccfr_rs_o1_s7",
+          "rules_version": "paulista-1v1-o1",
+          "rules_fingerprint": "ca73a2770a14c415",
+          "iterations": 658872576,
+          "seed": 7,
+          "equity_dist": {
+            "1": 0.6373937677053825,
+            "3": 0.29380817482800486,
+            "6": 0.02063941723998381,
+            "9": 0.013354917037636584,
+            "12": 0.03480372318899231
+          },
+          "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+          "min_visits": 30,
+          "nodes": 9743691,
+          "network": "runs\\e8_imitation_s20261020\\policy.npz",
+          "network_meta": {
+            "rules_fingerprint": "ca73a2770a14c415",
+            "run_id": "e8_imitation_s20261020",
+            "teacher": "zap:v1",
+            "seed": 20261020,
+            "best_epoch": 34,
+            "val_loss": 0.6038028597831726,
+            "feature_version": 1,
+            "layers": 3
+          }
+        },
+        {
+          "policy": "runs/mccfr_rs_o1_s7/compact",
+          "run_id": "mccfr_rs_o1_s7",
+          "rules_version": "paulista-1v1-o1",
+          "rules_fingerprint": "ca73a2770a14c415",
+          "iterations": 658872576,
+          "seed": 7,
+          "equity_dist": {
+            "1": 0.6373937677053825,
+            "3": 0.29380817482800486,
+            "6": 0.02063941723998381,
+            "9": 0.013354917037636584,
+            "12": 0.03480372318899231
+          },
+          "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+          "min_visits": 30,
+          "nodes": 9743691,
+          "network": "runs\\e8_style_heuristic_s31\\policy.npz",
+          "network_meta": {
+            "rules_fingerprint": "ca73a2770a14c415",
+            "run_id": "e8_style_heuristic_s31",
+            "teacher": "heuristic",
+            "seed": 31,
+            "best_epoch": 41,
+            "val_loss": 0.18108873069286346,
+            "feature_version": 1,
+            "layers": 3
+          }
+        },
+        {
+          "policy": "runs/mccfr_rs_o1_s7/compact",
+          "run_id": "mccfr_rs_o1_s7",
+          "rules_version": "paulista-1v1-o1",
+          "rules_fingerprint": "ca73a2770a14c415",
+          "iterations": 658872576,
+          "seed": 7,
+          "equity_dist": {
+            "1": 0.6373937677053825,
+            "3": 0.29380817482800486,
+            "6": 0.02063941723998381,
+            "9": 0.013354917037636584,
+            "12": 0.03480372318899231
+          },
+          "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+          "min_visits": 30,
+          "nodes": 9743691,
+          "network": "runs\\e8_style_malandro_s32\\policy.npz",
+          "network_meta": {
+            "rules_fingerprint": "ca73a2770a14c415",
+            "run_id": "e8_style_malandro_s32",
+            "teacher": "malandro_rule",
+            "seed": 32,
+            "best_epoch": 92,
+            "val_loss": 0.00593166658654809,
+            "feature_version": 1,
+            "layers": 3
+          }
+        },
+        {
+          "policy": "runs/mccfr_rs_o1_s7/compact",
+          "run_id": "mccfr_rs_o1_s7",
+          "rules_version": "paulista-1v1-o1",
+          "rules_fingerprint": "ca73a2770a14c415",
+          "iterations": 658872576,
+          "seed": 7,
+          "equity_dist": {
+            "1": 0.6373937677053825,
+            "3": 0.29380817482800486,
+            "6": 0.02063941723998381,
+            "9": 0.013354917037636584,
+            "12": 0.03480372318899231
+          },
+          "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+          "min_visits": 30,
+          "nodes": 9743691,
+          "network": "runs\\e9_style_pimc_s44\\policy.npz",
+          "network_meta": {
+            "rules_fingerprint": "ca73a2770a14c415",
+            "run_id": "e9_style_pimc_s44",
+            "teacher": "pimc:64",
+            "seed": 44,
+            "best_epoch": 46,
+            "val_loss": 0.37251168489456177,
+            "feature_version": 1,
+            "layers": 3
+          }
+        },
+        {
+          "policy": "runs/mccfr_rs_o1_s7/compact",
+          "run_id": "mccfr_rs_o1_s7",
+          "rules_version": "paulista-1v1-o1",
+          "rules_fingerprint": "ca73a2770a14c415",
+          "iterations": 658872576,
+          "seed": 7,
+          "equity_dist": {
+            "1": 0.6373937677053825,
+            "3": 0.29380817482800486,
+            "6": 0.02063941723998381,
+            "9": 0.013354917037636584,
+            "12": 0.03480372318899231
+          },
+          "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+          "min_visits": 30,
+          "nodes": 9743691,
+          "network": "runs\\e9_iteration_s43_warm\\policy.npz",
+          "network_meta": {
+            "rules_fingerprint": "ca73a2770a14c415",
+            "run_id": "e9_iteration_s43_warm",
+            "teacher": "E8-frozen-full-matches",
+            "seed": 43,
+            "best_epoch": 18,
+            "val_loss": 0.921522855758667,
+            "feature_version": 1,
+            "layers": 3
+          }
+        }
+      ],
+      "response_policies": [
+        {
+          "policy": "runs/mccfr_rs_o1_s7/compact",
+          "run_id": "mccfr_rs_o1_s7",
+          "rules_version": "paulista-1v1-o1",
+          "rules_fingerprint": "ca73a2770a14c415",
+          "iterations": 658872576,
+          "seed": 7,
+          "equity_dist": {
+            "1": 0.6373937677053825,
+            "3": 0.29380817482800486,
+            "6": 0.02063941723998381,
+            "9": 0.013354917037636584,
+            "12": 0.03480372318899231
+          },
+          "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+          "min_visits": 30,
+          "nodes": 9743691,
+          "network": "runs\\e8_imitation_s20261020\\policy.npz",
+          "network_meta": {
+            "rules_fingerprint": "ca73a2770a14c415",
+            "run_id": "e8_imitation_s20261020",
+            "teacher": "zap:v1",
+            "seed": 20261020,
+            "best_epoch": 34,
+            "val_loss": 0.6038028597831726,
+            "feature_version": 1,
+            "layers": 3
+          }
+        },
+        {
+          "policy": "runs/mccfr_rs_o1_s7/compact",
+          "run_id": "mccfr_rs_o1_s7",
+          "rules_version": "paulista-1v1-o1",
+          "rules_fingerprint": "ca73a2770a14c415",
+          "iterations": 658872576,
+          "seed": 7,
+          "equity_dist": {
+            "1": 0.6373937677053825,
+            "3": 0.29380817482800486,
+            "6": 0.02063941723998381,
+            "9": 0.013354917037636584,
+            "12": 0.03480372318899231
+          },
+          "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+          "min_visits": 30,
+          "nodes": 9743691,
+          "network": "runs\\e8_mixture_s20261021\\policy.npz",
+          "network_meta": {
+            "rules_fingerprint": "ca73a2770a14c415",
+            "run_id": "e8_mixture_s20261021",
+            "teacher": "mixture:zap:v1+heuristic+malandro_rule",
+            "seed": 20261021,
+            "best_epoch": 29,
+            "val_loss": 0.6009328961372375,
+            "feature_version": 1,
+            "layers": 3
+          }
+        },
+        {
+          "policy": "runs/mccfr_rs_o1_s7/compact",
+          "run_id": "mccfr_rs_o1_s7",
+          "rules_version": "paulista-1v1-o1",
+          "rules_fingerprint": "ca73a2770a14c415",
+          "iterations": 658872576,
+          "seed": 7,
+          "equity_dist": {
+            "1": 0.6373937677053825,
+            "3": 0.29380817482800486,
+            "6": 0.02063941723998381,
+            "9": 0.013354917037636584,
+            "12": 0.03480372318899231
+          },
+          "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+          "min_visits": 30,
+          "nodes": 9743691,
+          "network": "runs\\e8_mixture_s20261021\\policy.npz",
+          "network_meta": {
+            "rules_fingerprint": "ca73a2770a14c415",
+            "run_id": "e8_mixture_s20261021",
+            "teacher": "mixture:zap:v1+heuristic+malandro_rule",
+            "seed": 20261021,
+            "best_epoch": 29,
+            "val_loss": 0.6009328961372375,
+            "feature_version": 1,
+            "layers": 3
+          }
+        },
+        {
+          "name": "Zap v1",
+          "spec": "search:runs\\mccfr_rs_o1_s7\\compact?belief=0&mix=1",
+          "policy": "runs\\mccfr_rs_o1_s7\\compact",
+          "run_id": "mccfr_rs_o1_s7",
+          "rules_version": "paulista-1v1-o1",
+          "rules_fingerprint": "ca73a2770a14c415",
+          "iterations": 658872576,
+          "seed": 7,
+          "equity_dist": {
+            "1": 0.6373937677053825,
+            "3": 0.29380817482800486,
+            "6": 0.02063941723998381,
+            "9": 0.013354917037636584,
+            "12": 0.03480372318899231
+          },
+          "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+          "min_visits": 30,
+          "nodes": 9743691
+        },
+        {
+          "policy": "runs/mccfr_rs_o1_s7/compact",
+          "run_id": "mccfr_rs_o1_s7",
+          "rules_version": "paulista-1v1-o1",
+          "rules_fingerprint": "ca73a2770a14c415",
+          "iterations": 658872576,
+          "seed": 7,
+          "equity_dist": {
+            "1": 0.6373937677053825,
+            "3": 0.29380817482800486,
+            "6": 0.02063941723998381,
+            "9": 0.013354917037636584,
+            "12": 0.03480372318899231
+          },
+          "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+          "min_visits": 30,
+          "nodes": 9743691,
+          "network": "runs\\e9_iteration_s43_warm\\policy.npz",
+          "network_meta": {
+            "rules_fingerprint": "ca73a2770a14c415",
+            "run_id": "e9_iteration_s43_warm",
+            "teacher": "E8-frozen-full-matches",
+            "seed": 43,
+            "best_epoch": 18,
+            "val_loss": 0.921522855758667,
+            "feature_version": 1,
+            "layers": 3
+          }
+        }
+      ],
+      "fallback": {
+        "name": "Zap v1",
+        "spec": "search:runs\\mccfr_rs_o1_s7\\compact?belief=0&mix=1",
+        "policy": "runs\\mccfr_rs_o1_s7\\compact",
+        "run_id": "mccfr_rs_o1_s7",
+        "rules_version": "paulista-1v1-o1",
+        "rules_fingerprint": "ca73a2770a14c415",
+        "iterations": 658872576,
+        "seed": 7,
+        "equity_dist": {
+          "1": 0.6373937677053825,
+          "3": 0.29380817482800486,
+          "6": 0.02063941723998381,
+          "9": 0.013354917037636584,
+          "12": 0.03480372318899231
+        },
+        "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+        "min_visits": 30,
+        "nodes": 9743691
+      },
+      "style_n": 48,
+      "threshold": 0.35,
+      "selection": "whole-hand public-history likelihood; no opponent identity",
+      "portfolio_file": "runs\\e9_frozen_20261020\\portfolio.json",
+      "portfolio_sha256": "33c222e37e0d3273cb3b4f507e9f7ed2d5288101adb3deddd670f9e03945e363",
+      "model_specs": [
+        "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e8_imitation_s20261020/policy.npz&nbets=1&bcards=1",
+        "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e8_style_heuristic_s31/policy.npz&nbets=1&bcards=1",
+        "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e8_style_malandro_s32/policy.npz&nbets=1&bcards=1",
+        "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e9_style_pimc_s44/policy.npz&nbets=1&bcards=1",
+        "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e9_iteration_s43_warm/policy.npz&nbets=1&bcards=1"
+      ],
+      "policy_specs": [
+        "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e8_imitation_s20261020/policy.npz&belief=1&bcards=1&temper=1&mix=0&bets=0&n=48",
+        "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e8_mixture_s20261021/policy.npz&belief=1&bcards=1&temper=1&mix=0&bets=0&n=48&nbets=1",
+        "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e8_mixture_s20261021/policy.npz&belief=1&bcards=1&temper=1&mix=0&bets=0&n=48&nbets=1",
+        "zap:v1",
+        "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e9_iteration_s43_warm/policy.npz&belief=1&bcards=1&temper=1&mix=0&bets=0&n=48&nbets=1"
+      ]
+    },
+    "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e11_frozen_20261020/policy.npz&belief=1&bcards=1&temper=1&mix=0&bets=0&n=384&nbets=1": {
+      "policy": "runs/mccfr_rs_o1_s7/compact",
+      "run_id": "mccfr_rs_o1_s7",
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "iterations": 658872576,
+      "seed": 7,
+      "equity_dist": {
+        "1": 0.6373937677053825,
+        "3": 0.29380817482800486,
+        "6": 0.02063941723998381,
+        "9": 0.013354917037636584,
+        "12": 0.03480372318899231
+      },
+      "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+      "min_visits": 30,
+      "nodes": 9743691,
+      "network": "runs\\e11_frozen_20261020\\policy.npz",
+      "network_meta": {
+        "rules_fingerprint": "ca73a2770a14c415",
+        "run_id": "e10_expanded_s53",
+        "teacher": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+        "seed": 53,
+        "best_epoch": 3,
+        "val_loss": 0.8748297095298767,
+        "feature_version": 1,
+        "layers": 3
+      }
+    },
+    "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e12_frozen_20261020/policy.npz&belief=1&bcards=1&temper=1&mix=0&bets=0&n=96&nbets=1": {
+      "policy": "runs/mccfr_rs_o1_s7/compact",
+      "run_id": "mccfr_rs_o1_s7",
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "iterations": 658872576,
+      "seed": 7,
+      "equity_dist": {
+        "1": 0.6373937677053825,
+        "3": 0.29380817482800486,
+        "6": 0.02063941723998381,
+        "9": 0.013354917037636584,
+        "12": 0.03480372318899231
+      },
+      "source": "runs\\mccfr_rs_o1_s7\\policy.tsv",
+      "min_visits": 30,
+      "nodes": 9743691,
+      "network": "runs\\e12_frozen_20261020\\policy.npz",
+      "network_meta": {
+        "rules_fingerprint": "ca73a2770a14c415",
+        "run_id": "e12_imitation_s61_warm",
+        "teacher": "E11-384",
+        "seed": 61,
+        "best_epoch": 16,
+        "val_loss": 0.6295064091682434,
+        "feature_version": 1,
+        "layers": 3
+      }
+    },
+    "mccfr_simplex": {},
+    "pimc:64": {}
+  },
+  "matchups": [
+    {
+      "games": 80,
+      "a_wins": 38,
+      "win_rate_a": 0.475,
+      "ci95": [
+        0.3692454986165162,
+        0.5830454881967124
+      ],
+      "hands": 872,
+      "point_diff_per_hand_a": -0.8237593031323682,
+      "point_diff_se": 0.34752990966766,
+      "by_seat": {
+        "0": 0.475,
+        "1": 0.475
+      },
+      "a_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 2109,
+        "time_s": 623.0041695001346,
+        "ms_per_decision": 295.4026408250994,
+        "raise_per_hand": 0.4426605504587156,
+        "run_rate_on_response": 0.9774774774774775
+      },
+      "b_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 2086,
+        "time_s": 38.92959980013984,
+        "ms_per_decision": 18.662320134295225,
+        "raise_per_hand": 0.2545871559633027,
+        "run_rate_on_response": 0.5751295336787565
+      },
+      "a": "bayes:runs/e13_frozen_20261020/policy.json",
+      "b": "zap:v1",
+      "deals": 40,
+      "start_seed": 240000,
+      "deal_wins": [
+        0,
+        1,
+        2,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        2,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        2,
+        2,
+        1,
+        0,
+        1,
+        1,
+        1,
+        2,
+        2
+      ],
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "stats": {
+        "wilson95": [
+          0.3692454986165162,
+          0.5830454881967124
+        ],
+        "wilson_bonf": [
+          0.36924733297407575,
+          0.5830435735027006
+        ],
+        "alpha_family": 0.05,
+        "cluster95": [
+          0.370023934351804,
+          0.5799760656481959
+        ],
+        "cluster_bonf": [
+          0.37002586331164466,
+          0.5799741366883553
+        ],
+        "p_binom": 0.7375543089843097,
+        "p_cluster": 0.6406622479872028,
+        "sig_bonf": false,
+        "win_rate_a": 0.475
+      },
+      "name": "candidate_vs_v1",
+      "latency_s": {
+        "a": {
+          "p50": 0.29687949999788543,
+          "p95": 0.4549765000017942,
+          "p99": 0.5324690279958304,
+          "max": 0.9381611999997403
+        },
+        "b": {
+          "p50": 0.017497449996881187,
+          "p95": 0.047147100000074715,
+          "p99": 0.0582350900021993,
+          "max": 0.0910031999956118
+        }
+      }
+    },
+    {
+      "games": 80,
+      "a_wins": 60,
+      "win_rate_a": 0.75,
+      "ci95": [
+        0.6451511899886556,
+        0.8319389418790569
+      ],
+      "hands": 669,
+      "point_diff_per_hand_a": 1.4237405425456895,
+      "point_diff_se": 0.44271230096828795,
+      "by_seat": {
+        "0": 0.8,
+        "1": 0.7
+      },
+      "a_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1595,
+        "time_s": 453.6569114998929,
+        "ms_per_decision": 284.4243959246977,
+        "raise_per_hand": 0.4962630792227205,
+        "run_rate_on_response": 1.3137254901960784
+      },
+      "b_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1468,
+        "time_s": 2.2545316000905586,
+        "ms_per_decision": 1.5357844687265385,
+        "raise_per_hand": 0.30493273542600896,
+        "run_rate_on_response": 0.39156626506024095
+      },
+      "a": "bayes:runs/e13_frozen_20261020/policy.json",
+      "b": "heuristic",
+      "deals": 40,
+      "start_seed": 240000,
+      "deal_wins": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "stats": {
+        "wilson95": [
+          0.6451511899886556,
+          0.8319389418790569
+        ],
+        "wilson_bonf": [
+          0.6451532538076603,
+          0.8319376814245762
+        ],
+        "alpha_family": 0.05,
+        "cluster95": [
+          0.6715372046355073,
+          0.8284627953644927
+        ],
+        "cluster_bonf": [
+          0.6715386464077847,
+          0.8284613535922153
+        ],
+        "p_binom": 8.580559867049264e-06,
+        "p_cluster": 4.23805435190161e-10,
+        "sig_bonf": true,
+        "win_rate_a": 0.75
+      },
+      "name": "candidate_vs_heuristic",
+      "latency_s": {
+        "a": {
+          "p50": 0.28034049999405397,
+          "p95": 0.4472138900018763,
+          "p99": 0.5502935860033903,
+          "max": 0.7005875000031665
+        },
+        "b": {
+          "p50": 0.0016302999974868726,
+          "p95": 0.0027464799997687778,
+          "p99": 0.0038449579968437312,
+          "max": 0.050145799999882
+        }
+      }
+    },
+    {
+      "games": 80,
+      "a_wins": 64,
+      "win_rate_a": 0.8,
+      "ci95": [
+        0.6995355220341885,
+        0.8729726362070666
+      ],
+      "hands": 853,
+      "point_diff_per_hand_a": 0.9008068139613223,
+      "point_diff_se": 0.32028330763157226,
+      "by_seat": {
+        "0": 0.875,
+        "1": 0.725
+      },
+      "a_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1811,
+        "time_s": 507.6173070000077,
+        "ms_per_decision": 280.29669077857966,
+        "raise_per_hand": 0.5603751465416178,
+        "run_rate_on_response": 1.6374269005847952
+      },
+      "b_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1853,
+        "time_s": 0.08474060011212714,
+        "ms_per_decision": 0.04573157048684681,
+        "raise_per_hand": 0.20046893317702227,
+        "run_rate_on_response": 0.6694560669456067
+      },
+      "a": "bayes:runs/e13_frozen_20261020/policy.json",
+      "b": "malandro_rule",
+      "deals": 40,
+      "start_seed": 240000,
+      "deal_wins": [
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "stats": {
+        "wilson95": [
+          0.6995355220341885,
+          0.8729726362070666
+        ],
+        "wilson_bonf": [
+          0.6995375627182918,
+          0.8729715595603922
+        ],
+        "alpha_family": 0.05,
+        "cluster95": [
+          0.7231224750258319,
+          0.8768775249741682
+        ],
+        "cluster_bonf": [
+          0.7231238876683939,
+          0.8768761123316062
+        ],
+        "p_binom": 5.8713304145960005e-08,
+        "p_cluster": 2.042810365310288e-14,
+        "sig_bonf": true,
+        "win_rate_a": 0.8
+      },
+      "name": "candidate_vs_malandro",
+      "latency_s": {
+        "a": {
+          "p50": 0.2782472000035341,
+          "p95": 0.43894564999936847,
+          "p99": 0.5845092399984425,
+          "max": 0.8893974000020535
+        },
+        "b": {
+          "p50": 4.470000567380339e-05,
+          "p95": 6.928000075276939e-05,
+          "p99": 0.00016810399858513877,
+          "max": 0.0006819999980507419
+        }
+      }
+    },
+    {
+      "games": 80,
+      "a_wins": 52,
+      "win_rate_a": 0.65,
+      "ci95": [
+        0.5407980232189245,
+        0.7454560559017032
+      ],
+      "hands": 451,
+      "point_diff_per_hand_a": 1.824345238095238,
+      "point_diff_se": 0.6396775848271566,
+      "by_seat": {
+        "0": 0.675,
+        "1": 0.625
+      },
+      "a_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1226,
+        "time_s": 399.29955469991546,
+        "ms_per_decision": 325.6929483686097,
+        "raise_per_hand": 0.5831485587583148,
+        "run_rate_on_response": 0.7003891050583657
+      },
+      "b_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1117,
+        "time_s": 8.823840699958964,
+        "ms_per_decision": 7.899588809273916,
+        "raise_per_hand": 0.5698447893569845,
+        "run_rate_on_response": 0.23574144486692014
+      },
+      "a": "bayes:runs/e13_frozen_20261020/policy.json",
+      "b": "pimc:24",
+      "deals": 40,
+      "start_seed": 240000,
+      "deal_wins": [
+        2,
+        0,
+        2,
+        2,
+        2,
+        1,
+        0,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        0
+      ],
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "stats": {
+        "wilson95": [
+          0.5407980232189245,
+          0.7454560559017032
+        ],
+        "wilson_bonf": [
+          0.5408000664880768,
+          0.7454544946512653
+        ],
+        "alpha_family": 0.05,
+        "cluster95": [
+          0.5558446455626088,
+          0.7441553544373912
+        ],
+        "cluster_bonf": [
+          0.5558463756893417,
+          0.7441536243106583
+        ],
+        "p_binom": 0.009682849923057388,
+        "p_cluster": 0.0017932271518499299,
+        "sig_bonf": true,
+        "win_rate_a": 0.65
+      },
+      "name": "candidate_vs_pimc",
+      "latency_s": {
+        "a": {
+          "p50": 0.3268735499950708,
+          "p95": 0.49892314999669907,
+          "p99": 0.6455612999961886,
+          "max": 0.7662482999949134
+        },
+        "b": {
+          "p50": 0.00844879999931436,
+          "p95": 0.014458360000571706,
+          "p99": 0.01737597600062144,
+          "max": 0.03477320000092732
+        }
+      }
+    },
+    {
+      "games": 80,
+      "a_wins": 52,
+      "win_rate_a": 0.65,
+      "ci95": [
+        0.5407980232189245,
+        0.7454560559017032
+      ],
+      "hands": 665,
+      "point_diff_per_hand_a": -0.08521167482758041,
+      "point_diff_se": 0.46762333565875996,
+      "by_seat": {
+        "0": 0.75,
+        "1": 0.55
+      },
+      "a_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1582,
+        "time_s": 490.80021699993085,
+        "ms_per_decision": 310.2403394436984,
+        "raise_per_hand": 0.42105263157894735,
+        "run_rate_on_response": 0.7471698113207547
+      },
+      "b_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1518,
+        "time_s": 173.73121819999506,
+        "ms_per_decision": 114.44744281949609,
+        "raise_per_hand": 0.39849624060150374,
+        "run_rate_on_response": 0.55
+      },
+      "a": "bayes:runs/e13_frozen_20261020/policy.json",
+      "b": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+      "deals": 40,
+      "start_seed": 240000,
+      "deal_wins": [
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        2
+      ],
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "stats": {
+        "wilson95": [
+          0.5407980232189245,
+          0.7454560559017032
+        ],
+        "wilson_bonf": [
+          0.5408000664880768,
+          0.7454544946512653
+        ],
+        "alpha_family": 0.05,
+        "cluster95": [
+          0.5626275288323106,
+          0.7373724711676894
+        ],
+        "cluster_bonf": [
+          0.5626291343219717,
+          0.7373708656780283
+        ],
+        "p_binom": 0.009682849923057388,
+        "p_cluster": 0.000765702246169564,
+        "sig_bonf": true,
+        "win_rate_a": 0.65
+      },
+      "name": "candidate_vs_e9",
+      "latency_s": {
+        "a": {
+          "p50": 0.31213190000198665,
+          "p95": 0.47225655500151315,
+          "p99": 0.5569675280022784,
+          "max": 0.7947185000011814
+        },
+        "b": {
+          "p50": 0.10615784999754396,
+          "p95": 0.2147869850054121,
+          "p99": 0.26335085100115935,
+          "max": 0.31654379999963567
+        }
+      }
+    },
+    {
+      "games": 80,
+      "a_wins": 47,
+      "win_rate_a": 0.5875,
+      "ci95": [
+        0.4780384112688303,
+        0.6889431348848691
+      ],
+      "hands": 588,
+      "point_diff_per_hand_a": -0.05232380568777627,
+      "point_diff_se": 0.4950497691978947,
+      "by_seat": {
+        "0": 0.525,
+        "1": 0.65
+      },
+      "a_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1301,
+        "time_s": 415.6501213999727,
+        "ms_per_decision": 319.4851048424079,
+        "raise_per_hand": 0.38095238095238093,
+        "run_rate_on_response": 0.672645739910314
+      },
+      "b_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1287,
+        "time_s": 1041.7739265000564,
+        "ms_per_decision": 809.4591503496941,
+        "raise_per_hand": 0.3792517006802721,
+        "run_rate_on_response": 0.7767857142857143
+      },
+      "a": "bayes:runs/e13_frozen_20261020/policy.json",
+      "b": "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e11_frozen_20261020/policy.npz&belief=1&bcards=1&temper=1&mix=0&bets=0&n=384&nbets=1",
+      "deals": 40,
+      "start_seed": 240000,
+      "deal_wins": [
+        2,
+        1,
+        2,
+        2,
+        0,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        0,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        0,
+        2,
+        1,
+        0,
+        2,
+        0,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "stats": {
+        "wilson95": [
+          0.4780384112688303,
+          0.6889431348848691
+        ],
+        "wilson_bonf": [
+          0.47804040345890175,
+          0.6889414238723813
+        ],
+        "alpha_family": 0.05,
+        "cluster95": [
+          0.488951853495425,
+          0.686048146504575
+        ],
+        "cluster_bonf": [
+          0.488953664340743,
+          0.6860463356592571
+        ],
+        "p_binom": 0.14563545440298153,
+        "p_cluster": 0.08181230117547367,
+        "sig_bonf": false,
+        "win_rate_a": 0.5875
+      },
+      "name": "candidate_vs_e11",
+      "latency_s": {
+        "a": {
+          "p50": 0.3162514000068768,
+          "p95": 0.4977749999961816,
+          "p99": 0.5965791000053287,
+          "max": 0.7141275999965728
+        },
+        "b": {
+          "p50": 0.8997085000009974,
+          "p95": 1.34117228999894,
+          "p99": 1.4646938280043837,
+          "max": 1.6218184000026667
+        }
+      }
+    },
+    {
+      "games": 80,
+      "a_wins": 50,
+      "win_rate_a": 0.625,
+      "ci95": [
+        0.515485228513904,
+        0.7230598374199522
+      ],
+      "hands": 553,
+      "point_diff_per_hand_a": 1.0263148656898657,
+      "point_diff_se": 0.6642822316351545,
+      "by_seat": {
+        "0": 0.7,
+        "1": 0.55
+      },
+      "a_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1198,
+        "time_s": 394.1425474000207,
+        "ms_per_decision": 329.00045692823096,
+        "raise_per_hand": 0.3616636528028933,
+        "run_rate_on_response": 0.7348837209302326
+      },
+      "b_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1141,
+        "time_s": 281.5291369000479,
+        "ms_per_decision": 246.7389455740998,
+        "raise_per_hand": 0.3887884267631103,
+        "run_rate_on_response": 0.91
+      },
+      "a": "bayes:runs/e13_frozen_20261020/policy.json",
+      "b": "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e12_frozen_20261020/policy.npz&belief=1&bcards=1&temper=1&mix=0&bets=0&n=96&nbets=1",
+      "deals": 40,
+      "start_seed": 240000,
+      "deal_wins": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        0,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "stats": {
+        "wilson95": [
+          0.515485228513904,
+          0.7230598374199522
+        ],
+        "wilson_bonf": [
+          0.5154872546314301,
+          0.7230582129846882
+        ],
+        "alpha_family": 0.05,
+        "cluster95": [
+          0.54085802596283,
+          0.70914197403717
+        ],
+        "cluster_bonf": [
+          0.5408595720913483,
+          0.7091404279086517
+        ],
+        "p_binom": 0.0329926184264757,
+        "p_cluster": 0.003594155393042975,
+        "sig_bonf": true,
+        "win_rate_a": 0.625
+      },
+      "name": "candidate_vs_e12",
+      "latency_s": {
+        "a": {
+          "p50": 0.32969990000128746,
+          "p95": 0.5051810850007313,
+          "p99": 0.5964622910020257,
+          "max": 0.7813833000036539
+        },
+        "b": {
+          "p50": 0.2597613999969326,
+          "p95": 0.4098094000000856,
+          "p99": 0.4440640000029814,
+          "max": 0.5079309000066132
+        }
+      }
+    },
+    {
+      "games": 80,
+      "a_wins": 40,
+      "win_rate_a": 0.5,
+      "ci95": [
+        0.392972274311075,
+        0.607027725688925
+      ],
+      "hands": 832,
+      "point_diff_per_hand_a": -0.3938752903550698,
+      "point_diff_se": 0.24150944060446047,
+      "by_seat": {
+        "0": 0.55,
+        "1": 0.45
+      },
+      "a_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 2110,
+        "time_s": 266.24977570001647,
+        "ms_per_decision": 126.18472781991302,
+        "raise_per_hand": 0.49759615384615385,
+        "run_rate_on_response": 0.7932692307692307
+      },
+      "b_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 2103,
+        "time_s": 37.33590249998815,
+        "ms_per_decision": 17.753638849257324,
+        "raise_per_hand": 0.25,
+        "run_rate_on_response": 0.5555555555555556
+      },
+      "a": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+      "b": "zap:v1",
+      "deals": 40,
+      "start_seed": 240000,
+      "deal_wins": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        2,
+        0,
+        0,
+        1,
+        0,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "stats": {
+        "wilson95": [
+          0.392972274311075,
+          0.607027725688925
+        ],
+        "wilson_bonf": [
+          0.3929741508611972,
+          0.6070258491388028
+        ],
+        "alpha_family": 0.05,
+        "cluster95": [
+          0.40716156852372853,
+          0.5928384314762715
+        ],
+        "cluster_bonf": [
+          0.407163274451693,
+          0.592836725548307
+        ],
+        "p_binom": 0.9999999999999892,
+        "p_cluster": 1.0,
+        "sig_bonf": false,
+        "win_rate_a": 0.5
+      },
+      "name": "e9_vs_v1",
+      "latency_s": {
+        "a": {
+          "p50": 0.13060150000092108,
+          "p95": 0.20754342500113124,
+          "p99": 0.24237789499660717,
+          "max": 0.3121592000024975
+        },
+        "b": {
+          "p50": 0.014788899999985006,
+          "p95": 0.04676582999964011,
+          "p99": 0.058498920000711226,
+          "max": 0.08138679999683518
+        }
+      }
+    },
+    {
+      "games": 80,
+      "a_wins": 57,
+      "win_rate_a": 0.7125,
+      "ci95": [
+        0.6053944721715182,
+        0.8001321399160374
+      ],
+      "hands": 664,
+      "point_diff_per_hand_a": 0.8979576326451326,
+      "point_diff_se": 0.4242678949788049,
+      "by_seat": {
+        "0": 0.775,
+        "1": 0.65
+      },
+      "a_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1859,
+        "time_s": 215.29589959991426,
+        "ms_per_decision": 115.81274857445631,
+        "raise_per_hand": 0.5512048192771084,
+        "run_rate_on_response": 0.6793103448275862
+      },
+      "b_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1814,
+        "time_s": 2.685068900223996,
+        "ms_per_decision": 1.4801923374994466,
+        "raise_per_hand": 0.4367469879518072,
+        "run_rate_on_response": 0.39617486338797814
+      },
+      "a": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+      "b": "heuristic",
+      "deals": 40,
+      "start_seed": 240000,
+      "deal_wins": [
+        1,
+        1,
+        2,
+        2,
+        0,
+        1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "stats": {
+        "wilson95": [
+          0.6053944721715182,
+          0.8001321399160374
+        ],
+        "wilson_bonf": [
+          0.6053965378701004,
+          0.800130757077301
+        ],
+        "alpha_family": 0.05,
+        "cluster95": [
+          0.6273579241683462,
+          0.7976420758316538
+        ],
+        "cluster_bonf": [
+          0.6273594886739696,
+          0.7976405113260304
+        ],
+        "p_binom": 0.000183116564129747,
+        "p_cluster": 9.99060618900316e-07,
+        "sig_bonf": true,
+        "win_rate_a": 0.7125
+      },
+      "name": "e9_vs_heuristic",
+      "latency_s": {
+        "a": {
+          "p50": 0.10993500000040513,
+          "p95": 0.2063668700000562,
+          "p99": 0.25569360200170194,
+          "max": 0.37314989999867976
+        },
+        "b": {
+          "p50": 0.001573699995788047,
+          "p95": 0.002677150002637063,
+          "p99": 0.003573021002812298,
+          "max": 0.0085042999999132
+        }
+      }
+    },
+    {
+      "games": 80,
+      "a_wins": 63,
+      "win_rate_a": 0.7875,
+      "ci95": [
+        0.6857763938182242,
+        0.8628772578296451
+      ],
+      "hands": 959,
+      "point_diff_per_hand_a": 0.708035029717015,
+      "point_diff_se": 0.2167942999890961,
+      "by_seat": {
+        "0": 0.75,
+        "1": 0.825
+      },
+      "a_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 2337,
+        "time_s": 288.268342100062,
+        "ms_per_decision": 123.3497398802148,
+        "raise_per_hand": 0.5484880083420229,
+        "run_rate_on_response": 0.8253968253968254
+      },
+      "b_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 2500,
+        "time_s": 0.1119438999594422,
+        "ms_per_decision": 0.04477755998377688,
+        "raise_per_hand": 0.26277372262773724,
+        "run_rate_on_response": 0.7262357414448669
+      },
+      "a": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+      "b": "malandro_rule",
+      "deals": 40,
+      "start_seed": 240000,
+      "deal_wins": [
+        2,
+        1,
+        2,
+        2,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2,
+        2
+      ],
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "stats": {
+        "wilson95": [
+          0.6857763938182242,
+          0.8628772578296451
+        ],
+        "wilson_bonf": [
+          0.6857784426940335,
+          0.8628761328230387
+        ],
+        "alpha_family": 0.05,
+        "cluster95": [
+          0.7099249329639927,
+          0.8650750670360072
+        ],
+        "cluster_bonf": [
+          0.7099263584240537,
+          0.8650736415759462
+        ],
+        "p_binom": 2.2661405044675262e-07,
+        "p_cluster": 3.7614356074300304e-13,
+        "sig_bonf": true,
+        "win_rate_a": 0.7875
+      },
+      "name": "e9_vs_malandro",
+      "latency_s": {
+        "a": {
+          "p50": 0.12385380000341684,
+          "p95": 0.22101155999989708,
+          "p99": 0.28194709600153117,
+          "max": 0.38707869999780087
+        },
+        "b": {
+          "p50": 4.385000283946283e-05,
+          "p95": 6.411500071408219e-05,
+          "p99": 0.00014163500134600245,
+          "max": 0.0009396999957971275
+        }
+      }
+    },
+    {
+      "games": 80,
+      "a_wins": 46,
+      "win_rate_a": 0.575,
+      "ci95": [
+        0.46569091970838705,
+        0.6774361198519266
+      ],
+      "hands": 651,
+      "point_diff_per_hand_a": 0.953403487583538,
+      "point_diff_se": 0.3726170117376337,
+      "by_seat": {
+        "0": 0.5,
+        "1": 0.65
+      },
+      "a_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1861,
+        "time_s": 116.48499059999449,
+        "ms_per_decision": 62.59268704997017,
+        "raise_per_hand": 0.4270353302611367,
+        "run_rate_on_response": 0.5304568527918782
+      },
+      "b_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1830,
+        "time_s": 13.939801700020325,
+        "ms_per_decision": 7.617377978153184,
+        "raise_per_hand": 0.6052227342549923,
+        "run_rate_on_response": 0.3669064748201439
+      },
+      "a": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+      "b": "pimc:24",
+      "deals": 40,
+      "start_seed": 240000,
+      "deal_wins": [
+        2,
+        0,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        0,
+        2,
+        0,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "stats": {
+        "wilson95": [
+          0.46569091970838705,
+          0.6774361198519266
+        ],
+        "wilson_bonf": [
+          0.4656928984656886,
+          0.6774343821039822
+        ],
+        "alpha_family": 0.05,
+        "cluster95": [
+          0.4785833028610734,
+          0.6714166971389265
+        ],
+        "cluster_bonf": [
+          0.4785850745405091,
+          0.6714149254594908
+        ],
+        "p_binom": 0.2185180394787005,
+        "p_cluster": 0.12735086405995966,
+        "sig_bonf": false,
+        "win_rate_a": 0.575
+      },
+      "name": "e9_vs_pimc",
+      "latency_s": {
+        "a": {
+          "p50": 0.05322400000295602,
+          "p95": 0.1608849000040209,
+          "p99": 0.22186275999847574,
+          "max": 0.35051799999928335
+        },
+        "b": {
+          "p50": 0.007818750003934838,
+          "p95": 0.01383952999858593,
+          "p99": 0.01677500999860058,
+          "max": 0.0276668999940739
+        }
+      }
+    },
+    {
+      "games": 80,
+      "a_wins": 44,
+      "win_rate_a": 0.55,
+      "ci95": [
+        0.4411931301173402,
+        0.6542248962562025
+      ],
+      "hands": 605,
+      "point_diff_per_hand_a": 0.6968853634110987,
+      "point_diff_se": 0.3928924590667848,
+      "by_seat": {
+        "0": 0.55,
+        "1": 0.55
+      },
+      "a_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1548,
+        "time_s": 187.70175029982056,
+        "ms_per_decision": 121.25436065879882,
+        "raise_per_hand": 0.47603305785123967,
+        "run_rate_on_response": 0.543859649122807
+      },
+      "b_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1544,
+        "time_s": 192.13705200001277,
+        "ms_per_decision": 124.44109585493055,
+        "raise_per_hand": 0.47107438016528924,
+        "run_rate_on_response": 0.5381944444444444
+      },
+      "a": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+      "b": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+      "deals": 40,
+      "start_seed": 240000,
+      "deal_wins": [
+        2,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        2,
+        1,
+        0,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        0,
+        1,
+        0,
+        1,
+        2,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "stats": {
+        "wilson95": [
+          0.4411931301173402,
+          0.6542248962562025
+        ],
+        "wilson_bonf": [
+          0.44119507889355963,
+          0.6542231081528878
+        ],
+        "alpha_family": 0.05,
+        "cluster95": [
+          0.45200000000000007,
+          0.648
+        ],
+        "cluster_bonf": [
+          0.45200180077299734,
+          0.6479981992270027
+        ],
+        "p_binom": 0.4340422553454726,
+        "p_cluster": 0.3173105078629137,
+        "sig_bonf": false,
+        "win_rate_a": 0.55
+      },
+      "name": "e9_vs_e9",
+      "latency_s": {
+        "a": {
+          "p50": 0.12005174999649171,
+          "p95": 0.2139285999994172,
+          "p99": 0.25548113499797176,
+          "max": 0.41644580000138376
+        },
+        "b": {
+          "p50": 0.1286540499968396,
+          "p95": 0.21336694500387235,
+          "p99": 0.25022138299900665,
+          "max": 0.3919759999989765
+        }
+      }
+    },
+    {
+      "games": 80,
+      "a_wins": 32,
+      "win_rate_a": 0.4,
+      "ci95": [
+        0.29961659273441493,
+        0.5095473545185001
+      ],
+      "hands": 642,
+      "point_diff_per_hand_a": -0.3988718235346525,
+      "point_diff_se": 0.42977251547926515,
+      "by_seat": {
+        "0": 0.45,
+        "1": 0.35
+      },
+      "a_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1464,
+        "time_s": 168.28266030005034,
+        "ms_per_decision": 114.94717233609995,
+        "raise_per_hand": 0.3894080996884735,
+        "run_rate_on_response": 0.5335820895522388
+      },
+      "b_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1515,
+        "time_s": 1168.7278110999905,
+        "ms_per_decision": 771.4374990759013,
+        "raise_per_hand": 0.4174454828660436,
+        "run_rate_on_response": 0.836
+      },
+      "a": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+      "b": "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e11_frozen_20261020/policy.npz&belief=1&bcards=1&temper=1&mix=0&bets=0&n=384&nbets=1",
+      "deals": 40,
+      "start_seed": 240000,
+      "deal_wins": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "stats": {
+        "wilson95": [
+          0.29961659273441493,
+          0.5095473545185001
+        ],
+        "wilson_bonf": [
+          0.29961827595870943,
+          0.5095453499483961
+        ],
+        "alpha_family": 0.05,
+        "cluster95": [
+          0.3058446455626088,
+          0.4941553544373912
+        ],
+        "cluster_bonf": [
+          0.3058463756893417,
+          0.49415362431065835
+        ],
+        "p_binom": 0.09291188222054504,
+        "p_cluster": 0.0373729883406515,
+        "sig_bonf": false,
+        "win_rate_a": 0.4
+      },
+      "name": "e9_vs_e11",
+      "latency_s": {
+        "a": {
+          "p50": 0.10684784999830299,
+          "p95": 0.21612341000582078,
+          "p99": 0.25969100799891737,
+          "max": 0.4739717999982531
+        },
+        "b": {
+          "p50": 0.854453599997214,
+          "p95": 1.3444903400006296,
+          "p99": 1.5036079660023096,
+          "max": 1.6593416000032448
+        }
+      }
+    },
+    {
+      "games": 80,
+      "a_wins": 37,
+      "win_rate_a": 0.4625,
+      "ci95": [
+        0.3574781238878701,
+        0.5709583563319731
+      ],
+      "hands": 710,
+      "point_diff_per_hand_a": 0.1436556630074432,
+      "point_diff_se": 0.4243628917724256,
+      "by_seat": {
+        "0": 0.45,
+        "1": 0.475
+      },
+      "a_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1481,
+        "time_s": 160.7546339999899,
+        "ms_per_decision": 108.5446549628561,
+        "raise_per_hand": 0.29577464788732394,
+        "run_rate_on_response": 0.5886524822695035
+      },
+      "b_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1504,
+        "time_s": 370.5051966000319,
+        "ms_per_decision": 246.34654029257442,
+        "raise_per_hand": 0.3971830985915493,
+        "run_rate_on_response": 1.2476190476190476
+      },
+      "a": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+      "b": "learned:runs/mccfr_rs_o1_s7/compact?net=runs/e12_frozen_20261020/policy.npz&belief=1&bcards=1&temper=1&mix=0&bets=0&n=96&nbets=1",
+      "deals": 40,
+      "start_seed": 240000,
+      "deal_wins": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        2,
+        2,
+        1,
+        0,
+        0,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "stats": {
+        "wilson95": [
+          0.3574781238878701,
+          0.5709583563319731
+        ],
+        "wilson_bonf": [
+          0.3574799356278526,
+          0.5709564240873121
+        ],
+        "alpha_family": 0.05,
+        "cluster95": [
+          0.37381621285396016,
+          0.5511837871460399
+        ],
+        "cluster_bonf": [
+          0.3738178424393601,
+          0.5511821575606399
+        ],
+        "p_binom": 0.576430626188383,
+        "p_cluster": 0.4072247535466249,
+        "sig_bonf": false,
+        "win_rate_a": 0.4625
+      },
+      "name": "e9_vs_e12",
+      "latency_s": {
+        "a": {
+          "p50": 0.09555700000055367,
+          "p95": 0.21050470000045607,
+          "p99": 0.2548450800008141,
+          "max": 0.30590659999870695
+        },
+        "b": {
+          "p50": 0.2610052500021993,
+          "p95": 0.40110412999893014,
+          "p99": 0.44624445999848833,
+          "max": 0.5354824000023655
+        }
+      }
+    },
+    {
+      "games": 40,
+      "a_wins": 28,
+      "win_rate_a": 0.7,
+      "ci95": [
+        0.545696893456796,
+        0.8192532908430471
+      ],
+      "hands": 667,
+      "point_diff_per_hand_a": 0.1931093543109797,
+      "point_diff_se": 0.06612256052250069,
+      "by_seat": {
+        "0": 0.65,
+        "1": 0.75
+      },
+      "a_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1276,
+        "time_s": 359.7954266999659,
+        "ms_per_decision": 281.97133753915824,
+        "raise_per_hand": 0.45577211394302847,
+        "run_rate_on_response": 1.9098360655737705
+      },
+      "b_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1286,
+        "time_s": 0.013893899907998275,
+        "ms_per_decision": 0.010803965713840027,
+        "raise_per_hand": 0.18290854572713644,
+        "run_rate_on_response": 0.9572368421052632
+      },
+      "a": "bayes:runs/e13_frozen_20261020/policy.json",
+      "b": "mccfr_simplex",
+      "deals": 20,
+      "start_seed": 241000,
+      "deal_wins": [
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        0,
+        2,
+        2,
+        1,
+        1
+      ],
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "stats": {
+        "wilson95": [
+          0.545696893456796,
+          0.8192532908430471
+        ],
+        "wilson_bonf": [
+          0.5456998118185507,
+          0.8192515477025347
+        ],
+        "alpha_family": 0.05,
+        "cluster95": [
+          0.568904213404252,
+          0.8310957865957479
+        ],
+        "cluster_bonf": [
+          0.5689066223200945,
+          0.8310933776799054
+        ],
+        "p_binom": 0.01658900337497451,
+        "p_cluster": 0.0027881308826338547,
+        "sig_bonf": true,
+        "win_rate_a": 0.7
+      },
+      "name": "candidate_vs_simplex",
+      "latency_s": {
+        "a": {
+          "p50": 0.2952335000009043,
+          "p95": 0.42125135000242153,
+          "p99": 0.4804167750007764,
+          "max": 0.5669505000041681
+        },
+        "b": {
+          "p50": 8.100003469735384e-06,
+          "p95": 1.4400000509340316e-05,
+          "p99": 3.107499942416366e-05,
+          "max": 0.0003479999941191636
+        }
+      }
+    },
+    {
+      "games": 40,
+      "a_wins": 33,
+      "win_rate_a": 0.825,
+      "ci95": [
+        0.6804970794560755,
+        0.9125469700311694
+      ],
+      "hands": 646,
+      "point_diff_per_hand_a": 0.3602831957288311,
+      "point_diff_se": 0.06384152970652204,
+      "by_seat": {
+        "0": 0.75,
+        "1": 0.9
+      },
+      "a_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1471,
+        "time_s": 140.54907870001625,
+        "ms_per_decision": 95.54662046228161,
+        "raise_per_hand": 0.44891640866873067,
+        "run_rate_on_response": 0.9044585987261147
+      },
+      "b_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 1576,
+        "time_s": 0.016921100082981866,
+        "ms_per_decision": 0.010736738631333672,
+        "raise_per_hand": 0.24303405572755418,
+        "run_rate_on_response": 0.9896551724137931
+      },
+      "a": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+      "b": "mccfr_simplex",
+      "deals": 20,
+      "start_seed": 241000,
+      "deal_wins": [
+        2,
+        2,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        0
+      ],
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "stats": {
+        "wilson95": [
+          0.6804970794560755,
+          0.9125469700311694
+        ],
+        "wilson_bonf": [
+          0.6805000966821229,
+          0.9125458625396408
+        ],
+        "alpha_family": 0.05,
+        "cluster95": [
+          0.6963366285305148,
+          0.9536633714694851
+        ],
+        "cluster_bonf": [
+          0.6963389927501585,
+          0.9536610072498414
+        ],
+        "p_binom": 4.227702265779874e-05,
+        "p_cluster": 7.38695396851341e-07,
+        "sig_bonf": true,
+        "win_rate_a": 0.825
+      },
+      "name": "e9_vs_simplex",
+      "latency_s": {
+        "a": {
+          "p50": 0.077628500002902,
+          "p95": 0.19423125000321306,
+          "p99": 0.22433401999878697,
+          "max": 0.2658545000012964
+        },
+        "b": {
+          "p50": 8.199996955227107e-06,
+          "p95": 1.4500001270789653e-05,
+          "p99": 2.517500070098322e-05,
+          "max": 0.00024529999791411683
+        }
+      }
+    },
+    {
+      "games": 40,
+      "a_wins": 25,
+      "win_rate_a": 0.625,
+      "ci95": [
+        0.47032160054531913,
+        0.7577722646420829
+      ],
+      "hands": 263,
+      "point_diff_per_hand_a": 1.798903743315508,
+      "point_diff_se": 0.8277976017785211,
+      "by_seat": {
+        "0": 0.55,
+        "1": 0.7
+      },
+      "a_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 642,
+        "time_s": 208.24743530010164,
+        "ms_per_decision": 324.3729521808437,
+        "raise_per_hand": 0.5057034220532319,
+        "run_rate_on_response": 0.90625
+      },
+      "b_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 589,
+        "time_s": 12.68399199994019,
+        "ms_per_decision": 21.534791171375534,
+        "raise_per_hand": 0.4866920152091255,
+        "run_rate_on_response": 0.3383458646616541
+      },
+      "a": "bayes:runs/e13_frozen_20261020/policy.json",
+      "b": "pimc:64",
+      "deals": 20,
+      "start_seed": 241100,
+      "deal_wins": [
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        2,
+        0,
+        2,
+        1
+      ],
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "stats": {
+        "wilson95": [
+          0.47032160054531913,
+          0.7577722646420829
+        ],
+        "wilson_bonf": [
+          0.4703243913730111,
+          0.7577702083276672
+        ],
+        "alpha_family": 0.05,
+        "cluster95": [
+          0.5044497265824228,
+          0.7455502734175772
+        ],
+        "cluster_bonf": [
+          0.5044519417219859,
+          0.7455480582780141
+        ],
+        "p_binom": 0.15385994416282936,
+        "p_cluster": 0.042118528220545404,
+        "sig_bonf": false,
+        "win_rate_a": 0.625
+      },
+      "name": "candidate_vs_pimc64",
+      "latency_s": {
+        "a": {
+          "p50": 0.33080654999866965,
+          "p95": 0.48195862499924214,
+          "p99": 0.5469671469993048,
+          "max": 0.6654867999968701
+        },
+        "b": {
+          "p50": 0.023179600000730716,
+          "p95": 0.03898882000212325,
+          "p99": 0.043371500001230745,
+          "max": 0.05386050000379328
+        }
+      }
+    },
+    {
+      "games": 40,
+      "a_wins": 15,
+      "win_rate_a": 0.375,
+      "ci95": [
+        0.2422277353579172,
+        0.529678399454681
+      ],
+      "hands": 348,
+      "point_diff_per_hand_a": -0.4363289013617961,
+      "point_diff_se": 0.5573941550091048,
+      "by_seat": {
+        "0": 0.25,
+        "1": 0.5
+      },
+      "a_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 974,
+        "time_s": 59.25196729997697,
+        "ms_per_decision": 60.8336419917628,
+        "raise_per_hand": 0.3850574712643678,
+        "run_rate_on_response": 0.5684210526315789
+      },
+      "b_metrics": {
+        "illegal_rate": 0.0,
+        "decisions": 955,
+        "time_s": 19.41561950002506,
+        "ms_per_decision": 20.33049162306289,
+        "raise_per_hand": 0.5459770114942529,
+        "run_rate_on_response": 0.41044776119402987
+      },
+      "a": "portfolio:runs/e9_frozen_20261020/portfolio.json",
+      "b": "pimc:64",
+      "deals": 20,
+      "start_seed": 241100,
+      "deal_wins": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        2,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "rules_version": "paulista-1v1-o1",
+      "rules_fingerprint": "ca73a2770a14c415",
+      "stats": {
+        "wilson95": [
+          0.2422277353579172,
+          0.529678399454681
+        ],
+        "wilson_bonf": [
+          0.24222979167233274,
+          0.5296756086269889
+        ],
+        "alpha_family": 0.05,
+        "cluster95": [
+          0.2350460602085176,
+          0.5149539397914824
+        ],
+        "cluster_bonf": [
+          0.23504863189500377,
+          0.5149513681049962
+        ],
+        "p_binom": 0.15385994416282936,
+        "p_cluster": 0.0800189823204902,
+        "sig_bonf": false,
+        "win_rate_a": 0.375
+      },
+      "name": "e9_vs_pimc64",
+      "latency_s": {
+        "a": {
+          "p50": 0.05265195000174572,
+          "p95": 0.14509754999817226,
+          "p99": 0.21590549399828887,
+          "max": 0.26701499999762746
+        },
+        "b": {
+          "p50": 0.02111449999938486,
+          "p95": 0.037026289999630535,
+          "p99": 0.044315295999840604,
+          "max": 0.05924419999792008
+        }
+      }
+    }
+  ],
+  "elapsed_s": 759.7792313098907
+}

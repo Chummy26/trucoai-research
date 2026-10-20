@@ -1,0 +1,353 @@
+{
+  "completed": true,
+  "acceptance_passed": true,
+  "candidate": "E13-joint",
+  "result_sha256": "a938e61e0bd85bb240f2bf023eb5e851344d15a624e314514d638285b6998b85",
+  "hashes_verified": 148,
+  "loaded_runtime_verified": true,
+  "aggregate": {
+    "candidate": {
+      "mean": 0.6482142857142857,
+      "se": 0.022352999651201032,
+      "ci": [
+        0.6044032114514953,
+        0.6920253599770761
+      ],
+      "normal_p_two_sided": 3.342758183395476e-11
+    },
+    "e9": {
+      "mean": 0.5696428571428571,
+      "se": 0.01972593155517677,
+      "ci": [
+        0.5309807417332085,
+        0.6083049725525057
+      ],
+      "normal_p_two_sided": 0.00041473878866957794
+    }
+  },
+  "gain": {
+    "mean": 0.07857142857142857,
+    "se": 0.029803999534934705,
+    "ci": [
+      0.020156662887708038,
+      0.1369861942551491
+    ],
+    "normal_p_two_sided": 0.00838226834504133
+  },
+  "cells": {
+    "v1": {
+      "candidate_wins": 38,
+      "e9_wins": 40,
+      "games": 80,
+      "candidate_rate": 0.475,
+      "e9_rate": 0.5,
+      "candidate_paired95": {
+        "mean": 0.475,
+        "se": 0.053559217167446944,
+        "ci": [
+          0.3700258633116446,
+          0.5799741366883553
+        ],
+        "normal_p_two_sided": 0.640662247987203
+      },
+      "candidate_familywise": {
+        "mean": 0.475,
+        "se": 0.053559217167446944,
+        "ci": [
+          0.3309198396306803,
+          0.6190801603693197
+        ],
+        "normal_p_two_sided": 0.640662247987203
+      },
+      "difference_paired95": {
+        "mean": -0.025,
+        "se": 0.07370679960283384,
+        "ci": [
+          -0.16946267263726544,
+          0.11946267263726545
+        ],
+        "normal_p_two_sided": 0.734472829690493
+      }
+    },
+    "heuristic": {
+      "candidate_wins": 60,
+      "e9_wins": 57,
+      "games": 80,
+      "candidate_rate": 0.75,
+      "e9_rate": 0.7125,
+      "candidate_paired95": {
+        "mean": 0.75,
+        "se": 0.04003203845127178,
+        "ci": [
+          0.6715386464077847,
+          0.8284613535922153
+        ],
+        "normal_p_two_sided": 4.2380554260794744e-10
+      },
+      "candidate_familywise": {
+        "mean": 0.75,
+        "se": 0.04003203845127178,
+        "ci": [
+          0.6423094319706437,
+          0.8576905680293563
+        ],
+        "normal_p_two_sided": 4.2380554260794744e-10
+      },
+      "difference_paired95": {
+        "mean": 0.0375,
+        "se": 0.048659926649538436,
+        "ci": [
+          -0.05787170372345609,
+          0.13287170372345608
+        ],
+        "normal_p_two_sided": 0.4409116437204539
+      }
+    },
+    "malandro": {
+      "candidate_wins": 64,
+      "e9_wins": 63,
+      "games": 80,
+      "candidate_rate": 0.8,
+      "e9_rate": 0.7875,
+      "candidate_paired95": {
+        "mean": 0.8,
+        "se": 0.0392232270276368,
+        "ci": [
+          0.7231238876683939,
+          0.8768761123316062
+        ],
+        "normal_p_two_sided": 2.0329094548402516e-14
+      },
+      "candidate_familywise": {
+        "mean": 0.8,
+        "se": 0.0392232270276368,
+        "ci": [
+          0.6944852232870391,
+          0.905514776712961
+        ],
+        "normal_p_two_sided": 2.0329094548402516e-14
+      },
+      "difference_paired95": {
+        "mean": 0.0125,
+        "se": 0.048988159218220716,
+        "ci": [
+          -0.08351502773662643,
+          0.10851502773662643
+        ],
+        "normal_p_two_sided": 0.7985966658605671
+      }
+    },
+    "pimc": {
+      "candidate_wins": 52,
+      "e9_wins": 46,
+      "games": 80,
+      "candidate_rate": 0.65,
+      "e9_rate": 0.575,
+      "candidate_paired95": {
+        "mean": 0.65,
+        "se": 0.048038446141526144,
+        "ci": [
+          0.5558463756893417,
+          0.7441536243106583
+        ],
+        "normal_p_two_sided": 0.001793227151850063
+      },
+      "candidate_familywise": {
+        "mean": 0.65,
+        "se": 0.048038446141526144,
+        "ci": [
+          0.5207713183647724,
+          0.7792286816352276
+        ],
+        "normal_p_two_sided": 0.001793227151850063
+      },
+      "difference_paired95": {
+        "mean": 0.075,
+        "se": 0.05234868303390845,
+        "ci": [
+          -0.027601533384563517,
+          0.17760153338456353
+        ],
+        "normal_p_two_sided": 0.15194336112283938
+      }
+    },
+    "e9": {
+      "candidate_wins": 52,
+      "e9_wins": 44,
+      "games": 80,
+      "candidate_rate": 0.65,
+      "e9_rate": 0.55,
+      "candidate_paired95": {
+        "mean": 0.65,
+        "se": 0.04457779141208643,
+        "ci": [
+          0.5626291343219717,
+          0.7373708656780283
+        ],
+        "normal_p_two_sided": 0.0007657022461696564
+      },
+      "candidate_familywise": {
+        "mean": 0.65,
+        "se": 0.04457779141208643,
+        "ci": [
+          0.5300808586226456,
+          0.7699191413773544
+        ],
+        "normal_p_two_sided": 0.0007657022461696564
+      },
+      "difference_paired95": {
+        "mean": 0.1,
+        "se": 0.06504436355879908,
+        "ci": [
+          -0.027484609972575708,
+          0.22748460997257572
+        ],
+        "normal_p_two_sided": 0.12419239344721583
+      }
+    },
+    "e11": {
+      "candidate_wins": 47,
+      "e9_wins": 32,
+      "games": 80,
+      "candidate_rate": 0.5875,
+      "e9_rate": 0.4,
+      "candidate_paired95": {
+        "mean": 0.5875,
+        "se": 0.050279666583966834,
+        "ci": [
+          0.488953664340743,
+          0.686046335659257
+        ],
+        "normal_p_two_sided": 0.08181230117547347
+      },
+      "candidate_familywise": {
+        "mean": 0.5875,
+        "se": 0.050279666583966834,
+        "ci": [
+          0.45224218990009957,
+          0.7227578100999005
+        ],
+        "normal_p_two_sided": 0.08181230117547347
+      },
+      "difference_paired95": {
+        "mean": 0.1875,
+        "se": 0.07529323019249813,
+        "ci": [
+          0.03992798054301991,
+          0.33507201945698006
+        ],
+        "normal_p_two_sided": 0.012764833713341722
+      }
+    },
+    "e12": {
+      "candidate_wins": 50,
+      "e9_wins": 37,
+      "games": 80,
+      "candidate_rate": 0.625,
+      "e9_rate": 0.4625,
+      "candidate_paired95": {
+        "mean": 0.625,
+        "se": 0.04292957859039287,
+        "ci": [
+          0.5408595720913483,
+          0.7091404279086517
+        ],
+        "normal_p_two_sided": 0.003594155393042938
+      },
+      "candidate_familywise": {
+        "mean": 0.625,
+        "se": 0.04292957859039287,
+        "ci": [
+          0.5095147316370688,
+          0.7404852683629312
+        ],
+        "normal_p_two_sided": 0.003594155393042938
+      },
+      "difference_paired95": {
+        "mean": 0.1625,
+        "se": 0.0604139035619264,
+        "ci": [
+          0.04409092485314821,
+          0.2809090751468518
+        ],
+        "normal_p_two_sided": 0.007149952600682809
+      }
+    }
+  },
+  "exploratory": {
+    "simplex": {
+      "candidate": {
+        "wins": 28,
+        "games": 40,
+        "rate": 0.7,
+        "paired95": [
+          0.568904213404252,
+          0.8310957865957479
+        ]
+      },
+      "e9": {
+        "wins": 33,
+        "games": 40,
+        "rate": 0.825,
+        "paired95": [
+          0.6963366285305148,
+          0.9536633714694851
+        ]
+      }
+    },
+    "pimc64": {
+      "candidate": {
+        "wins": 25,
+        "games": 40,
+        "rate": 0.625,
+        "paired95": [
+          0.5044497265824228,
+          0.7455502734175772
+        ]
+      },
+      "e9": {
+        "wins": 15,
+        "games": 40,
+        "rate": 0.375,
+        "paired95": [
+          0.2350460602085176,
+          0.5149539397914824
+        ]
+      }
+    }
+  },
+  "primary_games_per_policy": 560,
+  "primary_wins": {
+    "candidate": 363,
+    "e9": 319
+  },
+  "all_families_superiority_confirmed": false,
+  "latency_s": {
+    "candidate": {
+      "decisions": 12740,
+      "mean": 0.30236955350075984,
+      "median": 0.30195699999967474,
+      "p95": 0.4730513549988244,
+      "p99": 0.5722929430017396,
+      "max": 0.9381611999997403
+    },
+    "e9": {
+      "decisions": 15105,
+      "mean": 0.10611123271766475,
+      "median": 0.09373609999602195,
+      "p95": 0.20569408000301337,
+      "p99": 0.2532614239992107,
+      "max": 0.4739717999982531
+    }
+  },
+  "illegal": {
+    "candidate": 0,
+    "e9": 0,
+    "opponents": 0
+  },
+  "total_matches": 1280,
+  "elapsed_s": 759.7792313098907,
+  "workers": 12,
+  "uncertainty_unit": "One paired seed, averaged across both seats and all seven fixed opponent families; candidate-control difference uses the same seeds and families.",
+  "scope": "Simulation under O1. Broad mean relative to E9, not a proof of universal optimality or strength against humans. No live activation."
+}
